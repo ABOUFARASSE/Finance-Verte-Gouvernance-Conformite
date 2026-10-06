@@ -1,19 +1,21 @@
 # Module 5 — Gouvernance d’entreprise, conformité et finance durable
 
-Badr ABOUFARASSE, PhD. Parcours de 15 heures (6 × 2h30), adapté au contexte africain, avec le Maroc comme point d’ancrage.
+Badr ABOUFARASSE, PhD. Six séances de trois heures (18 heures), avec un ancrage au Maroc et des comparaisons africaines et internationales.
 
-## Contenu disponible
+## Supports
 
-- Syllabus du module.
-- Séance 1 : gouvernance, conseil et responsabilité.
-- Cas fictif SolarOne Maroc, exercices et corrigés.
-- Matrice de responsabilités interactive, export CSV et note téléchargeable.
-- Sources officielles OCDE, AMMC, IoDSA et CMA Kenya.
+Les six séances contiennent cours détaillé, figures, exemples guidés, applications et corrigés. Le parcours en visioconférence conserve les explications et propose trois pauses courtes ainsi qu’une synthèse collective. Les outils facultatifs conservent les saisies dans le navigateur lorsque le stockage local est disponible.
 
-Les séances 2 à 6 seront développées successivement. Les exemples et corrigés sont pédagogiques ; chaque règle doit être examinée dans son périmètre juridique.
+## Évaluation finale
+
+Audit critique du dossier fictif SolarOne Maroc, en binôme et sans oral : rapport de 4–5 pages, tableau des constats, plan de correction et contributions personnelles. Douze pièces, références institutionnelles, grille de notation sur 20, dossier PDF et source LaTeX académique, modèle Word modifiable. Date limite : à annoncer.
+
+Le dépôt des travaux utilise le même projet Supabase que le module précédent, avec un bucket privé `module5-audit` et une table distincte `module5_audit_submissions`. Les étudiants peuvent envoyer un nouveau fichier et ses métadonnées mais ne peuvent pas lire, modifier ou supprimer les dépôts. Les ressources du cours sont publiques ; les copies et les coordonnées de dépôt ne sont pas publiées dans ce dépôt GitHub.
 
 ## Site pédagogique
 
 https://aboufarasse.github.io/Finance-Verte-Gouvernance-Conformite/
 
-Le fichier `index.html` est autonome et peut aussi être ouvert localement. GitHub Pages publie la branche `main`, à la racine.
+https://aboufarasse.github.io/Finance-Verte-Gouvernance-Conformite/evaluation-finale/
+
+GitHub Pages publie la branche `main`, à la racine. Le dossier PDF est recompilable avec la source `.tex` fournie (deux passes `pdflatex`). Les pièces sont fictives ; les référentiels institutionnels doivent être examinés dans leur périmètre juridique.
