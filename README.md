@@ -8,7 +8,7 @@ Les six séances contiennent cours détaillé, figures, exemples guidés, applic
 
 ## Évaluation finale
 
-Audit critique du dossier fictif SolarOne Maroc, en binôme et sans oral : rapport de 4–5 pages, tableau des constats, plan de correction et contributions personnelles. Douze pièces, références institutionnelles, grille de notation sur 20, dossier PDF, modèle Word modifiable. Date limite : à annoncer.
+Audit critique du dossier fictif SolarOne Maroc, en binôme et sans oral : rapport de 4–5 pages, tableau des constats, plan de correction et contributions personnelles. Douze pièces, références institutionnelles, grille de notation sur 20, dossier PDF, modèle Word modifiable. Date limite de dépôt : 31 octobre 2026 (31/10/2026).
 
 Le dépôt des travaux utilise le même projet Supabase que le module précédent, avec un bucket privé `module5-audit` et une table distincte `module5_audit_submissions`. Les étudiants peuvent envoyer un nouveau fichier et ses métadonnées mais ne peuvent pas lire, modifier ou supprimer les dépôts. Les ressources du cours sont publiques ; les copies et les coordonnées de dépôt ne sont pas publiées dans ce dépôt GitHub.
 
