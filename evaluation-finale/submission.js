@@ -62,6 +62,9 @@
       }
       receipt={module:'Module 5 — Gouvernance, conformité et finance durable',evaluation:'Audit critique SolarOne',reference:p.id,confirmation_utc:new Date().toISOString(),binome:members,email_depot:email,fichier:file.name,taille_octets:file.size};
       complete=true;
+      const receiptText=Object.entries(receipt).map(([key,value])=>key+' : '+value).join('\n');
+      receiptBtn.href=window.URL.createObjectURL(new Blob([receiptText],{type:'text/plain;charset=utf-8'}));
+      receiptBtn.download='Recu_Module5_'+receipt.reference+'.txt';
       status('Dépôt enregistré avec succès.\nRéférence : '+p.id+'\nFichier : '+file.name+'\nConservez le reçu : votre rapport et ses annexes ont été transmis pour correction.');
       receiptBtn.hidden=false;
       btn.textContent='Travail déposé';
@@ -74,12 +77,5 @@
         [emailEl,membersEl,fileEl].forEach(el=>el.disabled=false);
       }
     }
-  });
-  receiptBtn.addEventListener('click',()=>{
-    if(!receipt) return;
-    const text=Object.entries(receipt).map(([key,value])=>key+' : '+value).join('\n');
-    const url=window.URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));
-    const a=document.createElement('a');a.href=url;a.download='Recu_Module5_'+receipt.reference+'.txt';document.body.append(a);a.click();a.remove();
-    setTimeout(()=>window.URL.revokeObjectURL(url),1000);
   });
 })();
