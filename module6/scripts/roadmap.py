@@ -11,7 +11,7 @@ def render_roadmap(sessions):
     outputs=['Diagnostic financier argumenté','Plan financier et trésorerie prévisionnelle','Recommandation de financement','Matrice d’arbitrage stratégique','Scénarios, seuils et actions','Note de décision et tableau de bord']
     text='''<section id="feuille-de-route" class="course-route" aria-labelledby="route-title">
 <p class="smallcaps">Le parcours en un regard · 6 séances · 21 heures</p>
-<h2 id="route-title">Feuille de route du cours</h2>
+<h2 id="route-title">Schéma du cours — les 6 séances et leurs objectifs</h2>
 <p class="route-purpose"><b>Objectif final :</b> construire et défendre une stratégie de transition finançable, résistante aux chocs et pilotable dans le temps.</p>
 <ol class="route-phases">'''
     for i,(title,desc,nums) in enumerate(phases,1):
