@@ -9,10 +9,13 @@
 \begin{document}
 \begin{center}{\small MASTER FINANCE VERTE -- MODULE 6}\par\vspace{8pt}{\Large\bfseries Séance 2 -- Plan financier et trajectoire de transition}\par\vspace{6pt}Badr Aboufarasse\par{\small Cours et applications corrigées -- 25 octobre 2026}\end{center}
 \begin{quote}\itshape Combien financer, à quelle date et pour quels résultats ?\end{quote}
-\textbf{Données du cas fictives.} Montants en M MAD ; taux et seuils pédagogiques.
+\textbf{Données du cas fictives.} Montants en M MAD ; taux et seuils pédagogiques.\par Durée : 3 h 30 par séance ; 21 heures pour le module.
 
 \subsection*{Objectifs}
 \begin{itemize}\item Construire un plan financier reproductible sur cinq ans.\item Relier les trajectoires physiques aux flux et aux dates de mise en service.\item Distinguer besoin annuel et risque de liquidité en cours d’année.\end{itemize}
+\subsection*{Déroulé de 3 h 30}
+Problème initial : 15 min ; concepts : 55 min ; exemples résolus : 30 min ; applications : 70 min ; cas : 30 min ; synthèse : 10 min. Total : 210 min.
+
 \section*{1. Le plan comme système d’hypothèses}
 Un plan financier n’est pas une extrapolation mécanique du résultat. Il décrit des décisions, leur calendrier et leurs effets. On commence par les facteurs économiques : volumes, prix, coûts, délais clients, stocks et investissements. Les états prévisionnels en découlent. Chaque hypothèse doit posséder une unité, une date, une justification et un responsable de révision. [BD] [SS7]
 
@@ -100,7 +103,45 @@ La trajectoire de transition doit aussi expliquer quelles dépenses rendent poss
 
 Dans le dossier, indiquer pour E, S et W : dépense, mise en service, effet opérationnel, indicateur physique et condition de réalisation. La réduction d’émissions sera étudiée séparément de la réduction de facture : un prix électrique n’est pas un facteur d’émission.
 
-\section*{7. Trois applications corrigées}
+\section*{7. Approfondissement --- Relier les trois états prévisionnels}
+Un plan robuste doit pouvoir expliquer simultanément le résultat, la variation de trésorerie et le bilan final. Les tableaux ne sont pas trois exercices indépendants. L’investissement augmente les immobilisations avant amortissement ; le résultat non distribué augmente les capitaux propres ; les remboursements réduisent la dette ; les délais d’exploitation déterminent les actifs et dettes courants. Une incohérence entre ces mouvements révèle souvent un flux omis ou un poste compté deux fois. [BD] [VER]
+
+
+
+\begin{quote}\small Immobilisations finales = immobilisations initiales + CAPEX - amortissements\newline Fonds propres finaux = fonds propres initiaux + résultat net - distributions\newline Dette finale = dette initiale + tirages - principal remboursé\end{quote}
+
+\textbf{Exemple résolu A1.} Immobilisations = 40 + 20 - 4 = 56. Fonds propres = 42 + 8,52 = 50,52. Dette = 22 + 14 - 4,8 = 31,2. Si l’on conserve stocks/CA = 14 \%, clients/CA = 18 \% et fournisseurs/CA = 12 \%, les encours deviennent 14,7, 18,9 et 12,6 : leur BFR est bien 21.
+
+
+
+\Needspace{250pt}
+\begin{longtable}{p{5.07cm}p{5.07cm}p{5.07cm}}
+\toprule
+Bilan prévisionnel A1 & Actif & Financement / passif \\
+\midrule\endhead
+Immobilisations / fonds propres & 56 & 50,52 \\
+Stocks / dette financière & 14,7 & 31,2 \\
+Clients / fournisseurs & 18,9 & 12,6 \\
+Cash & 4,72 & --- \\
+Total & 94,32 & 94,32 \\
+\bottomrule
+\end{longtable}
+
+Le contrôle économique est également satisfait : immobilisations + BFR = 77 ; fonds propres + dette - cash = 50,52 + 31,2 - 4,72 = 77. Ces égalités ne prouvent pas la pertinence des prévisions, mais elles vérifient leur cohérence comptable dans le périmètre simplifié.
+
+\section*{8. Approfondissement --- Un besoin de financement se raisonne dans le temps}
+La croissance, le décalage des gains et les clauses de remboursement déterminent le besoin à financer. Une hausse de CA peut améliorer le résultat tout en absorbant du BFR. Une décision d’investissement peut sembler acceptable à cinq ans et provoquer une impasse au deuxième trimestre. On distingue donc le besoin cumulé, le besoin maximal et la réserve minimale retenue pour l’incertitude.
+
+
+Il faut éviter le financement utilisé comme un « bouchon » qui équilibrerait automatiquement chaque année. Un tel ajustement masque les conditions de marché et peut créer une circularité : plus de dette implique plus d’intérêts, donc plus de dette. Le modèle commun utilise des tirages définis et un calendrier explicite ; l’exercice 5 résout analytiquement un besoin de A1 sous des hypothèses contrôlées. [DAM] [BD]
+
+
+La prévision glissante réactualise les périodes à venir lorsque les informations deviennent disponibles. Le budget initial sert de point de comparaison, tandis que la nouvelle prévision représente la trajectoire la mieux étayée à la date de revue. Un retard ne doit pas être « corrigé » en avançant artificiellement les encaissements : mettre à jour mise en service, économies, amortissement, impôt et coût du financement.
+
+
+La fin du modèle n’est pas la fin de la vie des actifs. Le plan A1--A5 sert à étudier la liquidité et les engagements sur cinq ans ; il ne constitue pas une valorisation complète de tous les projets sur leur durée de vie. Une valeur terminale peut être nécessaire dans une valorisation, avec hypothèses de maintenance, de croissance et de rentabilité à long terme explicitement justifiées. Ne pas ajouter une valeur terminale à la trésorerie bancaire : c’est une valeur actualisée, pas un encaissement certain. [SS7]
+
+\section*{9. Trois applications corrigées}
 
 \subsection*{Application 1 --- Une croissance qui consomme du cash}
 Avec BFR/CA constant à 20 \%, calculer le BFR en A1 et A2 et les utilisations de cash correspondantes.
@@ -127,7 +168,58 @@ E et S entrent finalement en service en A3, avec décalage des amortissements é
 \paragraph{Correction expliquée}
 La perte d’EBITDA est 3,8 et l’amortissement baisse de 1,6. L’EBIT et le résultat imposable baissent de 2,2 ; l’impôt baisse de 0,55. CFO diminue donc de \textbf{3,25} (= 3,8 - 0,55). Retirer seulement 3,8 du cash ignorerait l’impôt ; utiliser un bouclier fiscal d’amortissement malgré le report serait également erroné.
 
-\section*{8. Cas de synthèse et transition}
+\section*{10. Applications supplémentaires --- États prévisionnels et financement}
+
+\subsection*{Application 4 --- Une croissance plus forte finance-t-elle le programme ?}
+En A1 uniquement, porter la croissance du CA de 5 \% à 10 \%. Conserver taux de charges variables, charges fixes, amortissements, financement et autres conventions. Recalculer résultat, BFR et cash ; comparer au cash de référence de 4,72.
+
+
+\paragraph{Corrigé détaillé : calcul, interprétation et limites}
+CA = 110 ; marge sur coûts variables = 44 ; charges fixes = 24,48 ; EBITDA = \textbf{19,52}. EBIT = 15,52 ; intérêts = 2,16 ; impôt = 3,34 ; résultat net = \textbf{10,02}.
+
+BFR = 22 ; variation = 2 ; CFO = 10,02 + 4 - 2 = \textbf{12,02}. Cash = 4 + 12,02 - 20 + 14 - 4,8 = \textbf{5,22}. L’amélioration du cash est seulement 0,5 : le supplément de marge après impôt de 1,5 est partiellement absorbé par 1 de BFR supplémentaire.
+
+\textbf{Interprétation et limites.} La croissance ne constitue pas une ressource financière égale au supplément de ventes. Les volumes, marges et délais déterminent la part réellement disponible. Cette variante ne modifie pas automatiquement A2--A5 : il faut préciser la trajectoire ultérieure.
+
+
+\subsection*{Application 5 --- Trouver l’intervalle de dette compatible avec deux contraintes}
+En A1 de référence, remplacer le tirage 14 par un montant D, à 6 \%, avec remboursement de D/5 dès A1. Aucun apport ni dividende. Imposer cash final au moins 3 et DSCR au moins 1,20. Supposer un bénéfice imposable positif. Calculer les bornes de D.
+
+
+\paragraph{Corrigé détaillé : calcul, interprétation et limites}
+\textbf{Impôt.} Il vaut 0,25 $\times$ (17,52 - 4 - 1,32 - 0,06D) = 3,05 - 0,015D. CFO = 12,15 - 0,045D. Cash final = \textbf{-5,85 + 0,755D}.
+
+\textbf{Liquidité.} -5,85 + 0,755D $\geq$ 3 donne D $\geq$ \textbf{11,722}. \textbf{Service.} CFADS = 9,47 + 0,015D ; service = 3,32 + 0,26D. Imposer CFADS/service $\geq$ 1,20 donne 5,486 $\geq$ 0,297D, donc D $\leq$ \textbf{18,471}.
+
+L’intervalle admissible de A1 est donc \textbf{[11,722 ; 18,471]}. Le choix D = 14 s’y trouve. Vérifier ensuite les années suivantes, la disponibilité du prêt et les besoins infra-annuels.
+
+\textbf{Interprétation et limites.} Davantage de dette améliore la trésorerie initiale tout en alourdissant le service. Une solution mathématique en A1 ne garantit ni accord bancaire ni soutenabilité du programme complet. Les inégalités sont valables sous les conventions de ce seul exercice.
+
+
+\subsection*{Application 6 --- Réconcilier clôture annuelle et impasse trimestrielle}
+Budget infra-annuel illustratif distinct de la ventilation du modèle commun : cash initial 4 ; CFO trimestriels 1, 3, 5, 7 ; CAPEX 8, 6, 4, 2 ; tirages de dette 4, 4, 4, 2 ; remboursements de principal 1 par trimestre. Aucun autre flux. Calculer les clôtures et une facilité minimale pour maintenir une réserve de 3, hors intérêts de la facilité.
+
+
+\paragraph{Corrigé détaillé : calcul, interprétation et limites}
+Clôture T1 = 4 + 1 - 8 + 4 - 1 = \textbf{0}. T2 = 0 + 3 - 6 + 4 - 1 = \textbf{0}. T3 = 0 + 5 - 4 + 4 - 1 = \textbf{4}. T4 = 4 + 7 - 2 + 2 - 1 = \textbf{10}.
+
+Contrôle annuel : 4 + 16 - 20 + 14 - 4 = 10. Une facilité de \textbf{3}, tirée avant les besoins de T1 et remboursée lorsque le cash le permet, suffirait au seul profil de fin de trimestre, sans intérêts. Son dimensionnement réel doit aussi couvrir les points bas internes à chaque trimestre.
+
+\textbf{Interprétation et limites.} La prévision annuelle est compatible avec une tension précoce. Vérifier date des tirages, disponibilité, sûretés et frais ; un montant affiché dans un budget n’est pas une ligne confirmée.
+
+
+\subsection*{Application 7 --- Un semestre de retard dans les économies}
+Variante A2 : E et S fonctionnent six mois au lieu d’une année entière. Leurs économies et leur amortissement sont proratisés à 50 \% ; le CAPEX reste inchangé. Calculer l’effet sur le CFO et le cash A2 par rapport à la référence.
+
+
+\paragraph{Corrigé détaillé : calcul, interprétation et limites}
+Perte d’EBITDA = 3,8 $\times$ 50 \% = \textbf{1,9}. Amortissement en moins = 1,6 $\times$ 50 \% = \textbf{0,8}. La base imposable baisse de 1,1 ; l’impôt diminue de 0,275.
+
+La baisse du CFO est 1,9 - 0,275 = \textbf{1,625}. La clôture A2 devient 8,0638 - 1,625 = \textbf{6,4388}. Contrôle par le résultat : le résultat net baisse de 0,825, auquel s’ajoute l’amortissement moindre de 0,8 dans le passage au CFO.
+
+\textbf{Interprétation et limites.} Le retard touche à la fois opérations et fiscalité. La perte de cash ne se déduit pas du seul EBITDA. La suite du plan doit préciser si les économies, la durée d’utilisation et l’amortissement sont simplement décalés ou définitivement perdus.
+
+\section*{11. Cas de synthèse et transition}
 \textbf{Atelier, 30 minutes.} Reproduire A1 puis A2 dans un tableur à partir du dossier commun. Séparer cellules d’hypothèses et formules. Rédiger une note expliquant si le prêt de 14 suffit à la clôture annuelle, puis pourquoi cela ne démontre pas l’absence d’impasse mensuelle.
 
 
@@ -144,5 +236,7 @@ En A2 : charges fixes 24 $\times$ 1,02² = 24,9696 ; EBITDA = 44,1 - 24,9696 + 3
 \item \textbf{[BD] Berk, J. et DeMarzo, P..} Corporate Finance, 6e édition, Pearson. Chapitres 2, 12, 14--18, 22, 24--27 et 30--31 selon la séance. \href{https://www.pearson.com/en-us/subject-catalog/p/corporate-finance/P200000009791/9780137844906}{Source officielle}.
 \item \textbf{[SS7] Schoenmaker, D. et Schramade, W. (2023).} Capital Budgeting. Chap. 7, p. 173--204. \href{https://doi.org/10.1007/978-3-031-35009-2_7}{Source officielle}.
 \item \textbf{[IFRS] IFRS Foundation (2025).} Disclosing information about an entity’s climate-related transition, including information about transition plans, in accordance with IFRS S2. \href{https://www.ifrs.org/content/dam/ifrs/supporting-implementation/ifrs-s2/transition-plan-disclosure-s2.pdf}{Source officielle}.
+\item \textbf{[VER] Vernimmen.} Finance d’entreprise : diagnostic, flux, marges, financement et rentabilité ; sommaire officiel. \href{https://www.vernimmen.fr/Vernimmen/Plan_du_livre.php}{Source officielle}.
+\item \textbf{[DAM] Damodaran, A. (NYU Stern).} Corporate Finance : notes, problèmes et tableurs ; ensembles actualisés au printemps 2026. \href{https://pages.stern.nyu.edu/~adamodar/New_Home_Page/cflect.htm}{Source officielle}.
 \end{itemize}\normalsize
 \end{document}

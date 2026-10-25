@@ -9,10 +9,13 @@
 \begin{document}
 \begin{center}{\small MASTER FINANCE VERTE -- MODULE 6}\par\vspace{8pt}{\Large\bfseries Séance 3 -- Structure du capital et choix de financement}\par\vspace{6pt}Badr Aboufarasse\par{\small Cours et applications corrigées -- 25 octobre 2026}\end{center}
 \begin{quote}\itshape Quelle combinaison de ressources rend le plan soutenable ?\end{quote}
-\textbf{Données du cas fictives.} Montants en M MAD ; taux et seuils pédagogiques.
+\textbf{Données du cas fictives.} Montants en M MAD ; taux et seuils pédagogiques.\par Durée : 3 h 30 par séance ; 21 heures pour le module.
 
 \subsection*{Objectifs}
 \begin{itemize}\item Expliquer les principales théories du financement.\item Comparer des offres au-delà du taux affiché.\item Tester service de dette, devise, dilution et marge de sécurité.\end{itemize}
+\subsection*{Déroulé de 3 h 30}
+Problème initial : 15 min ; concepts : 55 min ; exemples résolus : 30 min ; applications : 70 min ; cas : 30 min ; synthèse : 10 min. Total : 210 min.
+
 \section*{1. Un modèle de référence : Modigliani et Miller}
 Le résultat de neutralité de Modigliani et Miller constitue un point de comparaison : dans un cadre idéal sans les frictions pertinentes, modifier la répartition dette/fonds propres ne crée pas à lui seul de valeur. La dette moins chère ne permet pas une baisse gratuite du coût moyen : davantage d’endettement accroît le risque supporté par les actionnaires et leur rendement requis. [MM]
 
@@ -79,7 +82,37 @@ Le bénéfice d’un label n’est pas automatiquement une réduction du coût t
 
 La finance mixte peut répondre à une défaillance ou à un risque empêchant un investissement. Les principes IFC insistent sur la justification et la concessionnalité minimale. Une garantie modifie le risque assumé par les financeurs ; elle ne rend pas gratuits les risques économiques du projet. [IFC]
 
-\section*{7. Trois applications corrigées}
+\section*{7. Approfondissement --- Échéanciers, coût effectif et valeur actuelle ajustée}
+À taux identique, deux prêts peuvent présenter des profils de trésorerie différents : remboursement constant du principal, annuité constante ou remboursement in fine. Le principal constant fait baisser les intérêts avec l’encours ; l’annuité constante réalloue progressivement le paiement entre intérêts et principal ; l’in fine préserve le cash intermédiaire mais concentre le risque à l’échéance. Le choix doit correspondre au calendrier de production des flux. [BD] [DAM]
+
+
+
+\begin{quote}\small Annuité constante = capital $\times$ r / [1 - (1 + r)\textasciicircum{}(-n)]\newline Principal remboursé = annuité - intérêts de la période\newline Encours final = encours initial - principal remboursé\end{quote}
+
+Le taux effectif doit être obtenu à partir des sommes effectivement reçues et payées, frais compris. Pour un prêt multi-annuel, le calcul correspond au taux qui annule la valeur actuelle de ces flux, avec leurs dates ou périodes cohérentes. Comparer le montant total d’intérêts reste utile, mais il ne remplace pas une comparaison actualisée lorsque les calendriers diffèrent.
+
+
+La valeur actuelle ajustée, ou APV, sépare la valeur du projet non endetté et les effets propres du financement : valeur des boucliers fiscaux, frais, aides ou coûts attendus de détresse explicitement modélisés. L’approche WACC intègre certains de ces effets dans un taux ; l’APV les rend visibles dans des flux ou valeurs distincts. Il faut éviter de les ajouter une seconde fois lorsqu’ils sont déjà pris en compte. [MIT]
+
+
+Le taux d’actualisation d’un bouclier fiscal dépend du risque et de la politique de dette retenus. L’exercice 5 suppose une dette fixée, des déductions utilisables et un taux de 6 \% pour isoler le mécanisme ; cette convention ne vaut pas automatiquement pour une entreprise dont les bénéfices sont fortement incertains.
+
+\section*{8. Approfondissement --- Adapter le taux au projet et au risque du financement}
+Le coût des fonds propres observé pour une activité dépend de son risque économique et de son endettement. Utiliser directement le bêta d’un comparable très endetté pour un projet peu endetté mélangerait ces dimensions. Sous une hypothèse simplifiée de bêta de dette nul et une convention fiscale stable, on peut désendetter puis réendetter un bêta. [SS13]
+
+
+
+\begin{quote}\small Bêta actif = bêta fonds propres / [1 + (1 - T) $\times$ D/E]\newline Bêta fonds propres cible = bêta actif $\times$ [1 + (1 - T) $\times$ (D/E cible)]\end{quote}
+
+Les comparables doivent avoir une activité et une exposition cohérentes. Les taux doivent aussi correspondre à la devise et au caractère nominal ou réel des flux. La relation de Fisher indique (1 + taux nominal) = (1 + taux réel) $\times$ (1 + inflation anticipée) lorsqu’on exprime cette conversion de façon cohérente. Déflater les flux puis conserver un taux nominal introduit une incohérence.
+
+
+Pour une entreprise non cotée, le manque de données n’autorise pas à transformer un taux de convenance en estimation empirique. Présenter une fourchette justifiée et sa sensibilité est souvent plus transparent qu’un taux au centième de point insuffisamment documenté. Dans le cas, tous les taux restent pédagogiques.
+
+
+Enfin, le risque de change concerne l’ensemble des flux liés à une dette et aux recettes qui pourraient la couvrir. Une couverture naturelle nécessite une concordance de devise, montant et date. Le coût de couverture et la disponibilité des instruments doivent entrer dans la comparaison ; l’OCDE souligne l’enjeu des ressources en monnaie locale. [OECD]
+
+\section*{9. Trois applications corrigées}
 
 \subsection*{Application 1 --- Un taux réduit et des frais}
 Deux prêts in fine de 10 sur un an : classique à 6 \%, sans frais ; offre durable à 5,5 \% avec 0,1 de frais initiaux. Ignorer fiscalité et autres frais. Quel coût annuel effectif pour l’offre durable ?
@@ -106,7 +139,69 @@ Un projet a un coût initial de 4 et une valeur actuelle des flux futurs de 3,6,
 \paragraph{Correction expliquée}
 Le transfert est \textbf{0,4}. Il neutralise l’écart financier modélisé, sans démontrer l’additionnalité ou l’intérêt social. Une garantie ne se compare pas directement à une subvention nominale de 0,4 : il faut modéliser ses effets, sa probabilité d’appel et son coût.
 
-\section*{8. Cas de synthèse : une recommandation conditionnelle}
+\section*{10. Applications supplémentaires --- Échéanciers, APV et devise}
+
+\subsection*{Application 4 --- Comparer trois profils de remboursement sur cinq ans}
+Pour le nouveau financement seul : A emprunte 14 à 6 \%, principal 2,8/an ; B emprunte 14 à 7 \%, principal nul A1 puis 3,5/an ; C emprunte 14 à 6 \% avec annuité constante sur cinq ans. Sans frais ni fiscalité, calculer annuité C, service de A et B et intérêts totaux.
+
+
+\paragraph{Corrigé détaillé : calcul, interprétation et limites}
+
+\Needspace{250pt}
+\begin{longtable}{p{3.67cm}p{3.67cm}p{3.67cm}p{3.67cm}}
+\toprule
+Année & Service A & Service B & Service C \\
+\midrule\endhead
+A1 & 3,640 & 0,980 & 3,324 \\
+A2 & 3,472 & 4,480 & 3,324 \\
+A3 & 3,304 & 4,235 & 3,324 \\
+A4 & 3,136 & 3,990 & 3,324 \\
+A5 & 2,968 & 3,745 & 3,324 \\
+\bottomrule
+\end{longtable}
+Annuité C = 14 $\times$ 0,06/[1 - 1,06\textasciicircum{}(-5)] = \textbf{3,323550}. Intérêts totaux A = \textbf{2,52} ; B = \textbf{3,43} ; C = 5 $\times$ annuité - 14 = \textbf{2,618}.
+
+\textbf{Interprétation et limites.} B allège A1 mais alourdit le coût et les années suivantes. C lisse le paiement. Le calendrier du projet, les frais, l’impôt et le risque de refinancement doivent compléter la comparaison des seuls intérêts nominaux.
+
+
+\subsection*{Application 5 --- Valoriser séparément un bouclier fiscal}
+Variante APV : considérer, pour ce seul exercice, une VAN non endettée de 0,752992. Un prêt de 6 à 6 \% est remboursé par tiers sur trois ans ; impôt 25 \% et intérêts intégralement déductibles. Les boucliers sont actualisés à 6 \%. Frais initiaux 0,08 sans déduction fiscale. Calculer la valeur ajustée.
+
+
+\paragraph{Corrigé détaillé : calcul, interprétation et limites}
+Intérêts : 6 $\times$ 6 \% = 0,36 ; puis 4 $\times$ 6 \% = 0,24 ; puis 2 $\times$ 6 \% = 0,12. Boucliers : \textbf{0,09 ; 0,06 ; 0,03}.
+
+Valeur actuelle = 0,09/1,06 + 0,06/1,06² + 0,03/1,06³ = \textbf{0,163494}. APV = 0,752992 + valeur actuelle - 0,08 = \textbf{0,836486}.
+
+La VAN de départ est ici explicitement donnée comme non endettée : on ne récupère pas une valeur calculée avec un WACC intégrant déjà ce même bouclier pour lui ajouter l’économie fiscale une seconde fois.
+
+\textbf{Interprétation et limites.} L’effet fiscal est conditionnel à la déduction effective et au bénéfice disponible. Un résultat positif de l’APV ne démontre pas que le service de dette sera supportable à chaque échéance.
+
+
+\subsection*{Application 6 --- Désendetter puis réendetter un bêta}
+Comparables pédagogiques : bêta fonds propres 1,4 ; D/E = 0,5 ; impôt 25 \%. Cible du projet D/E = 0,3. Taux sans risque 3 \%, prime de marché 6 \%, coût de dette 5 \%. Supposer même devise, taux nominaux et bêta de dette nul. Calculer bêta actif, bêta cible, coût des fonds propres et WACC.
+
+
+\paragraph{Corrigé détaillé : calcul, interprétation et limites}
+Bêta actif = 1,4/[1 + 0,75 $\times$ 0,5] = \textbf{1,018182}. Bêta cible = bêta actif $\times$ [1 + 0,75 $\times$ 0,3] = \textbf{1,247273}.
+
+kE = 3 \% + bêta cible $\times$ 6 \% = \textbf{10,4836 \%}. D/V = 0,3/1,3 = 23,077 \% ; E/V = 76,923 \%. WACC = kE/1,3 + (0,3/1,3) $\times$ 5 \% $\times$ 0,75 = \textbf{8,9297 \%}.
+
+\textbf{Interprétation et limites.} Les pondérations de marché cibles sont distinctes des ratios comptables historiques. Ces paramètres ne remplacent pas les taux du modèle commun. La méthode ne suffit pas à corriger automatiquement tous les risques pays, de taille ou de liquidité.
+
+
+\subsection*{Application 7 --- Le taux étranger moins élevé est-il avantageux ?}
+Une entreprise a besoin de 20 M MAD pour un an. Option locale : 7 \%, in fine. Option étrangère : emprunter 2 millions d’unités de devise au cours initial 10 MAD, taux 4 \%, in fine. Ignorer impôt et frais. Calculer le coût si le cours final atteint 12, puis le cours d’indifférence entre les options.
+
+
+\paragraph{Corrigé détaillé : calcul, interprétation et limites}
+Remboursement local = 20 $\times$ 1,07 = \textbf{21,4} M MAD. Remboursement étranger = 2 $\times$ 1,04 = 2,08 millions de devise ; au cours 12, il coûte \textbf{24,96} M MAD, soit 3,56 de plus.
+
+Le cours d’indifférence est 21,4/2,08 = \textbf{10,288462 MAD}. Une hausse du cours au-delà d’environ 2,885 \% annule l’avantage nominal dans cet exercice. Au cours inchangé de 10, le remboursement étranger serait 20,8.
+
+\textbf{Interprétation et limites.} Cette comparaison porte sur une exposition non couverte. Un contrat à terme ou des recettes export dans la même devise exigent un autre calcul. Ne pas traiter le différentiel de taux comme une économie certaine.
+
+\section*{11. Cas de synthèse : une recommandation conditionnelle}
 \textbf{Atelier, 30 minutes.} Choisir entre A, B et C à partir de la référence et d’un stress. Comparer coût, liquidité A1, service futur, dilution et possibilité d’adapter le programme. Rédiger une recommandation comportant une condition de financement et une information à obtenir.
 
 
@@ -134,5 +229,6 @@ A respecte les seuils annuels de référence, mais la séance 5 montrera une ten
 \item \textbf{[ICMA] ICMA (2025).} Green Bond Principles, juin 2025 : principes volontaires relatifs à l’emploi des fonds. \href{https://www.icmagroup.org/assets/documents/Sustainable-finance/2025-updates/Green-Bond-Principles-GBP-June-2025.pdf}{Source officielle}.
 \item \textbf{[SLB] ICMA (2024).} Sustainability-Linked Bond Principles, juin 2024. \href{https://www.icmagroup.org/assets/documents/Sustainable-finance/2024-updates/Sustainability-Linked-Bond-Principles-June-2024.pdf}{Source officielle}.
 \item \textbf{[IFC] IFC.} How Blended Finance Works : justification, concessionnalité minimale et soutenabilité commerciale. \href{https://www.ifc.org/en/what-we-do/sector-expertise/blended-finance/how-blended-finance-works}{Source officielle}.
+\item \textbf{[MIT] Jenter, D. et Lewellen, K. (2003), MIT Sloan.} Finance Theory II, 15.402 : cours sur les flux, WACC/APV, structure du capital et options réelles. \href{https://ocw.mit.edu/courses/15-402-finance-theory-ii-spring-2003/pages/lecture-notes/}{Source officielle}.
 \end{itemize}\normalsize
 \end{document}

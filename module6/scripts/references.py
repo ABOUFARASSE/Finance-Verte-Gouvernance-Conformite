@@ -1,4 +1,6 @@
 REFS={
+'MET':('Damodaran, A. (NYU Stern)','Financial Measures and Ratios : définitions et conventions des mesures de rentabilité et de capital investi.','https://pages.stern.nyu.edu/~adamodar/New_Home_Page/definitions.html'),
+'SS16':('Schoenmaker, D. et Schramade, W. (2023)','Issues and Payouts: Changes in Capital Structure. Chap. 16, p. 463–495.','https://doi.org/10.1007/978-3-031-35009-2_16'),
 'BD':('Berk, J. et DeMarzo, P.','Corporate Finance, 6e édition, Pearson. Chapitres 2, 12, 14–18, 22, 24–27 et 30–31 selon la séance.','https://www.pearson.com/en-us/subject-catalog/p/corporate-finance/P200000009791/9780137844906'),
 'VER':('Vernimmen','Finance d’entreprise : diagnostic, flux, marges, financement et rentabilité ; sommaire officiel.','https://www.vernimmen.fr/Vernimmen/Plan_du_livre.php'),
 'DAM':('Damodaran, A. (NYU Stern)','Corporate Finance : notes, problèmes et tableurs ; ensembles actualisés au printemps 2026.','https://pages.stern.nyu.edu/~adamodar/New_Home_Page/cflect.htm'),

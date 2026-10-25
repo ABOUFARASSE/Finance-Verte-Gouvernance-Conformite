@@ -1,8 +1,9 @@
 # Module 6 — Management financier et prise de décision stratégique
 
-Cours de Badr Aboufarasse. Six séances, 15 heures, Master Finance verte.
+Cours de Badr Aboufarasse. Six séances, 21 heures, Master Finance verte.
 Site statique autonome : ouvrir `index.html` ou publier le dossier via GitHub Pages.
 L’évaluation formelle est différée. Les données du cas sont fictives.
+Le parcours enrichi comporte sept applications chiffrées par séance et conserve les sections initiales. Les approfondissements et variantes sont dans `scripts/enrichment.py`.
 
 ## Sources et reproduction
 Le texte original est dans `scripts/course.py`, les références dans `scripts/references.py`.

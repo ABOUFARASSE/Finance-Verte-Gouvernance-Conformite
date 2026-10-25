@@ -21,6 +21,20 @@ for c,jsrows in zip(cases,out):
 d=results();assert abs(d['base'][0]['tresorerie_cloture']-4.72)<1e-9
 assert abs(d['adverse'][0]['tresorerie_cloture']-1.834)<1e-9
 assert abs(d['npv_solaire']-.752992435)<1e-8
+# Comparaison des bornes analytiques avec le modèle complet indépendant.
+from enrichment import SOL
+assert abs(forecast(new_debt=SOL['s2_dette_min'])[0]['tresorerie_cloture']-3)<1e-9
+assert abs(forecast(new_debt=SOL['s2_dette_max'])[0]['dscr']-1.2)<1e-9
+assert abs(forecast(shock=SOL['s5_baisse_max'],energy=.1)[0]['dscr']-1.2)<1e-9
+# Réconciliation des bilans prévisionnels sur cinq années, depuis le bilan N.
+fixed,equity=40,42
+for x in forecast():
+ fixed+=x['capex']-x['amortissement'];equity+=x['resultat_net']
+ assert abs(fixed+x['bfr']+x['tresorerie_cloture']-equity-x['dette_cloture'])<1e-8
+# L'annuité calculée amortit exactement le nouveau prêt sur cinq ans.
+loan=14
+for y in range(5):loan-=SOL['s3_annuite']-loan*.06
+assert abs(loan)<1e-10
 broken=[];links=0
 for p in ROOT.rglob('*.html'):
  tree=html.fromstring(p.read_text());ids=tree.xpath('//@id');assert len(ids)==len(set(ids)),p
@@ -34,5 +48,5 @@ for p in ROOT.rglob('*.html'):
    dest=html.fromstring(target.read_text());assert parts[1] in dest.xpath('//@id'),(p,url)
 assert not broken,broken
 assert len(SESSIONS)==6
-assert sum(b.count('class="exercise"') for s in SESSIONS for _,b in s['sections'])==18
-print(json.dumps({'statut':'OK','jeux_hypotheses_python_js':len(cases),'periodes_comparees':len(cases)*5,'liens_locaux_et_externes_recenses':links,'liens_locaux_rompus':len(broken),'seances':6,'applications':18},ensure_ascii=False))
+assert sum(b.count('class="exercise"') for s in SESSIONS for _,b in s['sections'])==42
+print(json.dumps({'statut':'OK','jeux_hypotheses_python_js':len(cases),'periodes_comparees':len(cases)*5,'liens_locaux_et_externes_recenses':links,'liens_locaux_rompus':len(broken),'seances':6,'applications':42},ensure_ascii=False))

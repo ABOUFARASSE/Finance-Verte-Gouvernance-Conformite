@@ -9,10 +9,13 @@
 \begin{document}
 \begin{center}{\small MASTER FINANCE VERTE -- MODULE 6}\par\vspace{8pt}{\Large\bfseries Séance 4 -- Choix stratégiques : détenir, contractualiser, s’associer}\par\vspace{6pt}Badr Aboufarasse\par{\small Cours et applications corrigées -- 25 octobre 2026}\end{center}
 \begin{quote}\itshape Quel mode de développement choisir pour mobiliser les ressources et répartir les risques ?\end{quote}
-\textbf{Données du cas fictives.} Montants en M MAD ; taux et seuils pédagogiques.
+\textbf{Données du cas fictives.} Montants en M MAD ; taux et seuils pédagogiques.\par Durée : 3 h 30 par séance ; 21 heures pour le module.
 
 \subsection*{Objectifs}
 \begin{itemize}\item Comparer des options sur un service et un horizon communs.\item Associer valorisation, contrats et allocation des risques.\item Construire un portefeuille d’investissements sous contraintes.\end{itemize}
+\subsection*{Déroulé de 3 h 30}
+Problème initial : 15 min ; concepts : 55 min ; exemples résolus : 30 min ; applications : 70 min ; cas : 30 min ; synthèse : 10 min. Total : 210 min.
+
 \section*{1. Comparer des services plutôt que des étiquettes}
 Détenir un actif, louer une capacité ou acheter un service ne produit pas les mêmes engagements. Une comparaison robuste commence par définir la prestation : volume, disponibilité, qualité, horizon, date de livraison et responsabilité en cas de panne. Le faible investissement initial d’une option peut être compensé par une obligation d’achat ou une dépendance longue.
 
@@ -92,9 +95,39 @@ La valeur d’une adaptation peut dépendre des interruptions évitées. Pour W,
 Un partenariat peut mutualiser le capital mais nécessite des règles de contribution, de partage des flux, d’accès à l’actif et de résolution des désaccords. Une acquisition apporte des capacités existantes mais expose à la qualité des actifs et aux coûts d’intégration. On ne doit pas comptabiliser des synergies sans dépenses, délai ni responsable. [BD]
 
 
-Dans ce module de quinze heures, l’objectif consiste à poser ces arbitrages et à chiffrer leurs mécanismes principaux. Les valorisations complètes de fusion-acquisition et les montages contractuels avancés sont des prolongements.
+Dans ce module de vingt et une heures, l’objectif consiste à poser ces arbitrages et à chiffrer leurs mécanismes principaux. Les valorisations complètes de fusion-acquisition et les montages contractuels avancés sont des prolongements.
 
-\section*{7. Trois applications corrigées}
+\section*{7. Approfondissement --- Comparer des horizons différents et des engagements complets}
+Deux technologies peuvent délivrer un même service avec des durées de vie différentes. Comparer leurs seules valeurs actuelles sur des horizons distincts peut favoriser artificiellement l’option qui s’arrête plus tôt. Les méthodes possibles consistent à adopter un horizon commun avec renouvellement explicite, ou à convertir les coûts actualisés en un coût annuel équivalent lorsque les conditions de répétabilité et de comparabilité sont défendables. [BD]
+
+
+
+\begin{quote}\small Coût actualisé = investissement + valeur actuelle des coûts futurs - valeur actuelle des valeurs résiduelles\newline Coût annuel équivalent = coût actualisé / facteur d’annuité\end{quote}
+
+La méthode du coût annuel équivalent suppose notamment un service de qualité comparable, un risque et un environnement suffisamment stables, et la possibilité de répéter ou remplacer la technologie dans des conditions cohérentes. Si une technologie devient obsolète ou si une contrainte climatique modifie l’usage, il faut modéliser ces événements plutôt que prolonger mécaniquement le passé.
+
+
+Le prix d’un contrat n’est qu’une partie de son coût économique : coûts de recherche, d’adaptation, de suivi, de sortie et pertes en cas de défaillance peuvent compter. Un contrat qui paraît moins cher mais impose un volume minimal peut devenir coûteux lorsque l’activité baisse. La comparaison doit identifier quel risque est transféré, à qui, et à quel prix ; elle ne doit pas présenter un engagement contractuel comme une disparition du risque. [WIL]
+
+
+\textbf{Contre-exemple à discuter.} Un coût mensuel inférieur n’est pas nécessairement préférable si sa durée contractuelle dépasse le besoin industriel de l’entreprise. Les annuités et les VAN doivent être reliées à une stratégie d’usage, à des droits d’adaptation et à un horizon défendable.
+
+\section*{8. Approfondissement --- Portefeuilles indivisibles, contraintes et robustesse du choix}
+Un budget limité crée un problème d’allocation. Pour des projets indivisibles, retenir successivement les meilleurs ratios VAN/CAPEX peut empêcher une combinaison globalement supérieure. Avec trois ou quatre options, énumérer toutes les combinaisons admissibles est souvent plus pédagogique et plus transparent qu’un score présenté sans justification. Avec davantage de projets, un programme d’optimisation peut être nécessaire. [SS6]
+
+
+
+\begin{quote}\small Choisir x(j) = 0 ou 1 pour chaque projet\newline Maximiser la somme des VAN(j) $\times$ x(j)\newline Sous budget, exclusions mutuelles, dépendances et contraintes physiques explicites\end{quote}
+
+Un objectif financier ne définit pas les contraintes. L’obligation de garantir un niveau de service hydrique, la dépendance entre deux équipements ou l’impossibilité de choisir simultanément détention et PPA doivent être traduites avant de calculer le meilleur portefeuille. Une contrainte peut changer le choix sans modifier la VAN propre de chaque projet.
+
+
+Les options doivent aussi être évaluées avec des paramètres défendables. Une hausse du prix du contrat, une baisse du prix énergétique évité ou un retard de mise en service peut changer la préférence. Un seuil d’indifférence est utile pour la négociation : il indique sous quelles conditions une option cesse d’être attractive, plutôt que d’affirmer qu’elle est toujours supérieure.
+
+
+Pour les projets de résilience, séparer économies régulières et pertes évitées lors d’événements. Les pertes évitées dépendent de l’exposition, de l’efficacité de l’adaptation et de la fréquence des événements. Leur espérance peut être utile pour une valorisation, mais ne résume pas les pertes extrêmes ni la continuité du service. [SS7]
+
+\section*{9. Trois applications corrigées}
 
 \subsection*{Application 1 --- À quel prix le PPA perd-il son avantage ?}
 Le paiement annuel du PPA devient P, les autres hypothèses restant inchangées. Déterminer P qui rend sa VAN égale à celle de la détention.
@@ -121,7 +154,67 @@ Une acquisition permet 0,8 de synergies annuelles pendant cinq ans, mais exige 2
 \paragraph{Correction expliquée}
 0,8 $\times$ 3,790787 - 2 = \textbf{1,033}. Payer davantage uniquement au titre de ces synergies détruit de la valeur dans ce scénario. Il reste à analyser le prix de la cible hors synergies, leur probabilité et les risques d’intégration.
 
-\section*{8. Cas de synthèse : comparer des stratégies complètes}
+\section*{10. Applications supplémentaires --- Coût complet, portefeuille et résilience}
+
+\subsection*{Application 4 --- Choisir entre deux durées de vie}
+Deux équipements hydriques délivrent un service supposé identique. Variante A : investissement 4, coûts annuels 0,8 pendant cinq ans, revente nette 0,5 en fin de cinquième année. Variante B : investissement 6, coûts annuels 0,4 pendant huit ans, sans valeur résiduelle. Taux 10 \%, sans impôt. Calculer les coûts actualisés puis les coûts annuels équivalents.
+
+
+\paragraph{Corrigé détaillé : calcul, interprétation et limites}
+Facteurs d’annuité : cinq ans = 3,790787 ; huit ans = 5,334926. Coût actualisé A = 4 + 0,8 $\times$ 3,790787 - 0,5/1,1\textasciicircum{}5 = \textbf{6,722}. Coût actualisé B = 6 + 0,4 $\times$ 5,334926 = \textbf{8,134}.
+
+Coût annuel équivalent A = \textbf{1,773} ; B = \textbf{1,525} M MAD/an. Sous les hypothèses de service identique et de renouvellement cohérent, B est moins coûteux par année de service.
+
+\textbf{Interprétation et limites.} Les coûts actualisés bruts portent sur des durées différentes : leur comparaison directe ne suffit pas. Les valeurs sont celles d’une variante de technologie, et non une modification silencieuse du projet W du modèle commun.
+
+
+\subsection*{Application 5 --- Intégrer une indexation du PPA}
+Reprendre le PPA à 0,5 initialement et un paiement de 1,35 en année 1, puis indexé de 4 \% par an sur dix ans. Conserver dépense énergétique évitée 2,4/an, coûts résiduels 0,1/an, impôt 25 \% et taux 10 \%. Calculer la VAN et la comparer aux 3,878 du prix constant.
+
+
+\paragraph{Corrigé détaillé : calcul, interprétation et limites}
+Paiement en année t = 1,35 $\times$ 1,04\textasciicircum{}(t-1). FCFF(t) = 0,75 $\times$ [2,3 - paiement(t)]. Par exemple, le paiement de l’année 10 est \textbf{1,921} et le FCFF correspondant \textbf{0,284}.
+
+VAN = -0,5 + somme des dix FCFF actualisés = \textbf{2,854911}. La perte par rapport au prix fixe est \textbf{1,023}. Le PPA reste à comparer aux autres modalités selon leurs propres indexations et risques.
+
+\textbf{Interprétation et limites.} L’hypothèse volontairement restrictive de dépense évitée constante isole l’indexation contractuelle. Si le prix énergétique évité évolue aussi, il faut le modéliser ; ne pas appliquer une inflation générale à des postes qui la contiennent déjà.
+
+
+\subsection*{Application 6 --- Un budget de 10 avec une obligation hydrique}
+Utiliser les VAN E = 3,216851, S détenu = 0,752992, W = -0,159646 et PPA = 3,878004. Coûts initiaux : E 6, S 10, W 4, PPA 0,5. Budget 10, projets indivisibles, W obligatoire ; S et PPA mutuellement exclusifs. Les gains sont indépendants. Quel portefeuille est admissible et préférable ?
+
+
+\paragraph{Corrigé détaillé : calcul, interprétation et limites}
+
+\Needspace{250pt}
+\begin{longtable}{p{3.67cm}p{3.67cm}p{3.67cm}p{3.67cm}}
+\toprule
+Combinaison & Coût & VAN & Admissible ? \\
+\midrule\endhead
+W & 4 & -0,160 & Oui \\
+E + W & 10 & 3,057 & Oui \\
+PPA + W & 4,5 & 3,718 & Oui \\
+E + PPA + W & 10,5 & 6,935 & Non : budget \\
+S + W & 14 & 0,593 & Non : budget \\
+\bottomrule
+\end{longtable}
+Le portefeuille \textbf{PPA + W} est le meilleur des admissibles dans ces hypothèses ; 5,5 restent disponibles. Il n’est pas nécessaire d’épuiser le budget. E + PPA sans W aurait une VAN plus élevée mais ne respecte pas la contrainte.
+
+\textbf{Interprétation et limites.} Les chiffres sont des valeurs indépendantes à la même date, sans modification de financement. Les VAN données sont arrondies pour l’exercice ; les autres combinaisons se vérifient avant conclusion. Recalculer le plan de cash de la combinaison choisie et vérifier les clauses du PPA.
+
+
+\subsection*{Application 7 --- Valoriser une perte d’exploitation évitée}
+Pour W, conserver CAPEX 4 et FCFF régulier 0,625/an sur dix ans. Supposer en plus une interruption annuelle possible avec probabilité 20 \%. La perte de marge est 4 sans W et 0,5 avec W. Impôt 25 \%, pertes supposées déductibles et bénéfice suffisant. Taux 10 \%. Calculer la valeur attendue de cette résilience et la VAN totale.
+
+
+\paragraph{Corrigé détaillé : calcul, interprétation et limites}
+Marge préservée par événement = 4 - 0,5 = 3,5. Espérance annuelle avant impôt = 20 \% $\times$ 3,5 = \textbf{0,7} ; après impôt = \textbf{0,525}. Valeur actuelle de résilience = 0,525 $\times$ 6,144567 = \textbf{3,226}.
+
+FCFF total attendu = 0,625 + 0,525 = 1,15. VAN totale = -4 + 1,15 $\times$ facteur = \textbf{3,066}. Les 0,7 d’économies régulières avant impôt du dossier sont distincts des 0,7 de marge attendue préservée calculés ici.
+
+\textbf{Interprétation et limites.} La probabilité est une hypothèse d’exercice, pas une prévision climatique estimée. Vérifier le risque de compter des interruptions déjà incluses dans les ventes, ainsi que l’efficacité et la durée de vie du dispositif. Une espérance positive ne garantit pas une faible perte extrême.
+
+\section*{11. Cas de synthèse : comparer des stratégies complètes}
 \textbf{Atelier, 30 minutes.} Recommander détention ou PPA pour le solaire. Présenter valeur, besoin initial, engagements et conditions. Expliquer les postes à modifier dans le plan A1--A5 si l’on choisit le PPA.
 
 
