@@ -1,0 +1,145 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage[provide=*,french]{babel}
+\usepackage{lmodern,microtype,longtable,booktabs,array,enumitem,fancyhdr,needspace}
+\usepackage[margin=2.1cm,headheight=16pt]{geometry}
+\usepackage[hidelinks,breaklinks=true]{hyperref}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}\setlength{\emergencystretch}{3em}
+\setlist[itemize]{leftmargin=1.3em,itemsep=3pt}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Master Finance verte — Module 6}\fancyhead[R]{\small Badr Aboufarasse}\fancyfoot[C]{\thepage}
+\begin{document}
+\begin{center}{\small MASTER FINANCE VERTE -- MODULE 6}\par\vspace{8pt}{\Large\bfseries Séance 4 -- Choix stratégiques : détenir, contractualiser, s’associer}\par\vspace{6pt}Badr Aboufarasse\par{\small Cours et applications corrigées -- 25 octobre 2026}\end{center}
+\begin{quote}\itshape Quel mode de développement choisir pour mobiliser les ressources et répartir les risques ?\end{quote}
+\textbf{Données du cas fictives.} Montants en M MAD ; taux et seuils pédagogiques.
+
+\subsection*{Objectifs}
+\begin{itemize}\item Comparer des options sur un service et un horizon communs.\item Associer valorisation, contrats et allocation des risques.\item Construire un portefeuille d’investissements sous contraintes.\end{itemize}
+\section*{1. Comparer des services plutôt que des étiquettes}
+Détenir un actif, louer une capacité ou acheter un service ne produit pas les mêmes engagements. Une comparaison robuste commence par définir la prestation : volume, disponibilité, qualité, horizon, date de livraison et responsabilité en cas de panne. Le faible investissement initial d’une option peut être compensé par une obligation d’achat ou une dépendance longue.
+
+
+Dans le cas, trois modes permettent de substituer une partie de l’achat énergétique de référence : installation solaire détenue, achat contractuel d’électricité de type PPA, ou leasing. Les modalités présentées sont fictives. Nous supposons la faisabilité juridique, technique et contractuelle des trois options pour étudier les mécanismes financiers ; aucune conclusion n’est formulée sur l’éligibilité réelle d’une entreprise marocaine donnée.
+
+
+L’analyse doit préciser le scénario sans projet : ici, la dépense énergétique annuelle du service remplacé est 2,4. Ces 2,4 sont déjà inclus dans les charges de référence. Les gains ci-dessous sont des flux incrémentaux par rapport à cette référence. Les autres projets E et W sont maintenus constants. [BD] [MIT]
+
+\section*{2. Les flux pertinents et le coût du temps}
+Un flux pertinent change entre les options. Une étude déjà payée ne redevient pas un coût évitable ; un terrain utilisé peut avoir un coût d’opportunité même sans paiement nouveau. Les frais de fin de contrat, l’entretien et la remise en état doivent être inclus lorsqu’ils diffèrent. Le financement est traité séparément si l’on compare des flux avant service de dette. [SS7]
+
+
+
+\begin{quote}\small VAN = - investissement initial + somme des FCFF(t)/(1 + r)\textasciicircum{}t\newline FCFF = EBITDA incrémental $\times$ (1 - T) + amortissement $\times$ T - CAPEX - $\Delta$BFR\end{quote}
+
+Pour cette comparaison, on se place à une \textbf{date commune de mise en service t0}. Les flux futurs couvrent dix années, à leurs fins respectives ; valeur résiduelle nulle ; BFR additionnel nul ; taux nominal de 10 \% ; impôt pédagogique de 25 \%, avec bénéfice suffisant pour utiliser les déductions. Ce calendrier de valorisation est distinct de A1--A5 : dans le plan commun, le solaire est payé en A1 et produit à partir de A2.
+
+
+Une comparaison à cinq ans sans valeur résiduelle pénaliserait artificiellement les actifs qui servent dix ans. Les flux ont ici le même risque à des fins de calcul ; une différence significative de risque nécessite d’adapter les scénarios ou la valorisation.
+
+\section*{3. Exemple résolu : trois modalités solaires}
+
+\Needspace{180pt}
+\begin{longtable}{p{3.67cm}p{3.67cm}p{3.67cm}p{3.67cm}}
+\toprule
+Option & Flux à t0 & Gain annuel avant impôt & FCFF annuel \\
+\midrule\endhead
+Détenir & -10 & 2,4 - 0,4 = 2 & 2 $\times$ 0,75 + 1 $\times$ 0,25 = 1,75 \\
+PPA pédagogique & -0,5 & 2,4 - 1,35 de service - 0,1 de coûts résiduels = 0,95 & 0,7125 \\
+Leasing pédagogique & 0 & 2,4 - 1,65 de loyer - 0,4 de maintenance = 0,35 & 0,2625 \\
+\bottomrule
+\end{longtable}
+
+Dans le PPA, le coût initial de 0,5 est supposé sans déduction fiscale pour cet exercice simplifié ; aucun amortissement n’est ajouté. Dans le leasing, on suppose les loyers déductibles et aucune option finale payante. Il s’agit d’une comparaison économique de flux contractuels, pas d’un traitement comptable IFRS 16.
+
+
+Le facteur d’annuité à 10 \% sur dix ans est \textbf{6,144567}. VAN détention = -10 + 1,75 $\times$ 6,144567 = \textbf{0,753} ; VAN PPA = -0,5 + 0,7125 $\times$ 6,144567 = \textbf{3,878} ; VAN leasing = 0,2625 $\times$ 6,144567 = \textbf{1,613}.
+
+
+Le PPA est supérieur dans ces hypothèses, et non par nature. Le prix, l’indexation, les volumes garantis et le risque de contrepartie peuvent renverser le classement. Les flux de 1,75 après impôt de la détention correspondent bien au gain d’EBITDA de 2 retenu dans le dossier commun.
+
+\section*{4. Contrats, spécificité des actifs et dépendance}
+Williamson met l’accent sur les coûts de transaction et les difficultés d’adaptation quand les actifs sont spécifiques à une relation. Si un équipement n’a de valeur que pour un client ou un site, la sortie devient coûteuse et la négociation future peut être déséquilibrée. La détention, le contrat et le partenariat répartissent différemment ces risques. [WIL]
+
+
+Pour le PPA fictif, examiner : minimum d’achat ; indexation ; date de livraison ; indisponibilité ; garanties de performance ; transfert des attributs environnementaux ; sortie anticipée ; règlement des litiges. Une clause de prix stable n’assure pas une couverture du risque de volume ; une clause d’énergie livrée ne garantit pas automatiquement une allégation de réduction d’émissions.
+
+
+Le GHG Protocol distingue les méthodes de comptabilisation scope 2 et encadre les instruments contractuels. Pour ce cours, on conserve les volumes physiques et les preuves de contrat séparés du calcul financier. Un PPA ne suffit pas à lui seul pour affirmer que toute l’électricité consommée est sans émissions. [GHG]
+
+\section*{5. Allouer un budget entre projets}
+L’entreprise peut arbitrer entre plusieurs investissements. Pour un ensemble discret de projets, classer les ratios VAN/CAPEX ne garantit pas le meilleur portefeuille. Il faut comparer les combinaisons possibles et tenir compte des interdépendances et des contraintes physiques. [SS6]
+
+
+
+\Needspace{180pt}
+\begin{longtable}{p{3.67cm}p{3.67cm}p{3.67cm}p{3.67cm}}
+\toprule
+Projet indépendant, à t0 & CAPEX & FCFF annuel sur 10 ans & VAN à 10 \% \\
+\midrule\endhead
+Efficacité E & 6 & 1,5 & 3,217 \\
+Solaire S détenu & 10 & 1,75 & 0,753 \\
+Eau W & 4 & 0,625 & -0,160 \\
+\bottomrule
+\end{longtable}
+
+Avec un budget de 16 et sans autre contrainte, E + S produit une VAN de \textbf{3,970}. Si W devient une obligation préalable au maintien d’activité, il faut l’inclure et comparer les options restantes : E + W coûte 10 ; W + S coûte 14. Le problème de décision a changé. La VAN de W négative ne signifie pas qu’une contrainte d’eau peut être ignorée.
+
+
+Ce tableau isole les trois projets à une même date ; il ne remplace pas leur calendrier A1--A5. Une nouvelle combinaison exige de recalculer le plan et les besoins de financement.
+
+\section*{6. Résilience, partenariat et croissance externe}
+La valeur d’une adaptation peut dépendre des interruptions évitées. Pour W, un gain supplémentaire attendu de marge de 0,5 par an, avant impôt, porterait le FCFF à 1,0 et la VAN à \textbf{2,145}. C’est une variante pédagogique : ce gain n’est pas inclus dans le scénario financier de référence. Il doit être étayé par une analyse des événements, de leur fréquence et de l’efficacité de l’équipement.
+
+
+Un partenariat peut mutualiser le capital mais nécessite des règles de contribution, de partage des flux, d’accès à l’actif et de résolution des désaccords. Une acquisition apporte des capacités existantes mais expose à la qualité des actifs et aux coûts d’intégration. On ne doit pas comptabiliser des synergies sans dépenses, délai ni responsable. [BD]
+
+
+Dans ce module de quinze heures, l’objectif consiste à poser ces arbitrages et à chiffrer leurs mécanismes principaux. Les valorisations complètes de fusion-acquisition et les montages contractuels avancés sont des prolongements.
+
+\section*{7. Trois applications corrigées}
+
+\subsection*{Application 1 --- À quel prix le PPA perd-il son avantage ?}
+Le paiement annuel du PPA devient P, les autres hypothèses restant inchangées. Déterminer P qui rend sa VAN égale à celle de la détention.
+
+
+\paragraph{Correction expliquée}
+-0,5 + 0,75 $\times$ (2,3 - P) $\times$ 6,144567 = 0,752992. D’où P = \textbf{2,0281} environ. Au-delà, la détention devient supérieure dans ce calcul. Ce seuil suppose des risques comparables et ne tient pas compte des contraintes de financement.
+
+
+
+\subsection*{Application 2 --- Coût irrécupérable}
+Une étude déjà payée de 0,2 sera perdue quelle que soit l’option. Une indemnité de résiliation de 0,3 ne serait due qu’en choisissant le PPA. Quels montants intégrer dans la comparaison actuelle ?
+
+
+\paragraph{Correction expliquée}
+L’étude de 0,2 est irrécupérable et ne différencie pas les décisions. Les 0,3 d’indemnité sont incrémentaux pour le PPA et doivent être inclus à leur date. On conserve néanmoins l’étude dans le suivi historique du budget total.
+
+
+
+\subsection*{Application 3 --- Synergie nette}
+Une acquisition permet 0,8 de synergies annuelles pendant cinq ans, mais exige 2 d’intégration à t0. Supposer flux nets d’impôt, taux 10 \%, et aucun autre effet. Quelle valeur de synergie ne pas dépasser dans le prix supplémentaire ?
+
+
+\paragraph{Correction expliquée}
+0,8 $\times$ 3,790787 - 2 = \textbf{1,033}. Payer davantage uniquement au titre de ces synergies détruit de la valeur dans ce scénario. Il reste à analyser le prix de la cible hors synergies, leur probabilité et les risques d’intégration.
+
+\section*{8. Cas de synthèse : comparer des stratégies complètes}
+\textbf{Atelier, 30 minutes.} Recommander détention ou PPA pour le solaire. Présenter valeur, besoin initial, engagements et conditions. Expliquer les postes à modifier dans le plan A1--A5 si l’on choisit le PPA.
+
+
+
+\paragraph{Éléments de solution}
+Le scénario PPA remplace le CAPEX solaire de 10 par 0,5 selon la date négociée ; il retire l’amortissement de 1 et remplace le gain EBITDA solaire de 2 par 0,95. Il faut recalculer impôt, dette nécessaire et service, plutôt que conserver arbitrairement le prêt de 14. Demander les clauses de volume, d’indexation et de performance avant de confirmer le classement économique.
+
+
+\textbf{À retenir :} la décision stratégique définit les engagements qui produiront les flux. La séance 5 teste comment ces engagements se comportent lorsque les hypothèses centrales changent.
+
+\section*{Références mobilisées}
+\small
+\begin{itemize}
+\item \textbf{[BD] Berk, J. et DeMarzo, P..} Corporate Finance, 6e édition, Pearson. Chapitres 2, 12, 14--18, 22, 24--27 et 30--31 selon la séance. \href{https://www.pearson.com/en-us/subject-catalog/p/corporate-finance/P200000009791/9780137844906}{Source officielle}.
+\item \textbf{[MIT] Jenter, D. et Lewellen, K. (2003), MIT Sloan.} Finance Theory II, 15.402 : cours sur les flux, WACC/APV, structure du capital et options réelles. \href{https://ocw.mit.edu/courses/15-402-finance-theory-ii-spring-2003/pages/lecture-notes/}{Source officielle}.
+\item \textbf{[SS7] Schoenmaker, D. et Schramade, W. (2023).} Capital Budgeting. Chap. 7, p. 173--204. \href{https://doi.org/10.1007/978-3-031-35009-2_7}{Source officielle}.
+\item \textbf{[WIL] Williamson, O. E. (2009).} Notice autobiographique Nobel : coûts de transaction, spécificité des actifs et adaptation contractuelle. \href{https://www.nobelprize.org/prizes/economic-sciences/2009/williamson/biographical/}{Source officielle}.
+\item \textbf{[GHG] WRI / WBCSD (2015).} GHG Protocol Scope 2 Guidance, chap. 4 et critères de qualité des instruments contractuels. \href{https://ghgprotocol.org/sites/default/files/2023-03/Scope\%202\%20Guidance.pdf}{Source officielle}.
+\item \textbf{[SS6] Schoenmaker, D. et Schramade, W. (2023).} Investment Decision Rules. Chap. 6, p. 145--171. \href{https://doi.org/10.1007/978-3-031-35009-2_6}{Source officielle}.
+\end{itemize}\normalsize
+\end{document}

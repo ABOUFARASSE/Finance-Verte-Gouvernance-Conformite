@@ -1,0 +1,141 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage[provide=*,french]{babel}
+\usepackage{lmodern,microtype,longtable,booktabs,array,enumitem,fancyhdr,needspace}
+\usepackage[margin=2.1cm,headheight=16pt]{geometry}
+\usepackage[hidelinks,breaklinks=true]{hyperref}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}\setlength{\emergencystretch}{3em}
+\setlist[itemize]{leftmargin=1.3em,itemsep=3pt}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Master Finance verte — Module 6}\fancyhead[R]{\small Badr Aboufarasse}\fancyfoot[C]{\thepage}
+\begin{document}
+\begin{center}{\small MASTER FINANCE VERTE -- MODULE 6}\par\vspace{8pt}{\Large\bfseries Séance 1 -- Diagnostic financier et capacité de transformation}\par\vspace{6pt}Badr Aboufarasse\par{\small Cours et applications corrigées -- 25 octobre 2026}\end{center}
+\begin{quote}\itshape Quelles marges de manœuvre l’entreprise possède-t-elle réellement ?\end{quote}
+\textbf{Données du cas fictives.} Montants en M MAD ; taux et seuils pédagogiques.
+
+\subsection*{Objectifs}
+\begin{itemize}\item Distinguer résultat, trésorerie et valeur.\item Relier le diagnostic au modèle économique et aux dépendances environnementales.\item Calculer et interpréter les contraintes qui conditionnent la transformation.\end{itemize}
+\section*{1. De la stratégie aux mécanismes financiers}
+Une décision stratégique modifie une activité, un actif, une relation commerciale ou une exposition au risque. Son analyse financière exige de préciser ce qui change, quand les effets apparaissent et qui apporte les ressources. Une hausse du chiffre d’affaires peut absorber du cash si les clients paient tard ; un investissement d’efficacité peut réduire les charges mais imposer une sortie initiale importante. La question de la direction financière porte donc à la fois sur la valeur attendue et sur la capacité à traverser la période qui précède cette valeur.
+
+
+On distingue trois décisions interdépendantes : investir dans des actifs et compétences ; financer ces investissements ; conserver ou distribuer le cash disponible. Le financement engage le futur, car les remboursements peuvent devenir exigibles avant les économies attendues. La distribution réduit les réserves qui permettraient de réagir à un choc. Un bon diagnostic montre ces connexions plutôt que d’accumuler des ratios. [DAM]
+
+
+\textbf{Chaîne de raisonnement :} modèle économique $\rightarrow$ facteurs de revenus et coûts $\rightarrow$ flux $\rightarrow$ besoins de financement $\rightarrow$ risques $\rightarrow$ décision. Pour chaque dépendance, demander : quel poste est affecté ? quel délai ? quelle possibilité de substitution ? Une exposition à l’eau concerne simultanément la facture, la continuité de production et les dépenses d’adaptation.
+
+\section*{2. Le dossier de départ : Maghreb Agro-Industries}
+\textbf{Toutes les données du cas sont fictives.} Les montants monétaires sont en millions de MAD (M MAD), sauf indication contraire. L’année N est historique ; A1 à A5 désignent les prévisions. Le taux d’impôt pédagogique de 25 \% ne représente pas une affirmation sur la fiscalité marocaine applicable.
+
+
+
+\Needspace{285pt}
+\begin{longtable}{p{3.67cm}p{3.67cm}p{3.67cm}p{3.67cm}}
+\toprule
+Compte de résultat N & M MAD & Bilan à fin N & M MAD \\
+\midrule\endhead
+Chiffre d’affaires & 100 & Immobilisations nettes & 40 \\
+Charges variables & 60 & Stocks / clients & 14 / 18 \\
+Charges fixes décaissables & 24 & Trésorerie & 4 \\
+EBITDA / amortissements & 16 / 4 & Capitaux propres comptables & 42 \\
+EBIT / intérêts & 12 / 1,8 & Dettes financières & 22 \\
+Impôt / résultat net & 2,55 / 7,65 & Fournisseurs & 12 \\
+\bottomrule
+\end{longtable}
+
+Le total du bilan est 76. Le BFR initial est 14 + 18 - 12 = 20. À fin N-1, le BFR était 18, la trésorerie 3 et la dette 24. En N, le CAPEX de maintenance est 4 ; le remboursement de principal est 2 et les dividendes 2,65. Ces éléments permettent de réconcilier le résultat et la trésorerie.
+
+
+L’entreprise prévoit ensuite efficacité énergétique, solaire et gestion de l’eau. Le diagnostic doit identifier ce qui limite cette transformation avant d’en choisir les modalités. Les dépenses d’énergie de référence sont 8 ; les charges variables totales de 60 les incluent déjà. Leur ajout une seconde fois serait un double compte.
+
+\section*{3. Résultat, flux et besoin en fonds de roulement}
+Le résultat constate les produits et charges de la période. La trésorerie dépend de leur encaissement ou décaissement. L’amortissement réduit le résultat sans constituer un paiement de l’année ; une vente à crédit augmente le résultat avant l’encaissement. Le BFR d’exploitation représente ici les stocks et créances clients diminués du crédit fournisseurs. Les autres postes sont supposés nuls pour isoler le mécanisme. [VER] [BD]
+
+
+
+\begin{quote}\small BFR = stocks + clients - fournisseurs\newline $\Delta$BFR = BFR de clôture - BFR d’ouverture\newline CFO = résultat net + amortissements - $\Delta$BFR\end{quote}
+
+Le CFO du cas vaut 7,65 + 4 - 2 = \textbf{9,65}. Il est déjà après les intérêts et l’impôt retenus dans le résultat. La clôture de trésorerie est donc 3 + 9,65 - 4 - 2 - 2,65 = \textbf{4}. On ne retranche pas les intérêts une seconde fois. Les dividendes sont un flux de financement dans notre convention pédagogique.
+
+
+Un BFR plus élevé est une utilisation de fonds, pas nécessairement une mauvaise performance. Il peut accompagner une croissance rentable ou une stratégie de sécurité des stocks. L’interprétation dépend du volume d’activité, des délais et de la qualité des créances. Comparer les ratios dans le temps et avec des entreprises réellement comparables.
+
+\section*{4. Rentabilité économique et création de valeur}
+La rentabilité économique rapporte un résultat opérationnel après impôt aux ressources mobilisées par l’activité. Le NOPAT retire l’effet du financement : EBIT $\times$ (1 - T), soit 9 dans le cas. Les capitaux investis simplifiés sont les immobilisations nettes plus le BFR : 60. Le ROIC calculé sur le capital de clôture est donc 15 \%. Pour une analyse plus fine, un capital moyen cohérent avec le calendrier des investissements est préférable. [BD]
+
+
+
+\begin{quote}\small ROIC = NOPAT / capitaux investis\newline Profit économique = NOPAT - coût du capital $\times$ capitaux investis\end{quote}
+
+Avec un coût du capital pédagogique de 10 \%, le profit économique est 9 - 6 = \textbf{3}. Il mesure un surplus au-delà de la rémunération requise du capital selon les hypothèses retenues. Ce n’est ni le résultat net ni une estimation autonome de la valeur de marché. Un ROIC comptable élevé peut provenir d’actifs anciens fortement amortis ; une activité nouvelle peut temporairement abaisser le ratio avant sa montée en charge.
+
+
+Le taux de 10 \% est un paramètre de travail, pas une estimation du WACC réel de cette entreprise non cotée. Le risque du projet, la devise, l’inflation et la structure financière doivent être cohérents avec les flux actualisés. [SS13]
+
+\section*{5. Liquidité, solvabilité et capacité d’endettement}
+La liquidité concerne le paiement des échéances ; la solvabilité concerne la capacité à faire face aux engagements dans la durée. Une entreprise peut posséder des actifs mais manquer de cash immédiatement. La dette nette du cas est 22 - 4 = 18 ; dette nette/EBITDA = \textbf{1,125}. La couverture des intérêts par l’EBIT est 12/1,8 = \textbf{6,67}. Aucun de ces chiffres ne constitue un seuil universel d’acceptation.
+
+
+Le DSCR compare un flux disponible au service de la dette. Pour cet exercice, CFADS = EBITDA - impôt cash - $\Delta$BFR - CAPEX de maintenance. Il vaut 16 - 2,55 - 2 - 4 = 7,45 ; le service est 1,8 + 2 = 3,8 ; DSCR = \textbf{1,96}. Les intérêts ne sont pas retirés du numérateur car ils figurent au dénominateur. Les conventions contractuelles réelles peuvent différer. [BD] [DAM]
+
+
+Une lecture robuste demande également un échéancier, la part de dette variable ou en devise, les garanties, les lignes disponibles et les engagements hors du tableau simplifié. Les valeurs comptables des capitaux propres ne doivent pas être utilisées automatiquement comme pondérations de marché du WACC.
+
+\section*{6. Finance verte : relier impacts, dépendances et valeur}
+La valeur financière décrit les flux revenant aux apporteurs de capitaux. Les résultats environnementaux et sociaux peuvent être importants même lorsqu’ils ne se traduisent pas immédiatement par une recette ou une économie. Le cadre de valeur intégrée propose de considérer ces dimensions ensemble. Nous les présentons séparément avant tout arbitrage pour rendre les hypothèses visibles. [SS2]
+
+
+Une économie d’énergie réduit une charge et peut aussi réduire les émissions. La facture évitée appartient aux flux financiers. Une externalité climatique monétisée nécessite une quantité, un périmètre, un scénario de référence et un prix d’impact explicités. Elle ne devient pas une rentrée de trésorerie parce qu’elle est exprimée en monnaie.
+
+
+Dans le cas, construire deux colonnes : \textbf{transmission financière} (facture, interruption, investissement) et \textbf{résultat physique} (énergie, eau, émissions). L’entreprise peut retenir une contrainte physique de consommation d’eau sans prétendre que chaque mètre cube économisé a le même prix social et le même effet sur la trésorerie.
+
+\section*{7. Trois applications corrigées}
+
+\subsection*{Application 1 --- Le résultat ne finance pas tout}
+Le résultat net passe à 9, les amortissements restent 4 et le BFR augmente de 7. Calculer le CFO ; expliquer comment un résultat supérieur peut produire moins de cash.
+
+
+\paragraph{Correction expliquée}
+CFO = 9 + 4 - 7 = \textbf{6}, inférieur aux 9,65 de N. Le supplément de résultat de 1,35 ne compense pas les 5 de BFR supplémentaires. Examiner les délais clients et les stocks avant de conclure à une dégradation opérationnelle.
+
+
+
+\subsection*{Application 2 --- Seuil d’exploitation}
+Le prix et le taux de charges variables sont constants : ces dernières représentent 60 \% du CA ; les charges fixes sont 24. Calculer le seuil d’EBITDA nul et l’effet d’une baisse de CA de 10 \%.
+
+
+\paragraph{Correction expliquée}
+EBITDA = 0,4 $\times$ CA - 24. Le seuil est \textbf{60}. À CA = 90, EBITDA = \textbf{12}, soit -25 \% contre -10 \% de CA. Le levier opérationnel local est 40/16 = \textbf{2,5}. Ces résultats supposent coûts fixes constants et capacité inchangée.
+
+
+
+\subsection*{Application 3 --- Délais clients}
+Sur une base 360 jours et un CA annuel de 100, les clients paient 15 jours plus tard. Calculer le cash immobilisé, sans variation des autres postes.
+
+
+\paragraph{Correction expliquée}
+$\Delta$clients = 100 $\times$ 15/360 = \textbf{4,167}. C’est une absorption ponctuelle de cash lors de l’allongement du délai, pas une charge annuelle de 4,167. Si tout le reste était inchangé, la trésorerie de 4 deviendrait insuffisante de 0,167.
+
+\section*{8. Cas de synthèse et passage à la séance 2}
+\textbf{Travail guidé, 25 minutes.} Préparer un diagnostic en six lignes : marge EBITDA ; ROIC simplifié ; dette nette/EBITDA ; couverture des intérêts ; CFO ; trésorerie. Associer à chaque ligne une interprétation et une information manquante. Recommander trois vérifications avant d’engager 20 de CAPEX en A1.
+
+
+
+\paragraph{Éléments de solution}
+Résultats : 16 \% ; 15 \% ; 1,125 ; 6,67 ; 9,65 ; 4. L’activité produit un surplus opérationnel, mais sa trésorerie ne suffit pas à préfinancer le programme. Vérifications prioritaires : échéancier des paiements ; fiabilité des économies et délais de mise en service ; disponibilité et conditions du financement. Les ratios favorables de N ne prouvent pas la soutenabilité de A1.
+
+
+\textbf{Erreurs à éviter :} EBITDA assimilé au cash ; amortissement assimilé à une réserve bancaire ; dette nette calculée avec une trésorerie indisponible ; taux du cas présenté comme une norme ; ratio calculé sans périmètre ni date.
+
+
+\textbf{À retenir :} un diagnostic devient utile lorsqu’il transforme les comptes en contraintes de décision. La séance 2 convertit le programme de transition en flux datés et en besoins de financement.
+
+\section*{Références mobilisées}
+\small
+\begin{itemize}
+\item \textbf{[DAM] Damodaran, A. (NYU Stern).} Corporate Finance : notes, problèmes et tableurs ; ensembles actualisés au printemps 2026. \href{https://pages.stern.nyu.edu/~adamodar/New_Home_Page/cflect.htm}{Source officielle}.
+\item \textbf{[VER] Vernimmen.} Finance d’entreprise : diagnostic, flux, marges, financement et rentabilité ; sommaire officiel. \href{https://www.vernimmen.fr/Vernimmen/Plan_du_livre.php}{Source officielle}.
+\item \textbf{[BD] Berk, J. et DeMarzo, P..} Corporate Finance, 6e édition, Pearson. Chapitres 2, 12, 14--18, 22, 24--27 et 30--31 selon la séance. \href{https://www.pearson.com/en-us/subject-catalog/p/corporate-finance/P200000009791/9780137844906}{Source officielle}.
+\item \textbf{[SS13] Schoenmaker, D. et Schramade, W. (2023).} Cost of Capital. Chap. 13, p. 367--394. \href{https://doi.org/10.1007/978-3-031-35009-2_13}{Source officielle}.
+\item \textbf{[SS2] Schoenmaker, D. et Schramade, W. (2023).} Integrated Value Creation. Corporate Finance for Long-Term Value, chap. 2, p. 33--63. \href{https://doi.org/10.1007/978-3-031-35009-2_2}{Source officielle}.
+\end{itemize}\normalsize
+\end{document}

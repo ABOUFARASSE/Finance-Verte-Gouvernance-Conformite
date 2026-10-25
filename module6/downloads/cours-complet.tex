@@ -1,0 +1,808 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage[provide=*,french]{babel}
+\usepackage{lmodern,microtype,longtable,booktabs,array,enumitem,fancyhdr,needspace}
+\usepackage[margin=2.1cm,headheight=16pt]{geometry}
+\usepackage[hidelinks,breaklinks=true]{hyperref}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}\setlength{\emergencystretch}{3em}
+\setlist[itemize]{leftmargin=1.3em,itemsep=3pt}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Master Finance verte — Module 6}\fancyhead[R]{\small Badr Aboufarasse}\fancyfoot[C]{\thepage}
+\begin{document}
+\begin{center}{\small MASTER FINANCE VERTE -- MODULE 6}\par\vspace{8pt}{\Large\bfseries Séance 1 -- Diagnostic financier et capacité de transformation}\par\vspace{6pt}Badr Aboufarasse\par{\small Cours et applications corrigées -- 25 octobre 2026}\end{center}
+\begin{quote}\itshape Quelles marges de manœuvre l’entreprise possède-t-elle réellement ?\end{quote}
+\textbf{Données du cas fictives.} Montants en M MAD ; taux et seuils pédagogiques.
+
+\subsection*{Objectifs}
+\begin{itemize}\item Distinguer résultat, trésorerie et valeur.\item Relier le diagnostic au modèle économique et aux dépendances environnementales.\item Calculer et interpréter les contraintes qui conditionnent la transformation.\end{itemize}
+\section*{1. De la stratégie aux mécanismes financiers}
+Une décision stratégique modifie une activité, un actif, une relation commerciale ou une exposition au risque. Son analyse financière exige de préciser ce qui change, quand les effets apparaissent et qui apporte les ressources. Une hausse du chiffre d’affaires peut absorber du cash si les clients paient tard ; un investissement d’efficacité peut réduire les charges mais imposer une sortie initiale importante. La question de la direction financière porte donc à la fois sur la valeur attendue et sur la capacité à traverser la période qui précède cette valeur.
+
+
+On distingue trois décisions interdépendantes : investir dans des actifs et compétences ; financer ces investissements ; conserver ou distribuer le cash disponible. Le financement engage le futur, car les remboursements peuvent devenir exigibles avant les économies attendues. La distribution réduit les réserves qui permettraient de réagir à un choc. Un bon diagnostic montre ces connexions plutôt que d’accumuler des ratios. [DAM]
+
+
+\textbf{Chaîne de raisonnement :} modèle économique $\rightarrow$ facteurs de revenus et coûts $\rightarrow$ flux $\rightarrow$ besoins de financement $\rightarrow$ risques $\rightarrow$ décision. Pour chaque dépendance, demander : quel poste est affecté ? quel délai ? quelle possibilité de substitution ? Une exposition à l’eau concerne simultanément la facture, la continuité de production et les dépenses d’adaptation.
+
+\section*{2. Le dossier de départ : Maghreb Agro-Industries}
+\textbf{Toutes les données du cas sont fictives.} Les montants monétaires sont en millions de MAD (M MAD), sauf indication contraire. L’année N est historique ; A1 à A5 désignent les prévisions. Le taux d’impôt pédagogique de 25 \% ne représente pas une affirmation sur la fiscalité marocaine applicable.
+
+
+
+\Needspace{285pt}
+\begin{longtable}{p{3.67cm}p{3.67cm}p{3.67cm}p{3.67cm}}
+\toprule
+Compte de résultat N & M MAD & Bilan à fin N & M MAD \\
+\midrule\endhead
+Chiffre d’affaires & 100 & Immobilisations nettes & 40 \\
+Charges variables & 60 & Stocks / clients & 14 / 18 \\
+Charges fixes décaissables & 24 & Trésorerie & 4 \\
+EBITDA / amortissements & 16 / 4 & Capitaux propres comptables & 42 \\
+EBIT / intérêts & 12 / 1,8 & Dettes financières & 22 \\
+Impôt / résultat net & 2,55 / 7,65 & Fournisseurs & 12 \\
+\bottomrule
+\end{longtable}
+
+Le total du bilan est 76. Le BFR initial est 14 + 18 - 12 = 20. À fin N-1, le BFR était 18, la trésorerie 3 et la dette 24. En N, le CAPEX de maintenance est 4 ; le remboursement de principal est 2 et les dividendes 2,65. Ces éléments permettent de réconcilier le résultat et la trésorerie.
+
+
+L’entreprise prévoit ensuite efficacité énergétique, solaire et gestion de l’eau. Le diagnostic doit identifier ce qui limite cette transformation avant d’en choisir les modalités. Les dépenses d’énergie de référence sont 8 ; les charges variables totales de 60 les incluent déjà. Leur ajout une seconde fois serait un double compte.
+
+\section*{3. Résultat, flux et besoin en fonds de roulement}
+Le résultat constate les produits et charges de la période. La trésorerie dépend de leur encaissement ou décaissement. L’amortissement réduit le résultat sans constituer un paiement de l’année ; une vente à crédit augmente le résultat avant l’encaissement. Le BFR d’exploitation représente ici les stocks et créances clients diminués du crédit fournisseurs. Les autres postes sont supposés nuls pour isoler le mécanisme. [VER] [BD]
+
+
+
+\begin{quote}\small BFR = stocks + clients - fournisseurs\newline $\Delta$BFR = BFR de clôture - BFR d’ouverture\newline CFO = résultat net + amortissements - $\Delta$BFR\end{quote}
+
+Le CFO du cas vaut 7,65 + 4 - 2 = \textbf{9,65}. Il est déjà après les intérêts et l’impôt retenus dans le résultat. La clôture de trésorerie est donc 3 + 9,65 - 4 - 2 - 2,65 = \textbf{4}. On ne retranche pas les intérêts une seconde fois. Les dividendes sont un flux de financement dans notre convention pédagogique.
+
+
+Un BFR plus élevé est une utilisation de fonds, pas nécessairement une mauvaise performance. Il peut accompagner une croissance rentable ou une stratégie de sécurité des stocks. L’interprétation dépend du volume d’activité, des délais et de la qualité des créances. Comparer les ratios dans le temps et avec des entreprises réellement comparables.
+
+\section*{4. Rentabilité économique et création de valeur}
+La rentabilité économique rapporte un résultat opérationnel après impôt aux ressources mobilisées par l’activité. Le NOPAT retire l’effet du financement : EBIT $\times$ (1 - T), soit 9 dans le cas. Les capitaux investis simplifiés sont les immobilisations nettes plus le BFR : 60. Le ROIC calculé sur le capital de clôture est donc 15 \%. Pour une analyse plus fine, un capital moyen cohérent avec le calendrier des investissements est préférable. [BD]
+
+
+
+\begin{quote}\small ROIC = NOPAT / capitaux investis\newline Profit économique = NOPAT - coût du capital $\times$ capitaux investis\end{quote}
+
+Avec un coût du capital pédagogique de 10 \%, le profit économique est 9 - 6 = \textbf{3}. Il mesure un surplus au-delà de la rémunération requise du capital selon les hypothèses retenues. Ce n’est ni le résultat net ni une estimation autonome de la valeur de marché. Un ROIC comptable élevé peut provenir d’actifs anciens fortement amortis ; une activité nouvelle peut temporairement abaisser le ratio avant sa montée en charge.
+
+
+Le taux de 10 \% est un paramètre de travail, pas une estimation du WACC réel de cette entreprise non cotée. Le risque du projet, la devise, l’inflation et la structure financière doivent être cohérents avec les flux actualisés. [SS13]
+
+\section*{5. Liquidité, solvabilité et capacité d’endettement}
+La liquidité concerne le paiement des échéances ; la solvabilité concerne la capacité à faire face aux engagements dans la durée. Une entreprise peut posséder des actifs mais manquer de cash immédiatement. La dette nette du cas est 22 - 4 = 18 ; dette nette/EBITDA = \textbf{1,125}. La couverture des intérêts par l’EBIT est 12/1,8 = \textbf{6,67}. Aucun de ces chiffres ne constitue un seuil universel d’acceptation.
+
+
+Le DSCR compare un flux disponible au service de la dette. Pour cet exercice, CFADS = EBITDA - impôt cash - $\Delta$BFR - CAPEX de maintenance. Il vaut 16 - 2,55 - 2 - 4 = 7,45 ; le service est 1,8 + 2 = 3,8 ; DSCR = \textbf{1,96}. Les intérêts ne sont pas retirés du numérateur car ils figurent au dénominateur. Les conventions contractuelles réelles peuvent différer. [BD] [DAM]
+
+
+Une lecture robuste demande également un échéancier, la part de dette variable ou en devise, les garanties, les lignes disponibles et les engagements hors du tableau simplifié. Les valeurs comptables des capitaux propres ne doivent pas être utilisées automatiquement comme pondérations de marché du WACC.
+
+\section*{6. Finance verte : relier impacts, dépendances et valeur}
+La valeur financière décrit les flux revenant aux apporteurs de capitaux. Les résultats environnementaux et sociaux peuvent être importants même lorsqu’ils ne se traduisent pas immédiatement par une recette ou une économie. Le cadre de valeur intégrée propose de considérer ces dimensions ensemble. Nous les présentons séparément avant tout arbitrage pour rendre les hypothèses visibles. [SS2]
+
+
+Une économie d’énergie réduit une charge et peut aussi réduire les émissions. La facture évitée appartient aux flux financiers. Une externalité climatique monétisée nécessite une quantité, un périmètre, un scénario de référence et un prix d’impact explicités. Elle ne devient pas une rentrée de trésorerie parce qu’elle est exprimée en monnaie.
+
+
+Dans le cas, construire deux colonnes : \textbf{transmission financière} (facture, interruption, investissement) et \textbf{résultat physique} (énergie, eau, émissions). L’entreprise peut retenir une contrainte physique de consommation d’eau sans prétendre que chaque mètre cube économisé a le même prix social et le même effet sur la trésorerie.
+
+\section*{7. Trois applications corrigées}
+
+\subsection*{Application 1 --- Le résultat ne finance pas tout}
+Le résultat net passe à 9, les amortissements restent 4 et le BFR augmente de 7. Calculer le CFO ; expliquer comment un résultat supérieur peut produire moins de cash.
+
+
+\paragraph{Correction expliquée}
+CFO = 9 + 4 - 7 = \textbf{6}, inférieur aux 9,65 de N. Le supplément de résultat de 1,35 ne compense pas les 5 de BFR supplémentaires. Examiner les délais clients et les stocks avant de conclure à une dégradation opérationnelle.
+
+
+
+\subsection*{Application 2 --- Seuil d’exploitation}
+Le prix et le taux de charges variables sont constants : ces dernières représentent 60 \% du CA ; les charges fixes sont 24. Calculer le seuil d’EBITDA nul et l’effet d’une baisse de CA de 10 \%.
+
+
+\paragraph{Correction expliquée}
+EBITDA = 0,4 $\times$ CA - 24. Le seuil est \textbf{60}. À CA = 90, EBITDA = \textbf{12}, soit -25 \% contre -10 \% de CA. Le levier opérationnel local est 40/16 = \textbf{2,5}. Ces résultats supposent coûts fixes constants et capacité inchangée.
+
+
+
+\subsection*{Application 3 --- Délais clients}
+Sur une base 360 jours et un CA annuel de 100, les clients paient 15 jours plus tard. Calculer le cash immobilisé, sans variation des autres postes.
+
+
+\paragraph{Correction expliquée}
+$\Delta$clients = 100 $\times$ 15/360 = \textbf{4,167}. C’est une absorption ponctuelle de cash lors de l’allongement du délai, pas une charge annuelle de 4,167. Si tout le reste était inchangé, la trésorerie de 4 deviendrait insuffisante de 0,167.
+
+\section*{8. Cas de synthèse et passage à la séance 2}
+\textbf{Travail guidé, 25 minutes.} Préparer un diagnostic en six lignes : marge EBITDA ; ROIC simplifié ; dette nette/EBITDA ; couverture des intérêts ; CFO ; trésorerie. Associer à chaque ligne une interprétation et une information manquante. Recommander trois vérifications avant d’engager 20 de CAPEX en A1.
+
+
+
+\paragraph{Éléments de solution}
+Résultats : 16 \% ; 15 \% ; 1,125 ; 6,67 ; 9,65 ; 4. L’activité produit un surplus opérationnel, mais sa trésorerie ne suffit pas à préfinancer le programme. Vérifications prioritaires : échéancier des paiements ; fiabilité des économies et délais de mise en service ; disponibilité et conditions du financement. Les ratios favorables de N ne prouvent pas la soutenabilité de A1.
+
+
+\textbf{Erreurs à éviter :} EBITDA assimilé au cash ; amortissement assimilé à une réserve bancaire ; dette nette calculée avec une trésorerie indisponible ; taux du cas présenté comme une norme ; ratio calculé sans périmètre ni date.
+
+
+\textbf{À retenir :} un diagnostic devient utile lorsqu’il transforme les comptes en contraintes de décision. La séance 2 convertit le programme de transition en flux datés et en besoins de financement.
+
+\section*{Références mobilisées}
+\small
+\begin{itemize}
+\item \textbf{[DAM] Damodaran, A. (NYU Stern).} Corporate Finance : notes, problèmes et tableurs ; ensembles actualisés au printemps 2026. \href{https://pages.stern.nyu.edu/~adamodar/New_Home_Page/cflect.htm}{Source officielle}.
+\item \textbf{[VER] Vernimmen.} Finance d’entreprise : diagnostic, flux, marges, financement et rentabilité ; sommaire officiel. \href{https://www.vernimmen.fr/Vernimmen/Plan_du_livre.php}{Source officielle}.
+\item \textbf{[BD] Berk, J. et DeMarzo, P..} Corporate Finance, 6e édition, Pearson. Chapitres 2, 12, 14--18, 22, 24--27 et 30--31 selon la séance. \href{https://www.pearson.com/en-us/subject-catalog/p/corporate-finance/P200000009791/9780137844906}{Source officielle}.
+\item \textbf{[SS13] Schoenmaker, D. et Schramade, W. (2023).} Cost of Capital. Chap. 13, p. 367--394. \href{https://doi.org/10.1007/978-3-031-35009-2_13}{Source officielle}.
+\item \textbf{[SS2] Schoenmaker, D. et Schramade, W. (2023).} Integrated Value Creation. Corporate Finance for Long-Term Value, chap. 2, p. 33--63. \href{https://doi.org/10.1007/978-3-031-35009-2_2}{Source officielle}.
+\end{itemize}\normalsize
+\clearpage
+\begin{center}{\small MASTER FINANCE VERTE -- MODULE 6}\par\vspace{8pt}{\Large\bfseries Séance 2 -- Plan financier et trajectoire de transition}\par\vspace{6pt}Badr Aboufarasse\par{\small Cours et applications corrigées -- 25 octobre 2026}\end{center}
+\begin{quote}\itshape Combien financer, à quelle date et pour quels résultats ?\end{quote}
+\textbf{Données du cas fictives.} Montants en M MAD ; taux et seuils pédagogiques.
+
+\subsection*{Objectifs}
+\begin{itemize}\item Construire un plan financier reproductible sur cinq ans.\item Relier les trajectoires physiques aux flux et aux dates de mise en service.\item Distinguer besoin annuel et risque de liquidité en cours d’année.\end{itemize}
+\section*{1. Le plan comme système d’hypothèses}
+Un plan financier n’est pas une extrapolation mécanique du résultat. Il décrit des décisions, leur calendrier et leurs effets. On commence par les facteurs économiques : volumes, prix, coûts, délais clients, stocks et investissements. Les états prévisionnels en découlent. Chaque hypothèse doit posséder une unité, une date, une justification et un responsable de révision. [BD] [SS7]
+
+
+Dans le cas, le CA progresse de 5 \% par an ; les charges variables sont 60 \% du CA ; les charges fixes de 24 augmentent de 2 \% par an ; le BFR représente 20 \% du CA. Cette dernière convention est une simplification de délais et de stocks stables. Elle ne prouve pas que tous les postes du BFR évoluent toujours proportionnellement aux ventes.
+
+
+Le modèle est nominal en MAD. Les hausses de 5 \% et 2 \% sont déjà nominales ; on n’ajoute pas une inflation générale une seconde fois. Les hypothèses d’impôt et de financement sont pédagogiques. Une modélisation réelle séparerait prix, volumes, devises et différents taux d’inflation.
+
+\section*{2. Le programme commun et son calendrier}
+
+\Needspace{215pt}
+\begin{longtable}{p{3.67cm}p{3.67cm}p{3.67cm}p{3.67cm}}
+\toprule
+Investissement & Décaissement & Gain annuel d’EBITDA & Début du gain \\
+\midrule\endhead
+Maintenance & 4 chaque année & Préserve la capacité & Déjà dans la référence \\
+Efficacité E & 6 en A1 & 1,8 & A2 \\
+Solaire S détenu & 10 en A1 & 2,0 net de maintenance spécifique & A2 \\
+Eau W & 4 en A2 & 0,7 & A3 \\
+\bottomrule
+\end{longtable}
+
+CAPEX total : 20 en A1, 8 en A2, puis 4 par an. Amortissement historique maintenu à 4 ; E et S ajoutent 0,6 et 1 à partir de A2 ; W ajoute 0,4 à partir de A3. Ces durées de dix ans et dates sont des conventions explicites du cas. Les gains sont constants en montant nominal pour isoler le mécanisme.
+
+
+Les flux annuels sont agrégés et les intérêts calculés sur les encours d’ouverture, nouvelle dette comprise à partir de A1. Le remboursement de principal se fait en fin d’année. Le modèle ne mesure pas les pics infra-annuels : le zoom mensuel doit être traité séparément.
+
+
+La maintenance historique de 4 ne s’ajoute pas une seconde fois au gain net solaire de 2. Celui-ci correspond à une dépense énergétique évitée de 2,4 moins 0,4 de maintenance spécifique. La référence sans projets ne comprend pas les économies E, S et W.
+
+\section*{3. Construire le compte de résultat prévisionnel}
+
+\begin{quote}\small CA(t) = 100 $\times$ 1,05\textasciicircum{}t\newline EBITDA(t) = 40 \% $\times$ CA(t) - 24 $\times$ 1,02\textasciicircum{}t + économies actives\newline EBIT = EBITDA - amortissements\newline Impôt cash = max[0 ; 25 \% $\times$ (EBIT - intérêts)]\end{quote}
+
+L’impôt est calculé après intérêts dans ce plan de trésorerie. Aucun crédit d’impôt immédiat n’est reconnu en cas de perte ; les reports fiscaux sont exclus. Ce choix évite de transformer une perte fiscale en encaissement artificiel.
+
+
+En A1 : CA = 105 ; charges variables = 63 ; charges fixes = 24,48 ; EBITDA = \textbf{17,52}. Aucun gain de transition n’est encore actif. L’EBIT est 13,52. Avec une dette existante de 22 à 6 \% et un nouveau prêt de 14 à 6 \%, les intérêts sont 1,32 + 0,84 = \textbf{2,16}. L’impôt vaut 2,84 ; le résultat net \textbf{8,52}.
+
+
+Le taux historique implicite ne devient pas automatiquement le taux futur : les intérêts N de 1,8 sont une donnée historique. Le taux contractuel futur de 6 \% est une hypothèse distincte. Il faut expliquer cette séparation pour éviter une incohérence apparente.
+
+\section*{4. Du résultat aux ressources à mobiliser}
+
+\begin{quote}\small CFO = résultat net + amortissements - $\Delta$BFR\newline Cash final = cash initial + CFO - CAPEX + dette tirée + apport - principal remboursé - dividendes\end{quote}
+
+La politique de référence retient aucun dividende de A1 à A5, aucun apport et un nouveau prêt de 14 tiré au début de A1. La dette existante rembourse 2 par an ; la nouvelle 2,8 par an pendant cinq ans. En A1, $\Delta$BFR = 21 - 20 = 1 et CFO = 8,52 + 4 - 1 = \textbf{11,52}. La trésorerie de clôture est 4 + 11,52 - 20 + 14 - 4,8 = \textbf{4,72}.
+
+
+Cette clôture dépasse le coussin de 3 retenu par l’entreprise. Ce coussin est une politique pédagogique, pas un seuil bancaire universel. Si le nouveau prêt était absent, il faudrait recalculer les intérêts et l’impôt : on ne peut pas seulement retrancher 14 du cash final, car les frais financiers changent également.
+
+
+Le financement doit être lié au modèle : un emprunt peut résoudre une impasse initiale puis créer une échéance trop lourde. Les intérêts dépendent ici du solde d’ouverture pour éviter une circularité artificielle entre tirage de dette, intérêts et déficit de financement.
+
+\section*{5. Résultats de référence et contrôles}
+
+\Needspace{250pt}
+\begin{longtable}{p{2.84cm}p{2.84cm}p{2.84cm}p{2.84cm}p{2.84cm}}
+\toprule
+Année & CA & EBITDA & Cash final & DSCR \\
+\midrule\endhead
+A1 & 105.000 & 17.520 & 4.720 & 1.391 \\
+A2 & 110.250 & 22.930 & 8.064 & 2.101 \\
+A3 & 115.763 & 25.336 & 17.475 & 2.474 \\
+A4 & 121.551 & 27.142 & 28.402 & 2.792 \\
+A5 & 127.628 & 29.053 & 40.921 & 3.155 \\
+\bottomrule
+\end{longtable}
+
+Les fichiers CSV téléchargeables donnent tous les postes et les résultats non arrondis. Les économies E et S commencent en A2 ; W commence en A3. La trésorerie s’accumule ensuite parce que le cas ne prévoit pas de nouvelle croissance, de dividende ou d’acquisition. Ce solde ne constitue pas une recommandation de thésaurisation.
+
+
+\textbf{Contrôles :} dette finale = dette initiale + tirages - remboursements ; cash final = cash initial + flux nets ; gains nuls avant mise en service ; CAPEX de maintenance présent chaque année ; absence de double retrait des intérêts ; hypothèses de BFR identiques dans les résultats et le cash.
+
+
+Le plan vise la traçabilité, pas une précision illusoire. Il faut pouvoir modifier une hypothèse et expliquer le sens du résultat. Les valeurs arrondies affichées ne doivent pas servir de base aux calculs suivants.
+
+\section*{6. Le risque de calendrier et les informations de transition}
+Une clôture annuelle positive peut masquer une rupture de liquidité. Les salaires sont mensuels, un acompte fournisseur peut être exigé avant la livraison et une banque peut décaisser après constat d’avancement. L’échéancier d’investissement et les conditions de mobilisation du financement doivent donc être rapprochés. Une ligne non confirmée n’est pas une réserve certaine.
+
+
+La trajectoire de transition doit aussi expliquer quelles dépenses rendent possible quel résultat physique. Un budget « vert » sans dates de mise en service ne permet pas de relier objectifs et moyens. Les ressources IFRS sur la transition aident à articuler stratégie, effets financiers et incertitudes. Elles n’imposent pas par elles-mêmes à toute entreprise de créer un plan de transition. [IFRS]
+
+
+Dans le dossier, indiquer pour E, S et W : dépense, mise en service, effet opérationnel, indicateur physique et condition de réalisation. La réduction d’émissions sera étudiée séparément de la réduction de facture : un prix électrique n’est pas un facteur d’émission.
+
+\section*{7. Trois applications corrigées}
+
+\subsection*{Application 1 --- Une croissance qui consomme du cash}
+Avec BFR/CA constant à 20 \%, calculer le BFR en A1 et A2 et les utilisations de cash correspondantes.
+
+
+\paragraph{Correction expliquée}
+CA A1 = 105 ; A2 = 110,25. BFR = 21 puis 22,05 ; variations = \textbf{1 puis 1,05}. Le BFR de 22,05 n’est pas intégralement décaissé chaque année : seule sa variation est un flux de l’année.
+
+
+
+\subsection*{Application 2 --- Pic de liquidité}
+Au premier mois, le cash initial est 4, les encaissements 7, les paiements d’exploitation et impôt 9, les paiements d’investissement 5 et le tirage de dette 4. Il n’y a pas d’autre flux. Quel est le besoin pour préserver un coussin de 3 ?
+
+
+\paragraph{Correction expliquée}
+Cash final = 4 + 7 - 9 - 5 + 4 = \textbf{1}. Besoin complémentaire = \textbf{2}. Le cas mensuel illustre un profil de flux ; il n’est pas une ventilation exacte de toute la prévision annuelle. Proposer un tirage anticipé confirmé, un échéancier fournisseur négocié ou un décalage du programme, puis chiffrer leur coût.
+
+
+
+\subsection*{Application 3 --- Retard des gains}
+E et S entrent finalement en service en A3, avec décalage des amortissements également à A3. Tous les autres paramètres et le CAPEX sont inchangés. Quel est l’effet sur le CFO A2, si l’entreprise reste bénéficiaire ?
+
+
+\paragraph{Correction expliquée}
+La perte d’EBITDA est 3,8 et l’amortissement baisse de 1,6. L’EBIT et le résultat imposable baissent de 2,2 ; l’impôt baisse de 0,55. CFO diminue donc de \textbf{3,25} (= 3,8 - 0,55). Retirer seulement 3,8 du cash ignorerait l’impôt ; utiliser un bouclier fiscal d’amortissement malgré le report serait également erroné.
+
+\section*{8. Cas de synthèse et transition}
+\textbf{Atelier, 30 minutes.} Reproduire A1 puis A2 dans un tableur à partir du dossier commun. Séparer cellules d’hypothèses et formules. Rédiger une note expliquant si le prêt de 14 suffit à la clôture annuelle, puis pourquoi cela ne démontre pas l’absence d’impasse mensuelle.
+
+
+
+\paragraph{Éléments de solution}
+En A2 : charges fixes 24 $\times$ 1,02² = 24,9696 ; EBITDA = 44,1 - 24,9696 + 3,8 = \textbf{22,9304} ; amortissements 5,6 ; intérêts 1,872 ; impôt 3,8646 ; résultat net 11,5938 ; CFO 16,1438. Le cash final est 4,72 + 16,1438 - 8 - 4,8 = \textbf{8,0638}. Le prêt couvre le plan aux clôtures de référence. Un échéancier mensuel reste nécessaire pour prouver la disponibilité des fonds au moment des paiements.
+
+
+\textbf{À retenir :} une trajectoire devient finançable lorsque les moyens sont disponibles aux dates requises et que les engagements restent supportables. La séance 3 compare les structures de financement au lieu de considérer le prêt comme une simple cellule d’ajustement.
+
+\section*{Références mobilisées}
+\small
+\begin{itemize}
+\item \textbf{[BD] Berk, J. et DeMarzo, P..} Corporate Finance, 6e édition, Pearson. Chapitres 2, 12, 14--18, 22, 24--27 et 30--31 selon la séance. \href{https://www.pearson.com/en-us/subject-catalog/p/corporate-finance/P200000009791/9780137844906}{Source officielle}.
+\item \textbf{[SS7] Schoenmaker, D. et Schramade, W. (2023).} Capital Budgeting. Chap. 7, p. 173--204. \href{https://doi.org/10.1007/978-3-031-35009-2_7}{Source officielle}.
+\item \textbf{[IFRS] IFRS Foundation (2025).} Disclosing information about an entity’s climate-related transition, including information about transition plans, in accordance with IFRS S2. \href{https://www.ifrs.org/content/dam/ifrs/supporting-implementation/ifrs-s2/transition-plan-disclosure-s2.pdf}{Source officielle}.
+\end{itemize}\normalsize
+\clearpage
+\begin{center}{\small MASTER FINANCE VERTE -- MODULE 6}\par\vspace{8pt}{\Large\bfseries Séance 3 -- Structure du capital et choix de financement}\par\vspace{6pt}Badr Aboufarasse\par{\small Cours et applications corrigées -- 25 octobre 2026}\end{center}
+\begin{quote}\itshape Quelle combinaison de ressources rend le plan soutenable ?\end{quote}
+\textbf{Données du cas fictives.} Montants en M MAD ; taux et seuils pédagogiques.
+
+\subsection*{Objectifs}
+\begin{itemize}\item Expliquer les principales théories du financement.\item Comparer des offres au-delà du taux affiché.\item Tester service de dette, devise, dilution et marge de sécurité.\end{itemize}
+\section*{1. Un modèle de référence : Modigliani et Miller}
+Le résultat de neutralité de Modigliani et Miller constitue un point de comparaison : dans un cadre idéal sans les frictions pertinentes, modifier la répartition dette/fonds propres ne crée pas à lui seul de valeur. La dette moins chère ne permet pas une baisse gratuite du coût moyen : davantage d’endettement accroît le risque supporté par les actionnaires et leur rendement requis. [MM]
+
+
+Ce cadre est utile parce qu’il oblige à nommer la source d’un gain de financement. S’agit-il d’une économie fiscale, d’une garantie, d’une information mieux partagée ou d’une réduction de coûts de détresse ? Sans mécanisme explicite, affirmer que l’endettement ou le label vert « crée de la valeur » ne suffit pas.
+
+
+Dans le cas, l’entreprise non cotée ne possède ni accès illimité au crédit ni marchés parfaits. Le modèle de référence ne justifie donc pas l’indifférence pratique au financement ; il aide à comprendre pourquoi les conditions concrètes comptent.
+
+\section*{2. Arbitrage, information et incitations}
+L’approche par arbitrage confronte les avantages de la dette, dont l’avantage fiscal lorsque les intérêts sont déductibles, aux coûts attendus de détresse et aux contraintes qu’elle impose. La capacité d’endettement dépend de la stabilité des flux et des actifs finançables ; un optimum théorique ne se réduit pas à un ratio sectoriel unique. [SS15]
+
+
+Myers et Majluf montrent comment une information supérieure des dirigeants peut rendre une émission d’actions coûteuse et conduire à renoncer à un investissement intéressant. Cela éclaire la préférence pour des ressources internes puis certains financements externes. Ce mécanisme n’est pas une règle disant que les fonds propres doivent toujours être évités. [MY]
+
+
+Jensen et Meckling analysent les conflits d’intérêts associés à la dette et aux capitaux extérieurs. Des engagements contractuels et une information fiable peuvent limiter ces conflits ; des contraintes trop rigides peuvent aussi empêcher l’adaptation. Dans notre entreprise, une clause qui interdit toute dépense d’investissement supplémentaire doit être rapprochée du besoin futur d’adaptation hydrique. [JM]
+
+\section*{3. Coût du capital et cohérence des flux}
+
+\begin{quote}\small WACC = E/(D + E) $\times$ kE + D/(D + E) $\times$ kD $\times$ (1 - T)\newline kE = taux sans risque + bêta $\times$ prime de marché\end{quote}
+
+Le WACC combine des coûts de financement selon une structure cible cohérente, généralement fondée sur des valeurs de marché. Le CAPM constitue une méthode d’estimation du rendement requis des fonds propres, sous ses hypothèses. Le bêta d’une entreprise cotée reflète son exposition systématique et son levier ; ce n’est pas directement le risque d’un projet non coté. [SS13] [BD]
+
+
+Avec E/V = 60 \%, D/V = 40 \%, kE = 14 \%, kD = 6 \% et T = 25 \%, le WACC est 8,4 \% + 1,8 \% = \textbf{10,2 \%}. Ces nombres sont un exercice distinct ; le taux de 10 \% utilisé pour comparer les projets reste une hypothèse arrondie explicite.
+
+
+Des FCFF avant service de dette s’actualisent avec un taux cohérent de type WACC ; des flux aux actionnaires avec le coût des fonds propres. Retirer intérêts et principal puis actualiser au WACC mélangerait deux approches. Le bouclier fiscal n’a de valeur que si les conditions fiscales et les bénéfices permettent de l’utiliser.
+
+\section*{4. Lire une offre de financement}
+
+\Needspace{180pt}
+\begin{longtable}{p{5.07cm}p{5.07cm}p{5.07cm}}
+\toprule
+Offre pédagogique & Conditions & Risque à examiner \\
+\midrule\endhead
+A : dette amortissable & 14 ; 6 \% ; principal 2,8/an sur 5 ans ; sans frais & Charge de service dès A1 \\
+B : différé de principal & 14 ; 7 \% ; principal nul en A1 puis 3,5/an de A2 à A5 ; sans frais & Échéances plus élevées après A1 \\
+C : fonds propres & Apport 14 ; valorisation avant apport 42 supposée négociée & Dilution et droits de gouvernance \\
+\bottomrule
+\end{longtable}
+
+En C, la valeur négociée de 42 est une hypothèse d’exercice : son égalité avec les capitaux propres comptables du bilan est fortuite et ne constitue pas une méthode de valorisation. La fraction acquise par le nouvel investisseur vaut 14/(42 + 14) = \textbf{25 \%}.
+
+
+Comparer aussi les frais, le taux fixe ou variable, l’échéancier, la devise, les garanties, les possibilités de remboursement anticipé, les conditions suspensives et les clauses d’investissement. Le taux nominal ne résume ni le coût effectif ni le risque de refinancement. [DAM] [BD]
+
+\section*{5. Dette soutenable et risque de change}
+En offre A, le service total A1 comprend les intérêts 2,16 et le principal 4,8 : \textbf{6,96}. Le CFADS est 17,52 - 2,84 - 1 - 4 = \textbf{9,68} ; DSCR = \textbf{1,391}. Une exigence pédagogique de 1,20 laisse une marge limitée face aux chocs. Le seuil est une condition fictive d’exercice, pas une norme universelle.
+
+
+Une dette en devise peut afficher un taux inférieur mais créer un décalage entre recettes et remboursements. L’OCDE met en évidence le rôle du financement en monnaie locale et les difficultés de couverture dans les économies émergentes. La comparaison doit porter sur le coût après couverture disponible ou sur des scénarios explicites de change. [OECD]
+
+
+Si une échéance de 100 000 unités de devise doit être payée, elle coûte 1 M MAD au cours de 10, puis 1,2 au cours de 12. La hausse est 20 \%. Des recettes d’exportation dans cette même devise peuvent offrir une couverture naturelle seulement si montants et dates concordent. Une corrélation vague avec l’export ne suffit pas.
+
+\section*{6. Financement durable et partage des risques}
+Les Green Bond Principles organisent un financement fondé sur l’emploi des fonds et recommandent notamment sélection des projets, gestion des fonds et reporting. Les Sustainability-Linked Bond Principles concernent des caractéristiques financières liées à des indicateurs et objectifs. Ce sont des principes volontaires ; les conditions du contrat et les règles applicables restent à examiner. Les instruments obligataires servent ici de comparaison conceptuelle ; ils ne sont pas supposés immédiatement accessibles à notre PME. [ICMA] [SLB]
+
+
+Le bénéfice d’un label n’est pas automatiquement une réduction du coût total. Une marge légèrement réduite peut être compensée par les coûts de vérification, les frais ou le suivi des indicateurs. L’incitation doit être calculée sur les encours concernés et sur les seules périodes où elle s’applique.
+
+
+La finance mixte peut répondre à une défaillance ou à un risque empêchant un investissement. Les principes IFC insistent sur la justification et la concessionnalité minimale. Une garantie modifie le risque assumé par les financeurs ; elle ne rend pas gratuits les risques économiques du projet. [IFC]
+
+\section*{7. Trois applications corrigées}
+
+\subsection*{Application 1 --- Un taux réduit et des frais}
+Deux prêts in fine de 10 sur un an : classique à 6 \%, sans frais ; offre durable à 5,5 \% avec 0,1 de frais initiaux. Ignorer fiscalité et autres frais. Quel coût annuel effectif pour l’offre durable ?
+
+
+\paragraph{Correction expliquée}
+L’entreprise reçoit 9,9 et rembourse 10,55. Coût = 10,55/9,9 - 1 = \textbf{6,566 \%}, supérieur à 6 \%. Comparer des flux datés, pas uniquement les coupons.
+
+
+
+\subsection*{Application 2 --- Différé de principal}
+Comparer le service A1 des offres A et B, nouvelle dette seulement. Quel est le service B en A2 ?
+
+
+\paragraph{Correction expliquée}
+A1 : A = 0,84 + 2,8 = \textbf{3,64} ; B = \textbf{0,98}. En A2, B = 0,98 + 3,5 = \textbf{4,48}. Le différé reporte le principal ; il ne le supprime pas. Il faut recalculer impôt et trésorerie dans toute la prévision, avec les intérêts B propres à son échéancier.
+
+
+
+\subsection*{Application 3 --- Concessionnalité minimale}
+Un projet a un coût initial de 4 et une valeur actuelle des flux futurs de 3,6, avant aide. Quel transfert initial comblerait exactement l’écart, toutes choses égales ?
+
+
+\paragraph{Correction expliquée}
+Le transfert est \textbf{0,4}. Il neutralise l’écart financier modélisé, sans démontrer l’additionnalité ou l’intérêt social. Une garantie ne se compare pas directement à une subvention nominale de 0,4 : il faut modéliser ses effets, sa probabilité d’appel et son coût.
+
+\section*{8. Cas de synthèse : une recommandation conditionnelle}
+\textbf{Atelier, 30 minutes.} Choisir entre A, B et C à partir de la référence et d’un stress. Comparer coût, liquidité A1, service futur, dilution et possibilité d’adapter le programme. Rédiger une recommandation comportant une condition de financement et une information à obtenir.
+
+
+
+\paragraph{Éléments de solution}
+A respecte les seuils annuels de référence, mais la séance 5 montrera une tension en scénario défavorable. B améliore A1 et concentre le service après le différé. C préserve le cash de dette mais dilue les associés et implique un accord sur la valeur et les droits. Aucune option n’est supérieure sur tous les critères. Un mix, un programme phasé ou une réserve confirmée doivent être évalués avec leurs propres flux.
+
+
+\textbf{Erreurs à éviter :} fonds propres considérés gratuits ; différé confondu avec réduction de dette ; coût comptable utilisé comme coût de marché ; bouclier fiscal supposé certain ; financement vert assimilé à rentabilité du projet.
+
+
+\textbf{Transition :} la séance 4 examine si l’entreprise doit détenir les actifs ou accéder au service par contrat ou partenariat. Le besoin de financement dépend aussi du mode de développement.
+
+\section*{Références mobilisées}
+\small
+\begin{itemize}
+\item \textbf{[MM] Académie royale des sciences de Suède (1990).} Présentation scientifique des contributions de Miller, Modigliani et Sharpe. \href{https://www.nobelprize.org/prizes/economic-sciences/1990/press-release/}{Source officielle}.
+\item \textbf{[SS15] Schoenmaker, D. et Schramade, W. (2023).} Capital Structure. Chap. 15, p. 431--462. \href{https://doi.org/10.1007/978-3-031-35009-2_15}{Source officielle}.
+\item \textbf{[MY] Myers, S. C. et Majluf, N. S. (1984).} Corporate financing and investment decisions when firms have information that investors do not have. Journal of Financial Economics, 13(2), 187--221. \href{https://doi.org/10.1016/0304-405X(84)90023-0}{Source officielle}.
+\item \textbf{[JM] Jensen, M. C. et Meckling, W. H. (1976).} Theory of the firm: Managerial behavior, agency costs and ownership structure. Journal of Financial Economics, 3(4), 305--360. \href{https://doi.org/10.1016/0304-405X(76)90026-X}{Source officielle}.
+\item \textbf{[SS13] Schoenmaker, D. et Schramade, W. (2023).} Cost of Capital. Chap. 13, p. 367--394. \href{https://doi.org/10.1007/978-3-031-35009-2_13}{Source officielle}.
+\item \textbf{[BD] Berk, J. et DeMarzo, P..} Corporate Finance, 6e édition, Pearson. Chapitres 2, 12, 14--18, 22, 24--27 et 30--31 selon la séance. \href{https://www.pearson.com/en-us/subject-catalog/p/corporate-finance/P200000009791/9780137844906}{Source officielle}.
+\item \textbf{[DAM] Damodaran, A. (NYU Stern).} Corporate Finance : notes, problèmes et tableurs ; ensembles actualisés au printemps 2026. \href{https://pages.stern.nyu.edu/~adamodar/New_Home_Page/cflect.htm}{Source officielle}.
+\item \textbf{[OECD] OCDE (2025).} Unlocking local currency financing in emerging markets and developing economies. \href{https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/02/unlocking-local-currency-financing-in-emerging-markets-and-developing-economies_af15df6a/bc84fde7-en.pdf}{Source officielle}.
+\item \textbf{[ICMA] ICMA (2025).} Green Bond Principles, juin 2025 : principes volontaires relatifs à l’emploi des fonds. \href{https://www.icmagroup.org/assets/documents/Sustainable-finance/2025-updates/Green-Bond-Principles-GBP-June-2025.pdf}{Source officielle}.
+\item \textbf{[SLB] ICMA (2024).} Sustainability-Linked Bond Principles, juin 2024. \href{https://www.icmagroup.org/assets/documents/Sustainable-finance/2024-updates/Sustainability-Linked-Bond-Principles-June-2024.pdf}{Source officielle}.
+\item \textbf{[IFC] IFC.} How Blended Finance Works : justification, concessionnalité minimale et soutenabilité commerciale. \href{https://www.ifc.org/en/what-we-do/sector-expertise/blended-finance/how-blended-finance-works}{Source officielle}.
+\end{itemize}\normalsize
+\clearpage
+\begin{center}{\small MASTER FINANCE VERTE -- MODULE 6}\par\vspace{8pt}{\Large\bfseries Séance 4 -- Choix stratégiques : détenir, contractualiser, s’associer}\par\vspace{6pt}Badr Aboufarasse\par{\small Cours et applications corrigées -- 25 octobre 2026}\end{center}
+\begin{quote}\itshape Quel mode de développement choisir pour mobiliser les ressources et répartir les risques ?\end{quote}
+\textbf{Données du cas fictives.} Montants en M MAD ; taux et seuils pédagogiques.
+
+\subsection*{Objectifs}
+\begin{itemize}\item Comparer des options sur un service et un horizon communs.\item Associer valorisation, contrats et allocation des risques.\item Construire un portefeuille d’investissements sous contraintes.\end{itemize}
+\section*{1. Comparer des services plutôt que des étiquettes}
+Détenir un actif, louer une capacité ou acheter un service ne produit pas les mêmes engagements. Une comparaison robuste commence par définir la prestation : volume, disponibilité, qualité, horizon, date de livraison et responsabilité en cas de panne. Le faible investissement initial d’une option peut être compensé par une obligation d’achat ou une dépendance longue.
+
+
+Dans le cas, trois modes permettent de substituer une partie de l’achat énergétique de référence : installation solaire détenue, achat contractuel d’électricité de type PPA, ou leasing. Les modalités présentées sont fictives. Nous supposons la faisabilité juridique, technique et contractuelle des trois options pour étudier les mécanismes financiers ; aucune conclusion n’est formulée sur l’éligibilité réelle d’une entreprise marocaine donnée.
+
+
+L’analyse doit préciser le scénario sans projet : ici, la dépense énergétique annuelle du service remplacé est 2,4. Ces 2,4 sont déjà inclus dans les charges de référence. Les gains ci-dessous sont des flux incrémentaux par rapport à cette référence. Les autres projets E et W sont maintenus constants. [BD] [MIT]
+
+\section*{2. Les flux pertinents et le coût du temps}
+Un flux pertinent change entre les options. Une étude déjà payée ne redevient pas un coût évitable ; un terrain utilisé peut avoir un coût d’opportunité même sans paiement nouveau. Les frais de fin de contrat, l’entretien et la remise en état doivent être inclus lorsqu’ils diffèrent. Le financement est traité séparément si l’on compare des flux avant service de dette. [SS7]
+
+
+
+\begin{quote}\small VAN = - investissement initial + somme des FCFF(t)/(1 + r)\textasciicircum{}t\newline FCFF = EBITDA incrémental $\times$ (1 - T) + amortissement $\times$ T - CAPEX - $\Delta$BFR\end{quote}
+
+Pour cette comparaison, on se place à une \textbf{date commune de mise en service t0}. Les flux futurs couvrent dix années, à leurs fins respectives ; valeur résiduelle nulle ; BFR additionnel nul ; taux nominal de 10 \% ; impôt pédagogique de 25 \%, avec bénéfice suffisant pour utiliser les déductions. Ce calendrier de valorisation est distinct de A1--A5 : dans le plan commun, le solaire est payé en A1 et produit à partir de A2.
+
+
+Une comparaison à cinq ans sans valeur résiduelle pénaliserait artificiellement les actifs qui servent dix ans. Les flux ont ici le même risque à des fins de calcul ; une différence significative de risque nécessite d’adapter les scénarios ou la valorisation.
+
+\section*{3. Exemple résolu : trois modalités solaires}
+
+\Needspace{180pt}
+\begin{longtable}{p{3.67cm}p{3.67cm}p{3.67cm}p{3.67cm}}
+\toprule
+Option & Flux à t0 & Gain annuel avant impôt & FCFF annuel \\
+\midrule\endhead
+Détenir & -10 & 2,4 - 0,4 = 2 & 2 $\times$ 0,75 + 1 $\times$ 0,25 = 1,75 \\
+PPA pédagogique & -0,5 & 2,4 - 1,35 de service - 0,1 de coûts résiduels = 0,95 & 0,7125 \\
+Leasing pédagogique & 0 & 2,4 - 1,65 de loyer - 0,4 de maintenance = 0,35 & 0,2625 \\
+\bottomrule
+\end{longtable}
+
+Dans le PPA, le coût initial de 0,5 est supposé sans déduction fiscale pour cet exercice simplifié ; aucun amortissement n’est ajouté. Dans le leasing, on suppose les loyers déductibles et aucune option finale payante. Il s’agit d’une comparaison économique de flux contractuels, pas d’un traitement comptable IFRS 16.
+
+
+Le facteur d’annuité à 10 \% sur dix ans est \textbf{6,144567}. VAN détention = -10 + 1,75 $\times$ 6,144567 = \textbf{0,753} ; VAN PPA = -0,5 + 0,7125 $\times$ 6,144567 = \textbf{3,878} ; VAN leasing = 0,2625 $\times$ 6,144567 = \textbf{1,613}.
+
+
+Le PPA est supérieur dans ces hypothèses, et non par nature. Le prix, l’indexation, les volumes garantis et le risque de contrepartie peuvent renverser le classement. Les flux de 1,75 après impôt de la détention correspondent bien au gain d’EBITDA de 2 retenu dans le dossier commun.
+
+\section*{4. Contrats, spécificité des actifs et dépendance}
+Williamson met l’accent sur les coûts de transaction et les difficultés d’adaptation quand les actifs sont spécifiques à une relation. Si un équipement n’a de valeur que pour un client ou un site, la sortie devient coûteuse et la négociation future peut être déséquilibrée. La détention, le contrat et le partenariat répartissent différemment ces risques. [WIL]
+
+
+Pour le PPA fictif, examiner : minimum d’achat ; indexation ; date de livraison ; indisponibilité ; garanties de performance ; transfert des attributs environnementaux ; sortie anticipée ; règlement des litiges. Une clause de prix stable n’assure pas une couverture du risque de volume ; une clause d’énergie livrée ne garantit pas automatiquement une allégation de réduction d’émissions.
+
+
+Le GHG Protocol distingue les méthodes de comptabilisation scope 2 et encadre les instruments contractuels. Pour ce cours, on conserve les volumes physiques et les preuves de contrat séparés du calcul financier. Un PPA ne suffit pas à lui seul pour affirmer que toute l’électricité consommée est sans émissions. [GHG]
+
+\section*{5. Allouer un budget entre projets}
+L’entreprise peut arbitrer entre plusieurs investissements. Pour un ensemble discret de projets, classer les ratios VAN/CAPEX ne garantit pas le meilleur portefeuille. Il faut comparer les combinaisons possibles et tenir compte des interdépendances et des contraintes physiques. [SS6]
+
+
+
+\Needspace{180pt}
+\begin{longtable}{p{3.67cm}p{3.67cm}p{3.67cm}p{3.67cm}}
+\toprule
+Projet indépendant, à t0 & CAPEX & FCFF annuel sur 10 ans & VAN à 10 \% \\
+\midrule\endhead
+Efficacité E & 6 & 1,5 & 3,217 \\
+Solaire S détenu & 10 & 1,75 & 0,753 \\
+Eau W & 4 & 0,625 & -0,160 \\
+\bottomrule
+\end{longtable}
+
+Avec un budget de 16 et sans autre contrainte, E + S produit une VAN de \textbf{3,970}. Si W devient une obligation préalable au maintien d’activité, il faut l’inclure et comparer les options restantes : E + W coûte 10 ; W + S coûte 14. Le problème de décision a changé. La VAN de W négative ne signifie pas qu’une contrainte d’eau peut être ignorée.
+
+
+Ce tableau isole les trois projets à une même date ; il ne remplace pas leur calendrier A1--A5. Une nouvelle combinaison exige de recalculer le plan et les besoins de financement.
+
+\section*{6. Résilience, partenariat et croissance externe}
+La valeur d’une adaptation peut dépendre des interruptions évitées. Pour W, un gain supplémentaire attendu de marge de 0,5 par an, avant impôt, porterait le FCFF à 1,0 et la VAN à \textbf{2,145}. C’est une variante pédagogique : ce gain n’est pas inclus dans le scénario financier de référence. Il doit être étayé par une analyse des événements, de leur fréquence et de l’efficacité de l’équipement.
+
+
+Un partenariat peut mutualiser le capital mais nécessite des règles de contribution, de partage des flux, d’accès à l’actif et de résolution des désaccords. Une acquisition apporte des capacités existantes mais expose à la qualité des actifs et aux coûts d’intégration. On ne doit pas comptabiliser des synergies sans dépenses, délai ni responsable. [BD]
+
+
+Dans ce module de quinze heures, l’objectif consiste à poser ces arbitrages et à chiffrer leurs mécanismes principaux. Les valorisations complètes de fusion-acquisition et les montages contractuels avancés sont des prolongements.
+
+\section*{7. Trois applications corrigées}
+
+\subsection*{Application 1 --- À quel prix le PPA perd-il son avantage ?}
+Le paiement annuel du PPA devient P, les autres hypothèses restant inchangées. Déterminer P qui rend sa VAN égale à celle de la détention.
+
+
+\paragraph{Correction expliquée}
+-0,5 + 0,75 $\times$ (2,3 - P) $\times$ 6,144567 = 0,752992. D’où P = \textbf{2,0281} environ. Au-delà, la détention devient supérieure dans ce calcul. Ce seuil suppose des risques comparables et ne tient pas compte des contraintes de financement.
+
+
+
+\subsection*{Application 2 --- Coût irrécupérable}
+Une étude déjà payée de 0,2 sera perdue quelle que soit l’option. Une indemnité de résiliation de 0,3 ne serait due qu’en choisissant le PPA. Quels montants intégrer dans la comparaison actuelle ?
+
+
+\paragraph{Correction expliquée}
+L’étude de 0,2 est irrécupérable et ne différencie pas les décisions. Les 0,3 d’indemnité sont incrémentaux pour le PPA et doivent être inclus à leur date. On conserve néanmoins l’étude dans le suivi historique du budget total.
+
+
+
+\subsection*{Application 3 --- Synergie nette}
+Une acquisition permet 0,8 de synergies annuelles pendant cinq ans, mais exige 2 d’intégration à t0. Supposer flux nets d’impôt, taux 10 \%, et aucun autre effet. Quelle valeur de synergie ne pas dépasser dans le prix supplémentaire ?
+
+
+\paragraph{Correction expliquée}
+0,8 $\times$ 3,790787 - 2 = \textbf{1,033}. Payer davantage uniquement au titre de ces synergies détruit de la valeur dans ce scénario. Il reste à analyser le prix de la cible hors synergies, leur probabilité et les risques d’intégration.
+
+\section*{8. Cas de synthèse : comparer des stratégies complètes}
+\textbf{Atelier, 30 minutes.} Recommander détention ou PPA pour le solaire. Présenter valeur, besoin initial, engagements et conditions. Expliquer les postes à modifier dans le plan A1--A5 si l’on choisit le PPA.
+
+
+
+\paragraph{Éléments de solution}
+Le scénario PPA remplace le CAPEX solaire de 10 par 0,5 selon la date négociée ; il retire l’amortissement de 1 et remplace le gain EBITDA solaire de 2 par 0,95. Il faut recalculer impôt, dette nécessaire et service, plutôt que conserver arbitrairement le prêt de 14. Demander les clauses de volume, d’indexation et de performance avant de confirmer le classement économique.
+
+
+\textbf{À retenir :} la décision stratégique définit les engagements qui produiront les flux. La séance 5 teste comment ces engagements se comportent lorsque les hypothèses centrales changent.
+
+\section*{Références mobilisées}
+\small
+\begin{itemize}
+\item \textbf{[BD] Berk, J. et DeMarzo, P..} Corporate Finance, 6e édition, Pearson. Chapitres 2, 12, 14--18, 22, 24--27 et 30--31 selon la séance. \href{https://www.pearson.com/en-us/subject-catalog/p/corporate-finance/P200000009791/9780137844906}{Source officielle}.
+\item \textbf{[MIT] Jenter, D. et Lewellen, K. (2003), MIT Sloan.} Finance Theory II, 15.402 : cours sur les flux, WACC/APV, structure du capital et options réelles. \href{https://ocw.mit.edu/courses/15-402-finance-theory-ii-spring-2003/pages/lecture-notes/}{Source officielle}.
+\item \textbf{[SS7] Schoenmaker, D. et Schramade, W. (2023).} Capital Budgeting. Chap. 7, p. 173--204. \href{https://doi.org/10.1007/978-3-031-35009-2_7}{Source officielle}.
+\item \textbf{[WIL] Williamson, O. E. (2009).} Notice autobiographique Nobel : coûts de transaction, spécificité des actifs et adaptation contractuelle. \href{https://www.nobelprize.org/prizes/economic-sciences/2009/williamson/biographical/}{Source officielle}.
+\item \textbf{[GHG] WRI / WBCSD (2015).} GHG Protocol Scope 2 Guidance, chap. 4 et critères de qualité des instruments contractuels. \href{https://ghgprotocol.org/sites/default/files/2023-03/Scope\%202\%20Guidance.pdf}{Source officielle}.
+\item \textbf{[SS6] Schoenmaker, D. et Schramade, W. (2023).} Investment Decision Rules. Chap. 6, p. 145--171. \href{https://doi.org/10.1007/978-3-031-35009-2_6}{Source officielle}.
+\end{itemize}\normalsize
+\clearpage
+\begin{center}{\small MASTER FINANCE VERTE -- MODULE 6}\par\vspace{8pt}{\Large\bfseries Séance 5 -- Résistance financière et décisions adaptatives}\par\vspace{6pt}Badr Aboufarasse\par{\small Cours et applications corrigées -- 25 octobre 2026}\end{center}
+\begin{quote}\itshape Dans quelles conditions la stratégie devient-elle fragile, et quelles actions déclencher ?\end{quote}
+\textbf{Données du cas fictives.} Montants en M MAD ; taux et seuils pédagogiques.
+
+\subsection*{Objectifs}
+\begin{itemize}\item Construire des scénarios cohérents et en identifier les mécanismes.\item Calculer marges de sécurité et seuils de réaction.\item Distinguer couverture, résilience opérationnelle et flexibilité.\end{itemize}
+\section*{1. Sensibilité, scénario et stress inversé}
+Une sensibilité modifie un paramètre pour comprendre son effet. Un scénario combine plusieurs évolutions cohérentes. Un stress inversé part d’un échec défini, par exemple cash inférieur à 3, et cherche les conditions qui le provoquent. Ces exercices répondent à des questions différentes : facteur déterminant, robustesse d’ensemble, ou frontière de vulnérabilité.
+
+
+Le scénario de référence n’est pas « le futur probable » par défaut. Une probabilité exige une justification. Les scénarios NGFS sont exploratoires et ne doivent pas être convertis automatiquement en probabilités ni en prévisions de chiffre d’affaires d’une entreprise. Leur utilisation demande une chaîne de transmission macroéconomie $\rightarrow$ secteur $\rightarrow$ entreprise. Nos scénarios numériques sont des constructions pédagogiques propres au cas, non des projections NGFS. [NGFS]
+
+
+Il faut définir la durée du choc, le passage des prix aux clients, la réaction des volumes, les coûts évitables et le calendrier des adaptations. Une baisse de demande peut libérer du BFR tout en réduisant la marge : négliger l’un des deux effets fausse le cash.
+
+\section*{2. Le moteur des scénarios communs}
+
+\Needspace{180pt}
+\begin{longtable}{p{3.67cm}p{3.67cm}p{3.67cm}p{3.67cm}}
+\toprule
+Scénario & CA par rapport à la référence & Prix de l’énergie résiduelle & Autres hypothèses \\
+\midrule\endhead
+Référence & 100 \% & Pas de choc & Programme et financement communs \\
+Défavorable & 90 \% chaque année & +30 \% & Coûts fixes inchangés \\
+Sévère & 80 \% chaque année & +50 \% & Coûts fixes inchangés \\
+\bottomrule
+\end{longtable}
+
+Le CA de chaque année est le CA de référence multiplié par 0,9 ou 0,8 ; la baisse ne se cumule pas de nouveau chaque année. Les charges variables restent 60 \% du CA stressé. La base d’exposition énergétique résiduelle est max(0 ; 8 $\times$ 1,02\textasciicircum{}t - économies E et S actives). Le surcoût est le choc de prix multiplié par cette base. W concerne l’eau et ne réduit pas ce montant énergétique.
+
+
+Cette convention maintient l’exposition physique résiduelle indépendante de la baisse du CA pour représenter une consommation en partie rigide. Elle est explicite et discutable ; une autre hypothèse demanderait un autre modèle. Les charges variables de référence contiennent déjà l’énergie : on ajoute uniquement le surcoût du choc.
+
+\section*{3. Exemple résolu : le choc de A1}
+Dans le scénario défavorable, CA = 94,5 ; charges variables = 56,7 ; charges fixes = 24,48. L’énergie résiduelle est 8,16 avant gains ; le surcoût est 2,448. EBITDA = 94,5 - 56,7 - 24,48 - 2,448 = \textbf{10,872}. Les intérêts restent 2,16 ; les amortissements 4 ; l’impôt est 1,178.
+
+
+Le BFR devient 18,9, soit $\Delta$BFR = -1,1 par rapport aux 20 historiques. Le CFO est 10,872 - 2,16 - 1,178 + 1,1 = \textbf{8,634}. Le cash final est 4 + 8,634 - 20 + 14 - 4,8 = \textbf{1,834}. Le CFADS est 10,872 - 1,178 + 1,1 - 4 = \textbf{6,794} ; DSCR = 6,794/6,96 = \textbf{0,976}.
+
+
+L’entreprise termine encore avec un cash positif, mais sous sa réserve de 3 ; le flux disponible est inférieur au service de dette selon la convention retenue. Cash positif, respect du coussin et respect du DSCR sont donc trois diagnostics distincts.
+
+\section*{4. Résultats et interprétation du stress}
+
+\Needspace{250pt}
+\begin{longtable}{p{2.84cm}p{2.84cm}p{2.84cm}p{2.84cm}p{2.84cm}}
+\toprule
+Année & CA & EBITDA & Cash final & DSCR \\
+\midrule\endhead
+A1 & 94.500 & 10.872 & 1.834 & 0.976 \\
+A2 & 99.225 & 17.163 & 0.958 & 1.468 \\
+A3 & 104.186 & 19.299 & 5.951 & 1.782 \\
+A4 & 109.396 & 20.822 & 12.254 & 2.034 \\
+A5 & 114.865 & 22.438 & 19.933 & 2.322 \\
+\bottomrule
+\end{longtable}
+
+En défavorable, le cash passe à \textbf{0,958} en A2 : les gains de E et S n’éliminent pas immédiatement les conséquences des chocs et du CAPEX eau de 4. Dans le scénario sévère, le cash devient négatif dès A1 et atteint environ \textbf{-5,477} en A2. Une trésorerie négative est ici une impasse du modèle, pas la simulation d’un découvert déjà autorisé.
+
+
+Ajouter une ligne de crédit suppose d’introduire plafond, disponibilité, date de tirage, intérêts et remboursement. Un apport résout une partie du besoin mais modifie les droits des associés. Un report de CAPEX doit retirer ou décaler ses gains et sa dépréciation. Une mesure adaptative se modélise par tous ses effets, et non par une amélioration isolée du cash.
+
+
+Il faut aussi distinguer crise de liquidité et destruction durable de valeur. Un pont de trésorerie n’est utile que s’il finance une trajectoire capable de rembourser, ou s’il accompagne une restructuration crédible.
+
+\section*{5. Protéger l’investissement et préserver la flexibilité}
+Froot, Scharfstein et Stein expliquent comment la gestion des risques peut protéger la capacité d’investissement lorsque les ressources externes sont plus coûteuses que les fonds internes. L’objectif n’est donc pas nécessairement de rendre le résultat parfaitement stable, mais de préserver les moyens disponibles aux moments décisifs. [FSS]
+
+
+Trois réponses se distinguent : couverture financière d’un prix ou d’une devise ; réduction physique de l’exposition, par exemple efficacité énergétique ; flexibilité de la décision, par exemple déploiement par étapes. Chacune possède un coût et laisse un risque résiduel. Un contrat à prix fixe peut stabiliser un prix tout en augmentant le risque de volume minimum.
+
+
+Une option réelle représente la faculté de modifier une décision après information nouvelle : reporter, étendre, réduire ou abandonner. Elle a de la valeur si l’information peut effectivement arriver avant une décision réversible et si l’entreprise conserve les droits d’agir. Attendre peut aussi coûter des recettes ou faire perdre une aide. [MIT] [BD]
+
+\section*{6. Décider avec des seuils et des responsabilités}
+Un indicateur devient un outil de pilotage quand il est relié à une action. La formulation « suivre la trésorerie » est insuffisante. Il faut préciser horizon, seuil, date, responsable et décision autorisée. Exemple : si le cash minimum prévu sur treize semaines passe sous 3, le trésorier soumet sous cinq jours un plan de financement et de décalage des paiements ; les dépenses non engagées sont réexaminées.
+
+
+Le DSCR d’alerte de 1,20 et la réserve de 3 sont propres au cas. Si le contrat prévoit un calcul différent, son test doit être reproduit exactement. Une négociation de covenant ne supprime pas l’obligation économique de rembourser et peut avoir un coût.
+
+
+Pour un risque hydrique, on peut suivre une réserve opérationnelle ou des interruptions plutôt qu’un seul indicateur annuel d’intensité. Une mesure annuelle peut apparaître satisfaisante tout en masquant une rupture saisonnière.
+
+\section*{7. Trois applications corrigées}
+
+\subsection*{Application 1 --- Seuil d’EBITDA imposé par le DSCR}
+À paramètres de référence A1 inchangés : intérêts 2,16 ; amortissements 4 ; $\Delta$BFR 1 ; maintenance 4 ; service 6,96. En supposant bénéfice imposable positif, quel EBITDA assure DSCR = 1,20 ?
+
+
+\paragraph{Correction expliquée}
+Impôt = 0,25 $\times$ (EBITDA - 6,16). CFADS = 0,75 $\times$ EBITDA - 3,46. Imposer CFADS = 8,352 donne EBITDA = \textbf{15,7493}. C’est une sensibilité à BFR constant ; elle ne se transpose pas directement à un choc de demande qui change le BFR.
+
+
+
+\subsection*{Application 2 --- Couverture de change}
+Échéance certaine de 100 000 unités de devise dans un an. Le coût sans couverture est calculé à 10 ou 12 MAD par unité. Un contrat à terme fixe le cours à 10,4 ; ignorer frais et marge. Comparer.
+
+
+\paragraph{Correction expliquée}
+Sans couverture : \textbf{1 ou 1,2} M MAD ; avec couverture : \textbf{1,04}. La couverture coûte 0,04 dans le premier scénario et économise 0,16 dans le second. Elle stabilise une dépense ; sa valeur décisionnelle dépend de l’échéance et de la fragilité du plan, pas seulement d’un gain ex post.
+
+
+
+\subsection*{Application 3 --- Option de report}
+À t0, investir 4 donne dans un an 7 ou 2 avec probabilités pédagogiques 50/50. Taux 10 \%. Attendre permet à t1 de connaître l’état puis de payer 4 et recevoir immédiatement le montant connu ; il n’y a aucun autre coût ou flux. Comparer.
+
+
+\paragraph{Correction expliquée}
+Investir maintenant : -4 + 4,5/1,1 = \textbf{0,091}. Attendre : [0,5 $\times$ max(7 - 4 ; 0) + 0,5 $\times$ max(2 - 4 ; 0)]/1,1 = \textbf{1,364}. L’avantage d’attendre est 1,273. Cet arbre décisionnel avec taux et probabilités supposés n’est pas une valorisation d’option en absence d’arbitrage ; modifier le droit d’attendre ou les recettes change le résultat.
+
+\section*{8. Cas de synthèse : transformer le stress en décision}
+\textbf{Atelier, 30 minutes.} Préparer trois réponses au scénario défavorable : réserve externe, phasage, changement du mode solaire. Identifier les effets à recalculer et les conditions de faisabilité. Fixer un indicateur avancé et un seuil pour chaque réponse.
+
+
+
+\paragraph{Éléments de solution}
+La plus forte insuffisance de cash par rapport au coussin en défavorable est 3 - 0,958 = \textbf{2,042} environ. C’est un écart avant coût d’une éventuelle facilité, pas le montant final d’une dette à lever. Le phasage de W économise temporairement 4 mais reporte 0,7 de gains et 0,4 d’amortissement ; il peut être inacceptable si l’eau devient une contrainte d’exploitation. Un PPA impose de refaire le plan et les contrats, conformément à la séance 4.
+
+
+\textbf{À retenir :} le stress a une utilité lorsqu’il conduit à des conditions de décision et à des actions préparées. La séance 6 assemble ces éléments dans une trajectoire gouvernée et vérifiable.
+
+\section*{Références mobilisées}
+\small
+\begin{itemize}
+\item \textbf{[NGFS] NGFS.} Scenarios Portal, FAQ : usages, incertitude et limites des scénarios. \href{https://www.ngfs.net/ngfs-scenarios-portal/faq/}{Source officielle}.
+\item \textbf{[FSS] Froot, K. A., Scharfstein, D. S. et Stein, J. C. (1993).} Risk Management: Coordinating Corporate Investment and Financing Policies. Journal of Finance, 48(5), 1629--1658. \href{https://doi.org/10.1111/j.1540-6261.1993.tb05123.x}{Source officielle}.
+\item \textbf{[MIT] Jenter, D. et Lewellen, K. (2003), MIT Sloan.} Finance Theory II, 15.402 : cours sur les flux, WACC/APV, structure du capital et options réelles. \href{https://ocw.mit.edu/courses/15-402-finance-theory-ii-spring-2003/pages/lecture-notes/}{Source officielle}.
+\item \textbf{[BD] Berk, J. et DeMarzo, P..} Corporate Finance, 6e édition, Pearson. Chapitres 2, 12, 14--18, 22, 24--27 et 30--31 selon la séance. \href{https://www.pearson.com/en-us/subject-catalog/p/corporate-finance/P200000009791/9780137844906}{Source officielle}.
+\end{itemize}\normalsize
+\clearpage
+\begin{center}{\small MASTER FINANCE VERTE -- MODULE 6}\par\vspace{8pt}{\Large\bfseries Séance 6 -- Décision intégrée et pilotage financier de la transition}\par\vspace{6pt}Badr Aboufarasse\par{\small Cours et applications corrigées -- 25 octobre 2026}\end{center}
+\begin{quote}\itshape Quelle trajectoire financer, sous quelles conditions et avec quel suivi ?\end{quote}
+\textbf{Données du cas fictives.} Montants en M MAD ; taux et seuils pédagogiques.
+
+\subsection*{Objectifs}
+\begin{itemize}\item Assembler une recommandation stratégique cohérente et traçable.\item Connecter engagements, investissements, financements et résultats physiques.\item Organiser le suivi des écarts et la révision des décisions.\end{itemize}
+\section*{1. Revenir à la question initiale}
+Le comité doit choisir une trajectoire dont les conditions de réussite sont identifiées. Les cinq séances précédentes ont établi le diagnostic, le calendrier des besoins, les offres de financement, les modalités de développement et les limites du plan face aux chocs. La recommandation finale doit montrer comment ces éléments se combinent.
+
+
+Une trajectoire peut créer de la valeur dans le scénario central mais être trop fragile au regard des ressources disponibles. Une autre peut mieux protéger la liquidité mais exposer l’entreprise à une dépendance contractuelle. La décision ne se réduit pas au plus grand chiffre de VAN ; elle doit définir quels risques sont acceptés, transférés ou réduits. [BD]
+
+
+Dans le cas, il faut choisir un programme, un mode solaire et un financement, puis un dispositif de réaction. Toute alternative au programme de référence appelle une nouvelle prévision. Les tableaux de référence restent le point de comparaison et ne deviennent pas automatiquement les résultats de l’alternative retenue.
+
+\section*{2. Construire une trajectoire de transition financée}
+Un plan crédible relie objectifs, leviers opérationnels, ressources et suivi. Les ressources TPT organisent les informations autour des fondements, de la stratégie de mise en œuvre, de l’engagement, des métriques et objectifs, et de la gouvernance. Nous utilisons cette structure comme aide à la décision, sans la confondre avec une obligation générale de publication. [TPT]
+
+
+
+\Needspace{180pt}
+\begin{longtable}{p{3.67cm}p{3.67cm}p{3.67cm}p{3.67cm}}
+\toprule
+Objectif du cas & Levier & Ressource / calendrier & Preuve attendue \\
+\midrule\endhead
+Réduire l’énergie nécessaire & Efficacité E & 6 en A1 ; service A2 & Mesure avant/après ajustée à la production \\
+Modifier l’approvisionnement & Solaire détenu ou contrat & Selon option et financement & Production, factures, attributs et disponibilité \\
+Réduire la dépendance à l’eau & Projet W & 4 en A2 ; service A3 & Volumes, qualité et interruptions \\
+\bottomrule
+\end{longtable}
+
+Le budget doit distinguer dépenses engagées et envisagées, financement confirmé et recherché. Un objectif à dix ans ne prouve pas que les cinq premières années sont financées. Les informations sur effets financiers et incertitudes doivent être cohérentes avec les prévisions. [IFRS]
+
+\section*{3. Tableau de bord : résultats et signaux avancés}
+Un bon tableau de bord est sélectif. Chaque indicateur précise définition, unité, périmètre, fréquence, source, responsable et seuil d’action. On distingue résultats constatés et signaux avancés : économie annuelle d’énergie d’un côté, retard d’installation ou disponibilité des compteurs de l’autre.
+
+
+
+\Needspace{250pt}
+\begin{longtable}{p{5.07cm}p{5.07cm}p{5.07cm}}
+\toprule
+Indicateur & Fréquence / responsable & Seuil pédagogique et action \\
+\midrule\endhead
+Cash minimum prévu sur 13 semaines & Hebdomadaire / trésorerie & < 3 : plan de liquidité \\
+DSCR prévisionnel selon convention & Trimestrielle / DAF & < 1,20 : revue du financement \\
+Mise en service E/S/W & Mensuelle / projets & Retard > 1 mois : nouveau calendrier de gains \\
+Énergie par unité produite & Mensuelle / exploitation & Écart > 10 \% de la cible : analyse technique \\
+Eau par unité et interruptions & Mensuelle / exploitation & Seuil local défini avant décision \\
+\bottomrule
+\end{longtable}
+
+Les seuils 3, 1,20, un mois et 10 \% sont des choix du cas. Ils doivent être proportionnés et révisés au regard des engagements réels. Un indicateur sans source fiable peut créer une illusion de contrôle.
+
+\section*{4. Intensité, absolu et périmètre environnemental}
+Une intensité peut s’améliorer tandis que l’impact total augmente. Si la production passe de 100 à 120 et l’énergie par unité de 10 à 9, l’intensité diminue de 10 \% mais la consommation totale passe de 1 000 à 1 080, soit +8 \%. Suivre les deux valeurs évite de confondre efficacité et réduction absolue.
+
+
+Pour le solaire du cas, nous ajoutons une hypothèse physique autonome : 3 GWh/an d’électricité de réseau substitués et un facteur pédagogique de 0,6 tCO2e/MWh. La quantité indicative est 3 000 $\times$ 0,6 = \textbf{1 800 tCO2e/an}. Ce facteur n’est pas une estimation officielle du réseau marocain. Le calcul ne couvre ni cycle de vie, ni scope 3, ni certification d’émissions évitées.
+
+
+La comptabilité des émissions doit respecter les périmètres et les instruments applicables. Des attributs contractuels doivent être suivis pour éviter des allégations incompatibles ou des doubles revendications. On ne doit pas additionner mécaniquement une baisse d’inventaire et des « émissions évitées » comme deux réductions distinctes. [GHG]
+
+\section*{5. Prix interne du carbone et arbitrage}
+Un prix interne peut aider à comparer des investissements ou préparer une exposition future. Il faut préciser sa fonction : prix fictif d’aide à la décision, coût réglementaire prévu, ou prélèvement interne réellement transféré entre unités. Ces trois objets ne produisent pas les mêmes flux. [SS6]
+
+
+Avec 1 800 tCO2e/an et un prix fictif de 500 MAD/t, la valorisation indicative atteint 0,9 M MAD/an. Elle n’entre pas dans le CFO en l’absence d’un mécanisme réel de paiement ou de recette. Si un coût carbone futur est déjà intégré à la facture évitée, le rajouter comme bénéfice financier produirait un double compte.
+
+
+Le comité peut regarder une VAN financière et un résultat physique, puis appliquer une contrainte d’émissions ou une valeur d’impact séparée. Le cadre de valeur intégrée invite à examiner ces arbitrages ; il n’élimine pas la nécessité de justifier les prix, les pondérations et les effets distributifs. [SS2]
+
+\section*{6. Gouverner les écarts et les décisions}
+Le budget approuvé est une référence explicite, pas une interdiction d’apprendre. Lorsqu’un écart apparaît, le processus doit établir le fait, diagnostiquer la cause, recalculer les conséquences puis décider. La direction financière vérifie les flux et le financement ; l’exploitation valide les performances ; le responsable de projet met à jour les dates ; le comité approuve les modifications importantes.
+
+
+Le lien avec le module 5 est opérationnel : objectif $\rightarrow$ mécanisme $\rightarrow$ contrôle $\rightarrow$ preuve $\rightarrow$ revue $\rightarrow$ action $\rightarrow$ nouveau test. Les responsabilités de production de l’information et de vérification doivent être identifiées. Les coûts d’agence éclairent l’intérêt des engagements et des contrôles, sans supposer qu’un reporting volumineux garantit la bonne décision. [JM]
+
+
+Une décision conditionnelle peut autoriser E et S sous réserve d’un contrat confirmé, d’un échéancier de paiement et d’une réserve de liquidité ; elle peut prévoir une revue de W avant engagement si la contrainte hydrique le permet. Elle doit mentionner ce qui ferait abandonner ou accélérer l’option, et qui peut l’autoriser.
+
+\section*{7. Trois applications corrigées}
+
+\subsection*{Application 1 --- Décomposer une économie manquante}
+Le solaire devait éviter une dépense brute de 2,4. La production effective est 90 \% du prévu et le prix effectivement évité 95 \% du prévu. La maintenance reste 0,4. Comparer le gain réel au gain EBITDA prévu de 2.
+
+
+\paragraph{Correction expliquée}
+Gain brut réel = 2,4 $\times$ 0,90 $\times$ 0,95 = \textbf{2,052}. Gain net = \textbf{1,652} ; écart = -0,348. Décomposition séquentielle : volume -0,24 ; prix sur volume réel -0,108. La convention de décomposition doit rester constante pour attribuer l’interaction.
+
+
+
+\subsection*{Application 2 --- Une incitation financière limitée}
+Une remise de marge de 0,10 point de pourcentage s’applique pendant un an à un encours de 14 si l’objectif est atteint. La vérification coûte 0,03 pour cette même année. Ignorer fiscalité et actualisation. Quel avantage net ?
+
+
+\paragraph{Correction expliquée}
+Économie = 14 $\times$ 0,001 = \textbf{0,014} ; avantage net = \textbf{-0,016} M MAD. La remise seule ne couvre pas ce coût. D’autres bénéfices éventuels doivent être identifiés et ne peuvent être présumés.
+
+
+
+\subsection*{Application 3 --- Écart absolu et intensité}
+La production passe de 100 à 120 ; les émissions par unité de 2 à 1,8. Peut-on annoncer une baisse absolue de 10 \% ?
+
+
+\paragraph{Correction expliquée}
+Non. L’intensité baisse de 10 \% ; les émissions totales passent de 200 à \textbf{216}, soit +8 \%. L’annonce doit préciser indicateur, périmètre et année de référence.
+
+\section*{8. Comité de synthèse : une décision exécutable}
+\textbf{Atelier de clôture, 35 minutes, sans notation ni soutenance.} Une nouvelle information annonce un retard solaire et une hausse des coûts énergétiques. Rédiger une décision de dix lignes : programme retenu ; financement ; critères de valeur ; limite de liquidité ; résultats physiques ; conditions ; seuils ; responsables ; date de revue ; motif d’arrêt ou de révision.
+
+
+
+\paragraph{Proposition de structure de réponse}
+« Retenir E et le mode solaire choisi après validation de son coût complet et des engagements. Actualiser le plan avec le retard observé. Confirmer les financements avant acomptes et préserver un minimum de cash de 3. Réexaminer le scénario défavorable et la définition contractuelle du DSCR. Maintenir W selon la contrainte hydrique documentée. Confier au DAF une prévision glissante, aux opérations les mesures physiques et au comité les changements majeurs. Revoir les décisions aux seuils approuvés. » Cette structure doit être complétée par les chiffres de l’option effectivement recalculée ; elle ne démontre pas sa faisabilité à elle seule.
+
+
+\textbf{Synthèse du parcours :} comprendre les contraintes ; dater les flux ; choisir les ressources ; comparer les engagements ; tester les chocs ; gouverner l’adaptation. Une bonne décision financière rend visibles les hypothèses, les tensions et les conditions qui pourraient changer la recommandation.
+
+
+\textbf{Prolongements de lecture :} suivre les chapitres indiqués dans les références et comparer un plan de transition public à ses comptes et à son budget d’investissement. L’évaluation formelle du module sera construite ultérieurement.
+
+\section*{Références mobilisées}
+\small
+\begin{itemize}
+\item \textbf{[BD] Berk, J. et DeMarzo, P..} Corporate Finance, 6e édition, Pearson. Chapitres 2, 12, 14--18, 22, 24--27 et 30--31 selon la séance. \href{https://www.pearson.com/en-us/subject-catalog/p/corporate-finance/P200000009791/9780137844906}{Source officielle}.
+\item \textbf{[TPT] Transition Plan Taskforce / IFRS Foundation.} Disclosure Framework et ressources sectorielles. \href{https://www.ifrs.org/sustainability/knowledge-hub/transition-plan-taskforce-resources/}{Source officielle}.
+\item \textbf{[IFRS] IFRS Foundation (2025).} Disclosing information about an entity’s climate-related transition, including information about transition plans, in accordance with IFRS S2. \href{https://www.ifrs.org/content/dam/ifrs/supporting-implementation/ifrs-s2/transition-plan-disclosure-s2.pdf}{Source officielle}.
+\item \textbf{[GHG] WRI / WBCSD (2015).} GHG Protocol Scope 2 Guidance, chap. 4 et critères de qualité des instruments contractuels. \href{https://ghgprotocol.org/sites/default/files/2023-03/Scope\%202\%20Guidance.pdf}{Source officielle}.
+\item \textbf{[SS6] Schoenmaker, D. et Schramade, W. (2023).} Investment Decision Rules. Chap. 6, p. 145--171. \href{https://doi.org/10.1007/978-3-031-35009-2_6}{Source officielle}.
+\item \textbf{[SS2] Schoenmaker, D. et Schramade, W. (2023).} Integrated Value Creation. Corporate Finance for Long-Term Value, chap. 2, p. 33--63. \href{https://doi.org/10.1007/978-3-031-35009-2_2}{Source officielle}.
+\item \textbf{[JM] Jensen, M. C. et Meckling, W. H. (1976).} Theory of the firm: Managerial behavior, agency costs and ownership structure. Journal of Financial Economics, 3(4), 305--360. \href{https://doi.org/10.1016/0304-405X(76)90026-X}{Source officielle}.
+\end{itemize}\normalsize
+\end{document}

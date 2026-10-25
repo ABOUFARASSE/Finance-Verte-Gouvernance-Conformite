@@ -1,0 +1,23 @@
+﻿parametre;valeur;unite;statut
+CA_N;100;M MAD;fictif
+variable_CA;0.6;ratio;hypothese
+fixes_N;24;M MAD;fictif
+amort_N;4;M MAD;fictif
+cash_N;4;M MAD;fictif
+dette_N;22;M MAD;fictif
+BFR_N;20;M MAD;fictif
+croissance_CA;0.05;ratio annuel;hypothese
+croissance_fixes;0.02;ratio annuel;hypothese
+BFR_CA;0.2;ratio;hypothese
+impot;0.25;ratio;hypothese fiscale pedagogique
+nouvelle_dette;14;M MAD A1;hypothese
+taux_dette;0.06;ratio annuel;hypothese
+maintenance;4;M MAD/an;hypothese
+E;6;M MAD A1;hypothese
+S;10;M MAD A1;hypothese
+W;4;M MAD A2;hypothese
+gain_E;1.8;M MAD/an des A2;hypothese
+gain_S;2;M MAD/an des A2;hypothese
+gain_W;0.7;M MAD/an des A3;hypothese
+seuil_cash;3;M MAD;politique du cas
+seuil_DSCR;1.2;ratio;alerte du cas

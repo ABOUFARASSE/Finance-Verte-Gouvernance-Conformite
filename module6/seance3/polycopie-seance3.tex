@@ -1,0 +1,138 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage[provide=*,french]{babel}
+\usepackage{lmodern,microtype,longtable,booktabs,array,enumitem,fancyhdr,needspace}
+\usepackage[margin=2.1cm,headheight=16pt]{geometry}
+\usepackage[hidelinks,breaklinks=true]{hyperref}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}\setlength{\emergencystretch}{3em}
+\setlist[itemize]{leftmargin=1.3em,itemsep=3pt}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Master Finance verte — Module 6}\fancyhead[R]{\small Badr Aboufarasse}\fancyfoot[C]{\thepage}
+\begin{document}
+\begin{center}{\small MASTER FINANCE VERTE -- MODULE 6}\par\vspace{8pt}{\Large\bfseries Séance 3 -- Structure du capital et choix de financement}\par\vspace{6pt}Badr Aboufarasse\par{\small Cours et applications corrigées -- 25 octobre 2026}\end{center}
+\begin{quote}\itshape Quelle combinaison de ressources rend le plan soutenable ?\end{quote}
+\textbf{Données du cas fictives.} Montants en M MAD ; taux et seuils pédagogiques.
+
+\subsection*{Objectifs}
+\begin{itemize}\item Expliquer les principales théories du financement.\item Comparer des offres au-delà du taux affiché.\item Tester service de dette, devise, dilution et marge de sécurité.\end{itemize}
+\section*{1. Un modèle de référence : Modigliani et Miller}
+Le résultat de neutralité de Modigliani et Miller constitue un point de comparaison : dans un cadre idéal sans les frictions pertinentes, modifier la répartition dette/fonds propres ne crée pas à lui seul de valeur. La dette moins chère ne permet pas une baisse gratuite du coût moyen : davantage d’endettement accroît le risque supporté par les actionnaires et leur rendement requis. [MM]
+
+
+Ce cadre est utile parce qu’il oblige à nommer la source d’un gain de financement. S’agit-il d’une économie fiscale, d’une garantie, d’une information mieux partagée ou d’une réduction de coûts de détresse ? Sans mécanisme explicite, affirmer que l’endettement ou le label vert « crée de la valeur » ne suffit pas.
+
+
+Dans le cas, l’entreprise non cotée ne possède ni accès illimité au crédit ni marchés parfaits. Le modèle de référence ne justifie donc pas l’indifférence pratique au financement ; il aide à comprendre pourquoi les conditions concrètes comptent.
+
+\section*{2. Arbitrage, information et incitations}
+L’approche par arbitrage confronte les avantages de la dette, dont l’avantage fiscal lorsque les intérêts sont déductibles, aux coûts attendus de détresse et aux contraintes qu’elle impose. La capacité d’endettement dépend de la stabilité des flux et des actifs finançables ; un optimum théorique ne se réduit pas à un ratio sectoriel unique. [SS15]
+
+
+Myers et Majluf montrent comment une information supérieure des dirigeants peut rendre une émission d’actions coûteuse et conduire à renoncer à un investissement intéressant. Cela éclaire la préférence pour des ressources internes puis certains financements externes. Ce mécanisme n’est pas une règle disant que les fonds propres doivent toujours être évités. [MY]
+
+
+Jensen et Meckling analysent les conflits d’intérêts associés à la dette et aux capitaux extérieurs. Des engagements contractuels et une information fiable peuvent limiter ces conflits ; des contraintes trop rigides peuvent aussi empêcher l’adaptation. Dans notre entreprise, une clause qui interdit toute dépense d’investissement supplémentaire doit être rapprochée du besoin futur d’adaptation hydrique. [JM]
+
+\section*{3. Coût du capital et cohérence des flux}
+
+\begin{quote}\small WACC = E/(D + E) $\times$ kE + D/(D + E) $\times$ kD $\times$ (1 - T)\newline kE = taux sans risque + bêta $\times$ prime de marché\end{quote}
+
+Le WACC combine des coûts de financement selon une structure cible cohérente, généralement fondée sur des valeurs de marché. Le CAPM constitue une méthode d’estimation du rendement requis des fonds propres, sous ses hypothèses. Le bêta d’une entreprise cotée reflète son exposition systématique et son levier ; ce n’est pas directement le risque d’un projet non coté. [SS13] [BD]
+
+
+Avec E/V = 60 \%, D/V = 40 \%, kE = 14 \%, kD = 6 \% et T = 25 \%, le WACC est 8,4 \% + 1,8 \% = \textbf{10,2 \%}. Ces nombres sont un exercice distinct ; le taux de 10 \% utilisé pour comparer les projets reste une hypothèse arrondie explicite.
+
+
+Des FCFF avant service de dette s’actualisent avec un taux cohérent de type WACC ; des flux aux actionnaires avec le coût des fonds propres. Retirer intérêts et principal puis actualiser au WACC mélangerait deux approches. Le bouclier fiscal n’a de valeur que si les conditions fiscales et les bénéfices permettent de l’utiliser.
+
+\section*{4. Lire une offre de financement}
+
+\Needspace{180pt}
+\begin{longtable}{p{5.07cm}p{5.07cm}p{5.07cm}}
+\toprule
+Offre pédagogique & Conditions & Risque à examiner \\
+\midrule\endhead
+A : dette amortissable & 14 ; 6 \% ; principal 2,8/an sur 5 ans ; sans frais & Charge de service dès A1 \\
+B : différé de principal & 14 ; 7 \% ; principal nul en A1 puis 3,5/an de A2 à A5 ; sans frais & Échéances plus élevées après A1 \\
+C : fonds propres & Apport 14 ; valorisation avant apport 42 supposée négociée & Dilution et droits de gouvernance \\
+\bottomrule
+\end{longtable}
+
+En C, la valeur négociée de 42 est une hypothèse d’exercice : son égalité avec les capitaux propres comptables du bilan est fortuite et ne constitue pas une méthode de valorisation. La fraction acquise par le nouvel investisseur vaut 14/(42 + 14) = \textbf{25 \%}.
+
+
+Comparer aussi les frais, le taux fixe ou variable, l’échéancier, la devise, les garanties, les possibilités de remboursement anticipé, les conditions suspensives et les clauses d’investissement. Le taux nominal ne résume ni le coût effectif ni le risque de refinancement. [DAM] [BD]
+
+\section*{5. Dette soutenable et risque de change}
+En offre A, le service total A1 comprend les intérêts 2,16 et le principal 4,8 : \textbf{6,96}. Le CFADS est 17,52 - 2,84 - 1 - 4 = \textbf{9,68} ; DSCR = \textbf{1,391}. Une exigence pédagogique de 1,20 laisse une marge limitée face aux chocs. Le seuil est une condition fictive d’exercice, pas une norme universelle.
+
+
+Une dette en devise peut afficher un taux inférieur mais créer un décalage entre recettes et remboursements. L’OCDE met en évidence le rôle du financement en monnaie locale et les difficultés de couverture dans les économies émergentes. La comparaison doit porter sur le coût après couverture disponible ou sur des scénarios explicites de change. [OECD]
+
+
+Si une échéance de 100 000 unités de devise doit être payée, elle coûte 1 M MAD au cours de 10, puis 1,2 au cours de 12. La hausse est 20 \%. Des recettes d’exportation dans cette même devise peuvent offrir une couverture naturelle seulement si montants et dates concordent. Une corrélation vague avec l’export ne suffit pas.
+
+\section*{6. Financement durable et partage des risques}
+Les Green Bond Principles organisent un financement fondé sur l’emploi des fonds et recommandent notamment sélection des projets, gestion des fonds et reporting. Les Sustainability-Linked Bond Principles concernent des caractéristiques financières liées à des indicateurs et objectifs. Ce sont des principes volontaires ; les conditions du contrat et les règles applicables restent à examiner. Les instruments obligataires servent ici de comparaison conceptuelle ; ils ne sont pas supposés immédiatement accessibles à notre PME. [ICMA] [SLB]
+
+
+Le bénéfice d’un label n’est pas automatiquement une réduction du coût total. Une marge légèrement réduite peut être compensée par les coûts de vérification, les frais ou le suivi des indicateurs. L’incitation doit être calculée sur les encours concernés et sur les seules périodes où elle s’applique.
+
+
+La finance mixte peut répondre à une défaillance ou à un risque empêchant un investissement. Les principes IFC insistent sur la justification et la concessionnalité minimale. Une garantie modifie le risque assumé par les financeurs ; elle ne rend pas gratuits les risques économiques du projet. [IFC]
+
+\section*{7. Trois applications corrigées}
+
+\subsection*{Application 1 --- Un taux réduit et des frais}
+Deux prêts in fine de 10 sur un an : classique à 6 \%, sans frais ; offre durable à 5,5 \% avec 0,1 de frais initiaux. Ignorer fiscalité et autres frais. Quel coût annuel effectif pour l’offre durable ?
+
+
+\paragraph{Correction expliquée}
+L’entreprise reçoit 9,9 et rembourse 10,55. Coût = 10,55/9,9 - 1 = \textbf{6,566 \%}, supérieur à 6 \%. Comparer des flux datés, pas uniquement les coupons.
+
+
+
+\subsection*{Application 2 --- Différé de principal}
+Comparer le service A1 des offres A et B, nouvelle dette seulement. Quel est le service B en A2 ?
+
+
+\paragraph{Correction expliquée}
+A1 : A = 0,84 + 2,8 = \textbf{3,64} ; B = \textbf{0,98}. En A2, B = 0,98 + 3,5 = \textbf{4,48}. Le différé reporte le principal ; il ne le supprime pas. Il faut recalculer impôt et trésorerie dans toute la prévision, avec les intérêts B propres à son échéancier.
+
+
+
+\subsection*{Application 3 --- Concessionnalité minimale}
+Un projet a un coût initial de 4 et une valeur actuelle des flux futurs de 3,6, avant aide. Quel transfert initial comblerait exactement l’écart, toutes choses égales ?
+
+
+\paragraph{Correction expliquée}
+Le transfert est \textbf{0,4}. Il neutralise l’écart financier modélisé, sans démontrer l’additionnalité ou l’intérêt social. Une garantie ne se compare pas directement à une subvention nominale de 0,4 : il faut modéliser ses effets, sa probabilité d’appel et son coût.
+
+\section*{8. Cas de synthèse : une recommandation conditionnelle}
+\textbf{Atelier, 30 minutes.} Choisir entre A, B et C à partir de la référence et d’un stress. Comparer coût, liquidité A1, service futur, dilution et possibilité d’adapter le programme. Rédiger une recommandation comportant une condition de financement et une information à obtenir.
+
+
+
+\paragraph{Éléments de solution}
+A respecte les seuils annuels de référence, mais la séance 5 montrera une tension en scénario défavorable. B améliore A1 et concentre le service après le différé. C préserve le cash de dette mais dilue les associés et implique un accord sur la valeur et les droits. Aucune option n’est supérieure sur tous les critères. Un mix, un programme phasé ou une réserve confirmée doivent être évalués avec leurs propres flux.
+
+
+\textbf{Erreurs à éviter :} fonds propres considérés gratuits ; différé confondu avec réduction de dette ; coût comptable utilisé comme coût de marché ; bouclier fiscal supposé certain ; financement vert assimilé à rentabilité du projet.
+
+
+\textbf{Transition :} la séance 4 examine si l’entreprise doit détenir les actifs ou accéder au service par contrat ou partenariat. Le besoin de financement dépend aussi du mode de développement.
+
+\section*{Références mobilisées}
+\small
+\begin{itemize}
+\item \textbf{[MM] Académie royale des sciences de Suède (1990).} Présentation scientifique des contributions de Miller, Modigliani et Sharpe. \href{https://www.nobelprize.org/prizes/economic-sciences/1990/press-release/}{Source officielle}.
+\item \textbf{[SS15] Schoenmaker, D. et Schramade, W. (2023).} Capital Structure. Chap. 15, p. 431--462. \href{https://doi.org/10.1007/978-3-031-35009-2_15}{Source officielle}.
+\item \textbf{[MY] Myers, S. C. et Majluf, N. S. (1984).} Corporate financing and investment decisions when firms have information that investors do not have. Journal of Financial Economics, 13(2), 187--221. \href{https://doi.org/10.1016/0304-405X(84)90023-0}{Source officielle}.
+\item \textbf{[JM] Jensen, M. C. et Meckling, W. H. (1976).} Theory of the firm: Managerial behavior, agency costs and ownership structure. Journal of Financial Economics, 3(4), 305--360. \href{https://doi.org/10.1016/0304-405X(76)90026-X}{Source officielle}.
+\item \textbf{[SS13] Schoenmaker, D. et Schramade, W. (2023).} Cost of Capital. Chap. 13, p. 367--394. \href{https://doi.org/10.1007/978-3-031-35009-2_13}{Source officielle}.
+\item \textbf{[BD] Berk, J. et DeMarzo, P..} Corporate Finance, 6e édition, Pearson. Chapitres 2, 12, 14--18, 22, 24--27 et 30--31 selon la séance. \href{https://www.pearson.com/en-us/subject-catalog/p/corporate-finance/P200000009791/9780137844906}{Source officielle}.
+\item \textbf{[DAM] Damodaran, A. (NYU Stern).} Corporate Finance : notes, problèmes et tableurs ; ensembles actualisés au printemps 2026. \href{https://pages.stern.nyu.edu/~adamodar/New_Home_Page/cflect.htm}{Source officielle}.
+\item \textbf{[OECD] OCDE (2025).} Unlocking local currency financing in emerging markets and developing economies. \href{https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/02/unlocking-local-currency-financing-in-emerging-markets-and-developing-economies_af15df6a/bc84fde7-en.pdf}{Source officielle}.
+\item \textbf{[ICMA] ICMA (2025).} Green Bond Principles, juin 2025 : principes volontaires relatifs à l’emploi des fonds. \href{https://www.icmagroup.org/assets/documents/Sustainable-finance/2025-updates/Green-Bond-Principles-GBP-June-2025.pdf}{Source officielle}.
+\item \textbf{[SLB] ICMA (2024).} Sustainability-Linked Bond Principles, juin 2024. \href{https://www.icmagroup.org/assets/documents/Sustainable-finance/2024-updates/Sustainability-Linked-Bond-Principles-June-2024.pdf}{Source officielle}.
+\item \textbf{[IFC] IFC.} How Blended Finance Works : justification, concessionnalité minimale et soutenabilité commerciale. \href{https://www.ifc.org/en/what-we-do/sector-expertise/blended-finance/how-blended-finance-works}{Source officielle}.
+\end{itemize}\normalsize
+\end{document}
