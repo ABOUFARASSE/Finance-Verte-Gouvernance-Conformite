@@ -31,7 +31,7 @@ function renderStatus(d){
  if(!current){$('quiz').innerHTML='';return;}
  answers=current.answers||{};
  $('attempt-title').textContent=`Tentative ${current.number} / 3`;
- $('quiz').innerHTML=current.questions.map((q,i)=>`<fieldset id="question-${i+1}"><legend>${i+1}. ${esc(q.question)}</legend><p class="muted">Séance ${q.session}</p>${q.options.map((o,j)=>`<label class="option"><input type="radio" name="${esc(q.id)}" value="${j}" ${answers[q.id]===j?'checked':''}><span>${esc(o)}</span></label>`).join('')}</fieldset>`).join('');
+ $('quiz').innerHTML=current.questions.map((q,i)=>`<fieldset id="question-${i+1}"><legend>${i+1}. ${esc(q.question)}</legend><p class="muted">Séance ${q.session}${q.difficulty ? " · "+(q.difficulty === "simple" ? "Repérage simple" : "Compréhension") : ""}</p>${q.options.map((o,j)=>`<label class="option"><input type="radio" name="${esc(q.id)}" value="${j}" ${answers[q.id]===j?'checked':''}><span>${esc(o)}</span></label>`).join('')}</fieldset>`).join('');
  $('quiz').querySelectorAll('input').forEach(e=>e.onchange=()=>{answers[e.name]=Number(e.value);dirty=true;progress();clearTimeout(timer);timer=setTimeout(persist,400);});
  $('save-state').textContent='Tentative reprise ; les réponses enregistrées sont affichées.';progress();
 }
@@ -62,3 +62,4 @@ $('download').onclick=()=>{if(!lastResult)return;const content={module:'Module 1
 $('print').onclick=()=>window.print();
 window.addEventListener('beforeunload',e=>{if(dirty||busy){e.preventDefault();e.returnValue='';}});
 const remembered=sessionStorage.getItem('m10v2-key');if(remembered){$('access-code').value=remembered;$('login-form').requestSubmit();}
+

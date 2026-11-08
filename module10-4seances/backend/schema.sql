@@ -9,6 +9,7 @@ create table public.m10v2_access (
 );
 create table public.m10v2_questions (
  id text primary key, session integer not null check(session between 1 and 4),
+ difficulty text not null default 'simple' check(difficulty in ('simple','comprehension')),
  question text not null, options jsonb not null check(jsonb_array_length(options)=4),
  correct integer not null check(correct between 0 and 3), explanation text not null, source text not null
 );
@@ -27,8 +28,11 @@ alter table public.m10v2_attempts enable row level security;
 revoke all on public.m10v2_settings,public.m10v2_access,public.m10v2_questions,public.m10v2_attempts from public,anon,authenticated;
 grant select,insert,update,delete on public.m10v2_settings,public.m10v2_access,public.m10v2_questions,public.m10v2_attempts to service_role;
 
-create function public.m10v2_api(p_action text,p_key_hash text,p_payload jsonb default '{}'::jsonb)
-returns jsonb language plpgsql security invoker set search_path='' as $$
+CREATE OR REPLACE FUNCTION public.m10v2_api(p_action text, p_key_hash text, p_payload jsonb DEFAULT '{}'::jsonb)
+ RETURNS jsonb
+ LANGUAGE plpgsql
+ SET search_path TO ''
+AS $function$
 declare a public.m10v2_access; t public.m10v2_attempts; cfg public.m10v2_settings;
  n integer; b integer; items jsonb; hist jsonb; cur jsonb; ans jsonb; corrections jsonb;
 begin
@@ -61,8 +65,27 @@ begin
     update public.m10v2_access set student_name=trim(p_payload->>'name') where id=a.id returning * into a;
    end if;
    if (select count(*) from public.m10v2_questions)<>100 then raise exception 'Banque en préparation'; end if;
-   select jsonb_agg(to_jsonb(q) order by random()) into items from generate_series(1,4) as s(v)
-    cross join lateral (select z.* from public.m10v2_questions z where z.session=s.v order by random() limit 5) q;
+   if exists(select 1 from generate_series(1,4) s(v) where
+     (select count(*) from public.m10v2_questions where session=s.v and difficulty='simple')<>20 or
+     (select count(*) from public.m10v2_questions where session=s.v and difficulty='comprehension')<>5)
+    then raise exception 'Répartition de la banque en préparation'; end if;
+   select jsonb_agg(to_jsonb(q)||jsonb_build_object('options',sh.opts,'correct',sh.answer)
+      order by case q.difficulty when 'simple' then 0 else 1 end,random())
+    into items from generate_series(1,4) as s(v)
+    cross join (values ('simple'::text,4),('comprehension'::text,1)) as levels(difficulty,quota)
+    cross join lateral (
+      select z.* from public.m10v2_questions z
+      where z.session=s.v and z.difficulty=levels.difficulty
+      order by random() limit levels.quota
+    )q
+    cross join lateral (
+      select jsonb_agg(v order by newpos) as opts,
+        max(newpos-1) filter(where oldpos-1=q.correct)::integer as answer
+      from (
+        select v,ord as oldpos,row_number() over(order by random()) as newpos
+        from jsonb_array_elements(q.options) with ordinality as a(v,ord)
+      ) shuffled
+    )sh;
    insert into public.m10v2_attempts(access_id,number,items) values(a.id,n+1,items) returning * into t;
   end if;
  elsif p_action in ('save','submit','review') then
@@ -90,6 +113,9 @@ begin
  select coalesce(jsonb_agg(jsonb_build_object('id',id,'number',number,'score',score,'submitted_at',submitted_at) order by number),'[]'::jsonb) into hist from public.m10v2_attempts where access_id=a.id;
  select jsonb_build_object('id',u.id,'number',u.number,'answers',u.answers,'questions',(select jsonb_agg(q-'correct'-'explanation' order by ord) from jsonb_array_elements(u.items) with ordinality as x(q,ord))) into cur from public.m10v2_attempts u where access_id=a.id and submitted_at is null;
  return jsonb_build_object('name',a.student_name,'label',a.label,'open',cfg.is_open,'started',n,'remaining',3-n,'best',b,'history',hist,'current',cur);
-end;$$;
+end;$function$
+
+;
 revoke all on function public.m10v2_api(text,text,jsonb) from public,anon,authenticated;
 grant execute on function public.m10v2_api(text,text,jsonb) to service_role;
+
