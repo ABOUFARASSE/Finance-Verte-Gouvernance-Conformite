@@ -34,20 +34,30 @@ CREATE OR REPLACE FUNCTION public.m10v2_api(p_action text, p_key_hash text, p_pa
  SET search_path TO ''
 AS $function$
 declare a public.m10v2_access; t public.m10v2_attempts; cfg public.m10v2_settings;
- n integer; b integer; items jsonb; hist jsonb; cur jsonb; ans jsonb; corrections jsonb;
+ n integer; b integer; items jsonb; hist jsonb; cur jsonb; ans jsonb; corrections jsonb; target_access uuid;
 begin
  select * into cfg from public.m10v2_settings where id=1;
- if p_action in ('admin','toggle') then
+ if p_action in ('admin','toggle','delete_attempt') then
   if p_key_hash is distinct from cfg.admin_hash then raise exception 'Accès refusé'; end if;
+  if p_action='delete_attempt' then
+   if p_payload->'confirmed' is distinct from 'true'::jsonb then raise exception 'Confirmation de suppression requise'; end if;
+   select access_id into target_access from public.m10v2_attempts where id=(p_payload->>'attempt')::uuid;
+   if not found then raise exception 'Tentative introuvable ou déjà supprimée'; end if;
+   perform 1 from public.m10v2_access where id=target_access for update;
+   delete from public.m10v2_attempts where id=(p_payload->>'attempt')::uuid and access_id=target_access returning * into t;
+   if not found then raise exception 'Tentative introuvable ou déjà supprimée'; end if;
+   select count(*),max(score) into n,b from public.m10v2_attempts where access_id=target_access;
+   return jsonb_build_object('deleted',true,'attempt',t.id,'remaining',3-n,'best',b);
+  end if;
   if p_action='toggle' then
    if jsonb_typeof(p_payload->'open') is distinct from 'boolean' then raise exception 'Paramètre invalide'; end if;
    update public.m10v2_settings set is_open=(p_payload->>'open')::boolean where id=1;
    return jsonb_build_object('open',(p_payload->>'open')::boolean);
   end if;
-  return jsonb_build_object('open',cfg.is_open,'students',coalesce((select jsonb_agg(r order by r.label) from (
+  return jsonb_build_object('open',cfg.is_open,'server_now',clock_timestamp(),'students',coalesce((select jsonb_agg(r order by r.label) from (
    select x.label,x.student_name,count(y.id)::int as started,
     count(y.submitted_at)::int as validated,max(y.score) as best,
-    coalesce(jsonb_agg(jsonb_build_object('number',y.number,'score',y.score,'started_at',y.started_at,'submitted_at',y.submitted_at) order by y.number) filter(where y.id is not null),'[]'::jsonb) as attempts
+    coalesce(jsonb_agg(jsonb_build_object('id',y.id,'number',y.number,'score',y.score,'started_at',y.started_at,'submitted_at',y.submitted_at,'elapsed_seconds',greatest(0,floor(extract(epoch from coalesce(y.submitted_at,clock_timestamp())-y.started_at)))) order by y.started_at,y.id) filter(where y.id is not null),'[]'::jsonb) as attempts
    from public.m10v2_access x left join public.m10v2_attempts y on y.access_id=x.id
    group by x.id
   )r),'[]'::jsonb));
@@ -86,7 +96,7 @@ begin
         from jsonb_array_elements(q.options) with ordinality as a(v,ord)
       ) shuffled
     )sh;
-   insert into public.m10v2_attempts(access_id,number,items) values(a.id,n+1,items) returning * into t;
+   insert into public.m10v2_attempts(access_id,number,items) values(a.id,(select min(slot) from generate_series(1,3) slot where not exists(select 1 from public.m10v2_attempts occupied where occupied.access_id=a.id and occupied.number=slot)),items) returning * into t;
   end if;
  elsif p_action in ('save','submit','review') then
   select * into t from public.m10v2_attempts where id=(p_payload->>'attempt')::uuid and access_id=a.id for update;
@@ -110,12 +120,11 @@ begin
  elsif p_action<>'status' then raise exception 'Action inconnue';
  end if;
  select count(*),max(score) into n,b from public.m10v2_attempts where access_id=a.id;
- select coalesce(jsonb_agg(jsonb_build_object('id',id,'number',number,'score',score,'submitted_at',submitted_at) order by number),'[]'::jsonb) into hist from public.m10v2_attempts where access_id=a.id;
+ select coalesce(jsonb_agg(jsonb_build_object('id',id,'number',number,'score',score,'submitted_at',submitted_at) order by started_at,id),'[]'::jsonb) into hist from public.m10v2_attempts where access_id=a.id;
  select jsonb_build_object('id',u.id,'number',u.number,'answers',u.answers,'questions',(select jsonb_agg(q-'correct'-'explanation' order by ord) from jsonb_array_elements(u.items) with ordinality as x(q,ord))) into cur from public.m10v2_attempts u where access_id=a.id and submitted_at is null;
  return jsonb_build_object('name',a.student_name,'label',a.label,'open',cfg.is_open,'started',n,'remaining',3-n,'best',b,'history',hist,'current',cur);
-end;$function$
-
-;
+end;$function$;
 revoke all on function public.m10v2_api(text,text,jsonb) from public,anon,authenticated;
 grant execute on function public.m10v2_api(text,text,jsonb) to service_role;
+
 
