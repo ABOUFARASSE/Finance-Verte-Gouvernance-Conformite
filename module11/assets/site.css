@@ -80,3 +80,24 @@ footer .wrap { padding-block: .95rem 1.4rem; color: var(--muted); border-top: 1p
   .toc a { border-left: 0; text-decoration: underline; padding-inline: 0 .45rem; }
   .grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Ateliers Python */
+.python-lab { padding: 1rem; }
+.python-lab label { display: block; font-weight: 720; margin-bottom: .35rem; }
+.python-lab textarea, .python-lab pre { width: 100%; background: #142d27; color: #fff; border: 1px solid #214d40; border-radius: .35rem; padding: .8rem; font: .83rem/1.55 ui-monospace, monospace; tab-size: 4; }
+.python-lab textarea { resize: vertical; min-height: 13rem; }
+.python-lab pre { overflow: auto; white-space: pre-wrap; }
+.python-lab button { cursor: pointer; border: 1px solid var(--forest); font: inherit; padding: .4rem .68rem; border-radius: .28rem; color: var(--forest); background: white; }
+.python-lab button[data-run] { color: white; background: var(--accent); font-weight: 720; }
+.python-lab button:disabled { opacity: .55; cursor: default; }
+.python-lab [role=status] { margin-top: .7rem; font-size: .9rem; }
+.python-lab caption, .lab-figure figcaption { text-align: left; font-weight: 720; color: var(--forest); margin-bottom: .35rem; }
+.python-lab tbody th { background: transparent; }
+.lab-figure { padding: .75rem; background: white; border: 1px solid var(--line); }
+.lab-chart { overflow-x: auto; }
+.lab-chart svg { width: 100%; min-width: 31rem; display: block; }
+.lab-chart text { fill: var(--ink); font: .78rem system-ui, sans-serif; }
+.content .lab-legend { display: flex; flex-wrap: wrap; gap: .25rem .8rem; list-style: none; padding: 0; font-size: .85rem; }
+.lab-legend span { display: inline-block; width: .7rem; height: .7rem; border-radius: .12rem; margin-right: .3rem; }
+.lab-comments { padding: .7rem .8rem; background: #edf5ef; border-left: 3px solid var(--accent); margin-top: 1rem; }
+.lab-comments h4 { margin: .1rem 0 .45rem; }
