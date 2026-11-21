@@ -17,6 +17,12 @@
 <nav class="toc" aria-label="Sommaire"><strong>Sommaire</strong><ul><li><a href="#cadrage">Cadrage théorique</a></li><li><a href="#objectifs">Objectifs de la séance</a></li><li><a href="#cours-1">Construire et lire les scénarios</a></li><li><a href="#cours-2">Préparer les mesures d’adaptation</a></li><li><a href="#atelier-approfondi">Résistance du plan aux chocs</a></li><li><a href="#ateliers-python">Ateliers Python corrigés</a></li><li><a href="#applications">Exercices d’entraînement complémentaire</a></li><li><a href="#corriges">Corrigés et éléments de décision</a></li><li><a href="#approfondissements">Approfondissements</a></li><li><a href="#references">Références et dossier du cas</a></li></ul></nav>
 <article class="content"><section id="cadrage">
 <h2>Cadrage théorique et conceptuel</h2>
+<h3>Ce que vous réutilisez du master</h3>
+<p>Vous avez recommandé un montage et posé des conditions de signature. Dans le <a href="../../module10-4seances/seance1/">module 10 sur les risques et le contrôle interne</a>, vous avez appris à nommer un risque et à organiser l’alerte. Ici, vous donnez à cette alerte un seuil financier, une date et une réponse.</p>
+<h3>Partir d’une situation concrète</h3>
+<p>L’énergie se renchérit pendant que les ventes baissent. La direction doit savoir si l’usine manque d’argent pour régler ses paiements ou si son activité génère trop peu de flux pour couvrir le service de la dette. Le <strong>DSCR</strong> rapporte le flux retenu pour servir la dette aux intérêts et au principal exigibles. Comparez sa trajectoire au solde bancaire. Leurs points bas peuvent tomber à des dates différentes.</p>
+<p class="reminder"><strong>Votre décision à la fin de la séance.</strong> Vous devrez indiquer quel seuil déclenche l’alerte, à quelle date intervenir et quelle mesure proposer. Ce seuil et son responsable entreront dans le tableau de bord de la séance 4.</p>
+
 <p class="reminder"><strong>Question de décision.</strong> Sous quel choc la recommandation cesse-t-elle de satisfaire les exigences de trésorerie ou de couverture de la dette ?</p>
 
 <h3>Distinguer le scénario de référence et les tests de décision</h3>
@@ -173,6 +179,7 @@ C_{\mathrm{fin}} &amp;= 7{,}425-10{,}5d-6{,}12p.
 <p><strong>Livrable pour la séance 4.</strong> Fournissez votre matrice bivariée, la première contrainte qui cède, les minima A1–A5 et une mesure corrective chiffrée. Indiquez pour chaque mesure le responsable, la date limite et la preuve de disponibilité. Le cas de comité retient l’apport de 8 comme option à obtenir, sous réserve de confirmer le contrat et le calendrier de paiement.</p>
 </section><section class="chapter" id="ateliers-python">
 <h2>Ateliers Python corrigés</h2>
+<p class="reminder"><strong>Par où commencer ?</strong> Lisez d’abord la ligne du scénario de référence, puis celle où les deux chocs se combinent. Sur les graphiques, cherchez séparément l’année du minimum de trésorerie et celle du minimum du DSCR. Testez ensuite si changer le financement résout les deux difficultés. Vous pouvez lancer le code fourni puis modifier une hypothèse à la fois.</p>
 <p>Anticipez d’abord les résultats demandés. Ouvrez ensuite le code, lancez l’exécution et modifiez une hypothèse à la fois. Comparez les nouveaux tableaux, graphiques et commentaires avec votre calcul. Les calculs s’exécutent dans votre navigateur ; le premier lancement charge Python.</p>
 
 <section id="python-stress">
