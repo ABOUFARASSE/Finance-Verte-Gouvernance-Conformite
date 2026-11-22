@@ -88,6 +88,135 @@ def graphique(titre, unite, abscisses, series, type_="ligne"):
                 type=type_)
 
 
-def exporter(resultats):
-    """Sortie JSON pour une exécution locale ou externe à la page."""
+def exporter(resultats, nom=None):
+    """Affiche la sortie JSON et, si un nom est fourni, enregistre le PDF local."""
     print(json.dumps(resultats, ensure_ascii=False, indent=2, allow_nan=False))
+    if nom is not None:
+        try:
+            exporter_pdf(resultats, f"{nom}_resultats.pdf")
+        except ModuleNotFoundError as erreur:
+            if erreur.name != "matplotlib":
+                raise
+            import sys
+            print("Pour générer le PDF, installez Matplotlib : python -m pip install matplotlib",
+                  file=sys.stderr)
+
+
+def exporter_pdf(resultats, destination):
+    """Écrit uniquement les tableaux et figures. Destination : chemin ou flux binaire."""
+    from numbers import Real
+    from textwrap import fill
+
+    import matplotlib as mpl
+    from matplotlib.backends.backend_pdf import PdfPages
+    from matplotlib.figure import Figure
+    from matplotlib.ticker import FuncFormatter, MaxNLocator
+
+    # Toutes les dimensions du gabarit sont exprimées en points.
+    largeur, hauteur, marge = 595, 842, 48
+    utile = largeur - 2 * marge
+
+    def nombre(valeur):
+        if not isinstance(valeur, Real):
+            return "" if valeur is None else str(valeur)
+        if abs(valeur) < 0.0005:
+            valeur = 0
+        return f"{valeur:,.3f}".rstrip("0").rstrip(".").replace(",", " ").replace(".", ",").replace("-", "−")
+
+    def texte(page, x, y, libelle, **style):
+        page.text(x / largeur, 1 - y / hauteur, libelle, va="top", **style)
+
+    def construire_tableau(t):
+        en_tetes = t["colonnes"]
+        lignes = t["lignes"]
+        valeurs = [[nombre(v) for v in ligne] for ligne in lignes]
+        numeriques = [all(isinstance(ligne[i], Real) for ligne in lignes)
+                      for i in range(len(en_tetes))]
+        poids = [min(22, max(8, len(en_tetes[i]),
+                            *(len(ligne[i]) for ligne in valeurs)))
+                 for i in range(len(en_tetes))]
+        largeurs = [utile * p / sum(poids) for p in poids]
+        cellules = [[fill(v, width=max(5, int((l - 10) / 5)))
+                     for v, l in zip(ligne, largeurs)]
+                    for ligne in [en_tetes, *valeurs]]
+        hauteurs = [max(s.count("\n") + 1 for s in row) * 12 + 8
+                    for row in cellules]
+        return numeriques, largeurs, cellules, hauteurs
+
+    def filet(page, y, epaisseur):
+        page.add_artist(mpl.lines.Line2D(
+            [marge / largeur, 1 - marge / largeur], [1 - y / hauteur] * 2,
+            transform=page.transFigure, color="black", linewidth=epaisseur))
+
+    def dessiner_tableau(page, y, donnees):
+        numeriques, largeurs, cellules, hauteurs = donnees
+        filet(page, y, .9)
+        for index, (ligne, h) in enumerate(zip(cellules, hauteurs)):
+            x = marge
+            for cellule, l, numerique in zip(ligne, largeurs, numeriques):
+                texte(page, x + l - 5 if numerique else x + 5, y + 5, cellule,
+                      ha="right" if numerique else "left", fontsize=9,
+                      multialignment="right" if numerique else "left",
+                      weight="bold" if index == 0 else "normal")
+                x += l
+            y += h
+            if index == 0:
+                filet(page, y, .5)
+        filet(page, y, .9)
+
+    def dessiner_figure(page, y, bloc):
+        axe = page.add_axes([(marge + 48) / largeur, 1 - (y + 163) / hauteur,
+                             (utile - 64) / largeur, 163 / hauteur])
+        categories = bloc["categories"]
+        abscisses = list(range(len(categories)))
+        series = bloc["series"]
+        styles = [("-", "o"), ("--", "s"), ("-.", "^"), (":", "D")]
+        hachures = ["", "///", "...", "\\\\"]
+        for j, serie in enumerate(series):
+            valeurs, nom = serie["valeurs"], serie["nom"]
+            if bloc["type"] == "barres":
+                pas = .72 / len(series)
+                axe.bar([x + (j - (len(series) - 1) / 2) * pas for x in abscisses],
+                        valeurs, width=pas * .92, label=nom, color=".24" if j == 0 else "white",
+                        edgecolor="black", linewidth=.7, hatch=hachures[j % len(hachures)])
+            else:
+                trait, marqueur = styles[j % len(styles)]
+                axe.plot(abscisses, valeurs, label=nom, color="black", linestyle=trait,
+                         marker=marqueur, markersize=3.5, markerfacecolor="white", linewidth=1.15)
+        axe.set_xticks(abscisses, categories)
+        axe.set_ylabel(bloc["unite"])
+        axe.tick_params(length=3, width=.6, labelsize=9)
+        axe.spines[["top", "right"]].set_visible(False)
+        axe.yaxis.set_major_locator(MaxNLocator(nbins=5))
+        axe.yaxis.set_major_formatter(FuncFormatter(lambda v, _: nombre(v)))
+        axe.set_axisbelow(True)
+        axe.grid(axis="y", color=".86", linewidth=.5)
+        if axe.get_ylim()[0] < 0 < axe.get_ylim()[1]:
+            axe.axhline(0, color=".38", linewidth=.65)
+        axe.legend(loc="upper center", bbox_to_anchor=(.5, -.19), frameon=False,
+                   ncol=min(2, len(series)), fontsize=9)
+
+    with mpl.rc_context({"font.family": "DejaVu Serif", "pdf.fonttype": 42,
+                         "axes.linewidth": .65, "axes.labelsize": 10}):
+        with PdfPages(destination, metadata={"Title": "Résultats de l’atelier Python"}) as pdf:
+            page = Figure(figsize=(largeur / 72, hauteur / 72), facecolor="white")
+            y = marge
+            for cle, nom in [("tableaux", "Tableau"), ("graphiques", "Figure")]:
+                for index, bloc in enumerate(resultats.get(cle, []), 1):
+                    titre = fill(f"{nom} {index}. {bloc['titre']}", width=83)
+                    espace_titre = 16 * (titre.count("\n") + 1) + 5
+                    donnees = construire_tableau(bloc) if cle == "tableaux" else None
+                    h = sum(donnees[3]) if donnees else 232
+                    if y + espace_titre + h > hauteur - marge and y > marge:
+                        pdf.savefig(page)
+                        page = Figure(figsize=(largeur / 72, hauteur / 72), facecolor="white")
+                        y = marge
+                    texte(page, largeur / 2, y, titre, ha="center", fontsize=11, weight="bold")
+                    y += espace_titre
+                    if donnees:
+                        dessiner_tableau(page, y, donnees)
+                    else:
+                        dessiner_figure(page, y + 5, bloc)
+                    y += h + 26
+            if y != marge:
+                pdf.savefig(page)

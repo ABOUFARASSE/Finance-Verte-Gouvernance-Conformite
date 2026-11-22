@@ -127,7 +127,16 @@ for (const lab of document.querySelectorAll("[data-python-lab]")) {
   const stop = lab.querySelector("[data-stop]");
   const status = lab.querySelector("[role=status]");
   const results = lab.querySelector("[data-results]");
-  let original, worker, timeout;
+  const filename = new URL(lab.dataset.pythonLab, document.baseURI).pathname
+    .split("/").pop().replace(/\.py$/, "_resultats.pdf");
+  let original, worker, timeout, pdfURL, pdfLink;
+
+  function clearPDF() {
+    if (pdfURL) URL.revokeObjectURL(pdfURL);
+    pdfURL = undefined;
+    pdfLink?.remove();
+    pdfLink = undefined;
+  }
 
   function idle() {
     clearTimeout(timeout);
@@ -144,7 +153,9 @@ for (const lab of document.querySelectorAll("[data-python-lab]")) {
 
   async function loadCode() {
     if (original !== undefined) return;
-    const response = await fetch(lab.dataset.pythonLab);
+    const scriptURL = new URL(lab.dataset.pythonLab, document.baseURI);
+    scriptURL.searchParams.set("v", "pdf-aer-1");
+    const response = await fetch(scriptURL);
     if (!response.ok) throw new Error("Le fichier Python n’est pas disponible.");
     original = await response.text();
     code.value = original;
@@ -160,19 +171,37 @@ for (const lab of document.querySelectorAll("[data-python-lab]")) {
   });
   stop.addEventListener("click", () => end("Exécution interrompue. Vous pouvez modifier le code et relancer."));
   run.addEventListener("click", () => {
+    clearPDF();
     run.disabled = true;
     stop.hidden = false;
     status.textContent = worker ? "Calcul en cours…" : "Chargement de Python au premier lancement…";
-    worker ??= new Worker(new URL("./python-worker.js", import.meta.url));
+    worker ??= new Worker(new URL("./python-worker.js?v=pdf-aer-1", import.meta.url));
     worker.onerror = () => end("Python n’a pas pu démarrer. Réessayez ou utilisez les fichiers .py téléchargeables.");
     worker.onmessage = ({ data }) => {
       if (data.type === "ready") {
         status.textContent = "Calcul en cours…";
         return;
       }
-      idle();
+      if (data.type === "pdf") {
+        idle();
+        pdfURL = URL.createObjectURL(new Blob([data.bytes], { type: "application/pdf" }));
+        pdfLink = element("a", "Télécharger les résultats en PDF");
+        pdfLink.className = "button";
+        pdfLink.href = pdfURL;
+        pdfLink.download = filename;
+        results.prepend(pdfLink);
+        status.textContent = "Calcul terminé. Le PDF des tableaux et graphiques est disponible.";
+        return;
+      }
+      if (data.type === "pdf-error") {
+        // Les résultats en ligne restent disponibles si le moteur PDF ne se charge pas.
+        idle();
+        status.textContent = "Calcul terminé. Le PDF n’a pas pu être généré. Relancez l’atelier pour réessayer.";
+        return;
+      }
       results.replaceChildren();
       if (data.type === "error") {
+        idle();
         status.textContent = "Le programme a renvoyé une erreur.";
         results.append(element("pre", data.message));
         // Une erreur au chargement doit pouvoir être retentée avec un processus neuf.
@@ -187,7 +216,7 @@ for (const lab of document.querySelectorAll("[data-python-lab]")) {
           note.append(element("h4", "Interprétation des résultats"), ...commentaires.map(comment => element("p", comment)));
           results.append(note);
         }
-        status.textContent = "Calcul terminé. Les tableaux et graphiques sont à jour.";
+        status.textContent = "Calcul terminé. Génération du PDF des tableaux et graphiques…";
       }
       if (data.journal?.length) {
         const log = element("details");
