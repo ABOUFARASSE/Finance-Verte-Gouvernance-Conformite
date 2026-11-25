@@ -2,9 +2,9 @@
 const ENDPOINT='https://qrkzgapnevjzwkosgsnx.supabase.co/functions/v1/module10-qcm-v2';
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let key='',state=null,current=null,answers={},timer=null,chain=Promise.resolve(),busy=false,dirty=false,seq=0,lastResult=null;
+let identityPayload={},key='',state=null,current=null,answers={},timer=null,chain=Promise.resolve(),busy=false,dirty=false,seq=0,lastResult=null;
 async function api(action,payload={}){
- const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key,action,payload})});
+ const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({key,action,payload:{...identityPayload,...payload}})});
  const d=await r.json();if(!r.ok||d.error)throw Error(d.error||'Demande refusée');return d;
 }
 function message(text,error=false){$('message').textContent=text;$('message').className='notice'+(error?' error':'');$('message').hidden=!text;}
@@ -23,7 +23,7 @@ function renderStatus(d){
  $('identity').textContent=d.name?`${d.name} · ${d.label}`:d.label;
  $('best').textContent=d.best===null?'Aucun score validé':`Meilleur score retenu : ${d.best} / 20`;
  $('remaining').textContent=`${d.started} tentative(s) commencée(s) sur 3 · ${d.remaining} nouvelle(s) tentative(s) disponible(s).`;
- $('name-label').hidden=!!d.name;$('start').hidden=!!current||d.remaining===0||!d.open;
+ $('name-label').hidden=true;$('start').hidden=!!current||d.remaining===0||!d.open;
  $('closed').hidden=d.open||!!current;
  $('history').innerHTML=d.history.length?'<h3>Vos tentatives</h3><ul>'+d.history.map(x=>`<li>Tentative ${x.number} : ${x.score===null?'en cours':esc(x.score)+' / 20 <button type="button" data-review="'+esc(x.id)+'">Revoir le corrigé</button>'}</li>`).join('')+'</ul>':'';
  $('history').querySelectorAll('[data-review]').forEach(b=>b.onclick=async()=>{try{controls(true);showCorrection(await api('review',{attempt:b.dataset.review}));message('');}catch(e){message(e.message,true)}finally{controls(false)}});
@@ -41,10 +41,21 @@ function showCorrection(d){
  $('corrections').innerHTML=d.corrections.map((q,i)=>`<article class="card ${q.is_correct?'right':'wrong'}"><h3>${i+1}. ${esc(q.question)}</h3><p><strong>Votre réponse :</strong> ${q.selected===null?'Non renseignée':esc(q.options[q.selected])}</p><p><strong>Bonne réponse :</strong> ${esc(q.options[q.correct])}</p><p><strong>Explication :</strong> ${esc(q.explanation)}</p><a href="${esc(q.source)}" target="_blank" rel="noopener">Revoir le passage du cours · séance ${q.session}</a></article>`).join('');
  $('result').scrollIntoView({behavior:'smooth'});
 }
-$('login-form').onsubmit=async e=>{e.preventDefault();key=$('access-code').value.trim().toUpperCase();try{controls(true);renderStatus(await api('status'));sessionStorage.setItem('m10v2-key',key);message('');}catch(err){message(err.message,true)}finally{controls(false)}};
+$('login-form').onsubmit=async e=>{
+ e.preventDefault();key=$('access-code').value.trim().toUpperCase();identityPayload={};
+ try{controls(true);await api('status');$('login').hidden=true;$('name-label').hidden=false;$('student-last-name').focus();message('');}
+ catch(err){message(err.message,true)}finally{controls(false)}
+};
+$('identity-form').onsubmit=async e=>{
+ e.preventDefault();
+ const last_name=$('student-last-name').value.trim(),first_name=$('student-first-name').value.trim();
+ if(!/\p{L}/u.test(last_name)||!/\p{L}/u.test(first_name)){message('Renseignez votre nom et votre prénom.',true);return;}
+ identityPayload={last_name,first_name};
+ try{controls(true);const d=await api('status');if(d.identity_required)throw Error('Nom et prénom requis');renderStatus(d);message('');}
+ catch(err){message(err.message,true)}finally{controls(false)}
+};
 $('start').onclick=async()=>{
- const name=$('student-name').value.trim();
- if(!state.name&&name.length<2){message('Indiquez votre nom complet avant de commencer.',true);return;}
+ const name=identityPayload.last_name+' '+identityPayload.first_name;
  if(!confirm('Commencer une tentative ? Elle sera décomptée parmi les trois disponibles. Vous pourrez la reprendre avant validation.'))return;
  try{controls(true);$('result').hidden=true;renderStatus(await api('start',{name}));message('');$('quiz-wrap').scrollIntoView();}catch(e){message(e.message,true)}finally{controls(false)}
 };
@@ -61,5 +72,3 @@ $('logout').onclick=()=>{if((dirty||busy)&&!confirm('Des modifications ne sont p
 $('download').onclick=()=>{if(!lastResult)return;const content={module:'Module 10',student:state.name,reference:state.label,...lastResult};const blob=new Blob([JSON.stringify(content,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`Module10_${state.label}_tentative_${lastResult.number}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);};
 $('print').onclick=()=>window.print();
 window.addEventListener('beforeunload',e=>{if(dirty||busy){e.preventDefault();e.returnValue='';}});
-const remembered=sessionStorage.getItem('m10v2-key');if(remembered){$('access-code').value=remembered;$('login-form').requestSubmit();}
-
