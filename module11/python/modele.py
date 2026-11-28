@@ -26,7 +26,7 @@ def cout_effectif(flux_emprunteur):
     return (bas + haut) / 2
 
 
-def prevision(demande=0, energie=0, pret=14, apport=0, ppa=False, retard=0):
+def prevision(demande=0, energie=0, pret=14, apport=0, ppa=False, retard=0, retard_solaire=0):
     """Plan A1–A5. Chocs proportionnels constants versus trajectoire de base.
 
     Intérêts sur la dette d'ouverture plus le tirage de début A1.
@@ -34,19 +34,29 @@ def prevision(demande=0, energie=0, pret=14, apport=0, ppa=False, retard=0):
     Le PPA garde le même volume substitué à plein régime dans ce stress.
     Après mise en service il gagne 0,95, contre 2 en détention. Les frais
     d'entrée de 0,5 sont décaissés en A1, hors CFADS, et non déductibles.
+    retard décale E et S ensemble. retard_solaire ajoute un décalage pour S seul.
+    Le PPA commence à facturer à la livraison. Les frais d'entrée, le CAPEX
+    programmé et les tirages restent aux dates de référence dans ce test.
+    Sur la base énergétique, E évite 1,8 et S évite 2,0, qu'il soit détenu
+    ou acheté via PPA. Ce sont les économies de réseau avant paiement du PPA.
     """
     if not (0 <= demande <= 1 and energie >= 0 and pret >= 0 and apport >= 0
-            and isinstance(retard, int) and 0 <= retard <= 4):
+            and isinstance(retard, int) and isinstance(retard_solaire, int)
+            and retard >= 0 and retard_solaire >= 0 and retard + retard_solaire <= 4):
         raise ValueError("Vérifiez le domaine des chocs, du financement et du retard.")
     cash, bfr, dette_historique, dette_nouvelle = 4, 20, 22, 0
     lignes = []
     for annee in range(1, 6):
-        actif = annee >= 2 + retard
+        efficacite_active = annee >= 2 + retard
+        solaire_actif = annee >= 2 + retard + retard_solaire
         ca = 100 * 1.05**annee * (1 - demande)
-        economie = (1.8 + (0.95 if ppa else 2)) * actif + 0.7 * (annee >= 3)
-        surcout = energie * (8 * 1.02**annee - 3.8 * actif)
+        economie = (1.8 * efficacite_active + (0.95 if ppa else 2) * solaire_actif
+                    + 0.7 * (annee >= 3))
+        exposition_reseau = max(0, 8 * 1.02**annee - 1.8 * efficacite_active - 2 * solaire_actif)
+        surcout = energie * exposition_reseau
         ebitda = 0.4 * ca - 24 * 1.02**annee + economie - surcout
-        amort = 4 + (0.6 if ppa else 1.6) * actif + 0.4 * (annee >= 3)
+        amort = (4 + 0.6 * efficacite_active + (not ppa) * solaire_actif
+                 + 0.4 * (annee >= 3))
         tirage = pret if annee == 1 else 0
         interets = 0.06 * (dette_historique + dette_nouvelle + tirage)
         impot = 0.25 * max(0, ebitda - amort - interets)

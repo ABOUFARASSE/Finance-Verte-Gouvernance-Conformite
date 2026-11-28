@@ -4,7 +4,9 @@ let runtime;
 async function init() {
   importScripts(runtimeURL + "pyodide.js");
   const python = await loadPyodide({ indexURL: runtimeURL });
-  const modelURL = new URL("../python/modele.py?v=pdf-aer-1", self.location.href);
+  const version = new URL(self.location.href).searchParams.get("v") || "pdf-aer-1";
+  const modelURL = new URL("../python/modele.py", self.location.href);
+  modelURL.searchParams.set("v", version);
   const response = await fetch(modelURL);
   if (!response.ok) throw new Error("Le modèle Python du cours ne se charge pas.");
   python.FS.writeFile("modele.py", await response.text());

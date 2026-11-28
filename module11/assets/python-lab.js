@@ -1,3 +1,4 @@
+const version = new URL(import.meta.url).searchParams.get("v") || "pdf-aer-1";
 const FR = new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 3 });
 const palette = ["#19634f", "#ab4d23", "#365b99", "#614870"];
 
@@ -154,7 +155,7 @@ for (const lab of document.querySelectorAll("[data-python-lab]")) {
   async function loadCode() {
     if (original !== undefined) return;
     const scriptURL = new URL(lab.dataset.pythonLab, document.baseURI);
-    scriptURL.searchParams.set("v", "pdf-aer-1");
+    scriptURL.searchParams.set("v", version);
     const response = await fetch(scriptURL);
     if (!response.ok) throw new Error("Le fichier Python n’est pas disponible.");
     original = await response.text();
@@ -175,7 +176,7 @@ for (const lab of document.querySelectorAll("[data-python-lab]")) {
     run.disabled = true;
     stop.hidden = false;
     status.textContent = worker ? "Calcul en cours…" : "Chargement de Python au premier lancement…";
-    worker ??= new Worker(new URL("./python-worker.js?v=pdf-aer-1", import.meta.url));
+    worker ??= new Worker(new URL("./python-worker.js?v=" + encodeURIComponent(version), import.meta.url));
     worker.onerror = () => end("Python n’a pas pu démarrer. Réessayez ou utilisez les fichiers .py téléchargeables.");
     worker.onmessage = ({ data }) => {
       if (data.type === "ready") {
